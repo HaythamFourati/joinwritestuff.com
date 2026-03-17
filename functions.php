@@ -9,14 +9,14 @@
  */
 
 // Brand
-define('SITE_NAME', 'Komedy & Kindness Mail Club');
-define('SITE_TAGLINE', 'Real Paper. Real Warmth. Real Connection.');
-define('SITE_LOGO_INITIALS', 'K&K');
+define('SITE_NAME', 'Join Write Stuff');
+define('SITE_TAGLINE', 'Real Connection.');
+define('SITE_LOGO_INITIALS', 'WS');
 
 // Contact
 define('SITE_PHONE', '');
 define('SITE_PHONE_LINK', '');
-define('SITE_EMAIL', 'hello@komedykindness.com');
+define('SITE_EMAIL', 'info@joinwritestuff.com ');
 
 // Social Links (leave empty to hide)
 define('SITE_SOCIAL_FACEBOOK', '');
@@ -26,7 +26,7 @@ define('SITE_SOCIAL_INSTAGRAM', '');
 
 // Subscription Details
 define('FOUNDING_MEMBERS_LIMIT', '50');
-define('MONTHLY_PRICE', '$10');
+define('MONTHLY_PRICE', '$11');
 define('STRIPE_PAYMENT_LINK', ''); // TODO: Add Stripe payment link here when ready
 
 // Office Address (optional - leave empty if not needed)

@@ -21,111 +21,70 @@
     </div>
 
     <!-- Content Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       
       <!-- Item 1: Jokes -->
-      <div class="whats-inside-card group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50 hover:border-primary/30 hover:-translate-y-2">
-        <div class="absolute top-6 right-6 w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center">
-          <span class="text-2xl">😄</span>
+      <div class="whats-inside-card group relative bg-gradient-to-br from-white to-primary/5 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border-2 border-primary/20 hover:border-primary/40 hover:scale-105">
+        <div class="mb-6 w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/30 rounded-3xl flex items-center justify-center mx-auto">
+          <span class="text-5xl">😄</span>
         </div>
-        <div class="mb-4">
-          <svg class="w-12 h-12 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
-            <line x1="9" y1="9" x2="9.01" y2="9"/>
-            <line x1="15" y1="9" x2="15.01" y2="9"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-foreground mb-3">Some Jokes</h3>
-        <p class="text-muted-foreground leading-relaxed">
+        <h3 class="text-2xl font-bold text-foreground mb-4 text-center">Some Jokes</h3>
+        <p class="text-muted-foreground leading-relaxed text-center">
           Lighthearted comedy that earns a genuine laugh — the kind you share out loud.
         </p>
       </div>
 
       <!-- Item 2: Heartfelt Letter -->
-      <div class="whats-inside-card group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50 hover:border-accent/30 hover:-translate-y-2">
-        <div class="absolute top-6 right-6 w-12 h-12 bg-gradient-to-br from-accent/20 to-secondary/20 rounded-2xl flex items-center justify-center">
-          <span class="text-2xl">💌</span>
+      <div class="whats-inside-card group relative bg-gradient-to-br from-white to-accent/5 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border-2 border-accent/20 hover:border-accent/40 hover:scale-105">
+        <div class="mb-6 w-20 h-20 bg-gradient-to-br from-accent/20 to-secondary/30 rounded-3xl flex items-center justify-center mx-auto">
+          <span class="text-5xl">💌</span>
         </div>
-        <div class="mb-4">
-          <svg class="w-12 h-12 text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-foreground mb-3">A Vulnerable Heartfelt Letter</h3>
-        <p class="text-muted-foreground leading-relaxed">
+        <h3 class="text-2xl font-bold text-foreground mb-4 text-center">A Vulnerable Heartfelt Letter</h3>
+        <p class="text-muted-foreground leading-relaxed text-center">
           A personal note about life, family, and the beautifully imperfect experience of being human.
         </p>
       </div>
 
       <!-- Item 3: Reflection -->
-      <div class="whats-inside-card group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50 hover:border-secondary/30 hover:-translate-y-2">
-        <div class="absolute top-6 right-6 w-12 h-12 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-2xl flex items-center justify-center">
-          <span class="text-2xl">🌿</span>
+      <div class="whats-inside-card group relative bg-gradient-to-br from-white to-secondary/5 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border-2 border-secondary/20 hover:border-secondary/40 hover:scale-105">
+        <div class="mb-6 w-20 h-20 bg-gradient-to-br from-secondary/20 to-primary/30 rounded-3xl flex items-center justify-center mx-auto">
+          <span class="text-5xl">🌿</span>
         </div>
-        <div class="mb-4">
-          <svg class="w-12 h-12 text-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2v20M2 12h20"/>
-            <circle cx="12" cy="12" r="4"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-foreground mb-3">A Short Reflection</h3>
-        <p class="text-muted-foreground leading-relaxed">
+        <h3 class="text-2xl font-bold text-foreground mb-4 text-center">A Short Reflection</h3>
+        <p class="text-muted-foreground leading-relaxed text-center">
           A philosophical insight or gentle wisdom to carry with you over time.
         </p>
       </div>
 
       <!-- Item 4: Sticker/Surprise -->
-      <div class="whats-inside-card group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50 hover:border-primary/30 hover:-translate-y-2">
-        <div class="absolute top-6 right-6 w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center">
-          <span class="text-2xl">✨</span>
+      <div class="whats-inside-card group relative bg-gradient-to-br from-white to-peach/5 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border-2 border-peach/20 hover:border-peach/40 hover:scale-105">
+        <div class="mb-6 w-20 h-20 bg-gradient-to-br from-peach/20 to-secondary/30 rounded-3xl flex items-center justify-center mx-auto">
+          <span class="text-5xl">✨</span>
         </div>
-        <div class="mb-4">
-          <svg class="w-12 h-12 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/>
-            <path d="M2 7h20v5H2z"/>
-            <path d="M12 22V7"/>
-            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
-            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-foreground mb-3">A Sticker or Surprise</h3>
-        <p class="text-muted-foreground leading-relaxed">
+        <h3 class="text-2xl font-bold text-foreground mb-4 text-center">A Sticker or Surprise</h3>
+        <p class="text-muted-foreground leading-relaxed text-center">
           A small tactile delight — because grown-ups deserve fun surprises too. Remember Cracker Jacks?
         </p>
       </div>
 
       <!-- Item 5: Pay It Forward Postcard -->
-      <div class="whats-inside-card group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50 hover:border-accent/30 hover:-translate-y-2">
-        <div class="absolute top-6 right-6 w-12 h-12 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl flex items-center justify-center">
-          <span class="text-2xl">📮</span>
+      <div class="whats-inside-card group relative bg-gradient-to-br from-white to-mint/5 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border-2 border-mint/20 hover:border-mint/40 hover:scale-105">
+        <div class="mb-6 w-20 h-20 bg-gradient-to-br from-mint/20 to-primary/30 rounded-3xl flex items-center justify-center mx-auto">
+          <span class="text-5xl">📮</span>
         </div>
-        <div class="mb-4">
-          <svg class="w-12 h-12 text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <path d="M22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-foreground mb-3">A Pay It Forward Postcard</h3>
-        <p class="text-muted-foreground leading-relaxed">
+        <h3 class="text-2xl font-bold text-foreground mb-4 text-center">A Pay It Forward Postcard</h3>
+        <p class="text-muted-foreground leading-relaxed text-center">
           A new postcard each month that you can use to spread kindness to someone else.
         </p>
       </div>
 
       <!-- Item 6: Meditation -->
-      <div class="whats-inside-card group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50 hover:border-secondary/30 hover:-translate-y-2">
-        <div class="absolute top-6 right-6 w-12 h-12 bg-gradient-to-br from-secondary/20 to-accent/20 rounded-2xl flex items-center justify-center">
-          <span class="text-2xl">🧘</span>
+      <div class="whats-inside-card group relative bg-gradient-to-br from-white to-secondary/5 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border-2 border-secondary/20 hover:border-secondary/40 hover:scale-105">
+        <div class="mb-6 w-20 h-20 bg-gradient-to-br from-secondary/20 to-accent/30 rounded-3xl flex items-center justify-center mx-auto">
+          <span class="text-5xl">🧘</span>
         </div>
-        <div class="mb-4">
-          <svg class="w-12 h-12 text-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"/>
-            <path d="M12 6v6l4 2"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-foreground mb-3">A Short Meditation</h3>
-        <p class="text-muted-foreground leading-relaxed">
+        <h3 class="text-2xl font-bold text-foreground mb-4 text-center">A Short Meditation</h3>
+        <p class="text-muted-foreground leading-relaxed text-center">
           Joyful divinity in less than 5 minutes. A moment of peace in your busy day.
         </p>
       </div>

@@ -1,47 +1,48 @@
 <?php
 /**
- * Contact Section - Komedy & Kindness Mail Club
+ * Contact Section - Join Write Stuff
  * ============================================
- * Simple, warm contact section
+ * Playful, pretty contact section
  */
 ?>
-<section id="contact" class="py-20 lg:py-28 bg-gradient-to-br from-secondary/10 to-accent/10">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-      <!-- Left Column - Info -->
-      <div class="contact-info">
-        <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
-          Questions?
-        </span>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">
-          We'd Love to <span class="text-primary">Hear From You</span>
-        </h2>
-        <p class="text-lg text-muted-foreground leading-relaxed mb-8">
-          Have questions about the mail club? Curious about what's inside? Want to know more about becoming a founding member? Send us a message!
-        </p>
-
-        <!-- Contact Details -->
-        <div class="space-y-5 mb-8">
-          <a href="mailto:<?php echo esc_attr(SITE_EMAIL); ?>" class="flex items-center gap-4 group">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </div>
-            <div>
-              <p class="text-[13px] text-muted-foreground">Email Us</p>
-              <p class="text-[16px] font-semibold text-foreground group-hover:text-primary transition-colors"><?php echo esc_html(SITE_EMAIL); ?></p>
-            </div>
-          </a>
-          <div class="pt-4">
-            <p class="text-sm text-muted-foreground italic">
-              We typically respond within 24 hours. Can't wait to connect with you! 💌
-            </p>
-          </div>
-        </div>
+<section id="contact" class="relative py-20 lg:py-28 bg-gradient-to-b from-muted/20 to-background overflow-hidden">
+  <!-- Decorative floating elements -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute top-20 left-[8%] w-20 h-20 bg-primary/10 rounded-full blur-2xl animate-[gentle-float_10s_ease-in-out_infinite]"></div>
+    <div class="absolute bottom-32 right-[12%] w-24 h-24 bg-accent/10 rounded-full blur-2xl animate-[gentle-float_12s_ease-in-out_infinite_3s]"></div>
+    <div class="absolute top-1/2 left-[15%] animate-[gentle-float_8s_ease-in-out_infinite_1s]">
+      <span class="text-4xl opacity-20">✉️</span>
+    </div>
+    <div class="absolute top-1/3 right-[20%] animate-[gentle-float_9s_ease-in-out_infinite_2s]">
+      <span class="text-3xl opacity-20">💌</span>
+    </div>
+  </div>
+  
+  <div class="max-w-6xl mx-auto px-4 relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 border border-primary/30 text-primary text-sm font-bold mb-6">
+        <span class="text-xl">💌</span>
+        <span>Get In Touch</span>
       </div>
-
-      <!-- Right Column - Form -->
-      <div id="contact-form-root" class="bg-white rounded-2xl p-8 border border-border/50 shadow-sm">
-        <h3 class="text-xl font-semibold text-foreground mb-6">Send Us a Message</h3>
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+        We'd Love to <span class="text-primary">Hear From You</span>
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+        Have questions about the mail club? Curious about what's inside? Want to know more about becoming a founding member? Send us a message! ✨
+      </p>
+    </div>
+    
+    <!-- Centered Form -->
+    <div class="max-w-2xl mx-auto">
+      <div id="contact-form-root" class="bg-gradient-to-br from-white to-accent/5 rounded-3xl p-8 lg:p-10 border-2 border-accent/20 shadow-lg hover:shadow-xl transition-all duration-500">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-bold mb-4">
+            <span class="text-lg">✉️</span>
+            <span>Send a Message</span>
+          </div>
+          <h3 class="text-2xl font-bold text-foreground">Drop Us a Line</h3>
+        </div>
         
         <?php 
         // Contact Form 7 Integration
@@ -54,7 +55,7 @@
         if (shortcode_exists('contact-form-7')) {
           // CF7 is installed - use the shortcode
           // TODO: Update this shortcode with your actual CF7 form ID
-          echo do_shortcode('[contact-form-7 id="YOUR_FORM_ID" title="Contact Form"]');
+          echo do_shortcode('[contact-form-7 id="27f9550" title="Contact form 1"]');
         } else {
           // Fallback form when CF7 is not installed
         ?>

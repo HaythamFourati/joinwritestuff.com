@@ -5,7 +5,7 @@
  * Warm, minimal footer with love
  */
 ?>
-<footer class="bg-gradient-to-br from-foreground to-foreground/95 text-white/80">
+<footer class="bg-black text-white/90">
   <!-- Main Footer -->
   <div class="max-w-6xl mx-auto px-4 py-16">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
@@ -59,8 +59,9 @@
           <li><a href="#whats-inside" class="text-[13px] text-white/60 hover:text-white transition-colors">What's Inside</a></li>
           <li><a href="#how-it-works" class="text-[13px] text-white/60 hover:text-white transition-colors">How It Works</a></li>
           <li><a href="#who-we-are" class="text-[13px] text-white/60 hover:text-white transition-colors">About Us</a></li>
+          <li><a href="<?php echo home_url('/faq'); ?>" class="text-[13px] text-white/60 hover:text-white transition-colors">FAQ</a></li>
           <li><a href="#founding-membership" class="text-[13px] text-white/60 hover:text-white transition-colors">Join Now</a></li>
-          <li><a href="#contact" class="text-[13px] text-white/60 hover:text-white transition-colors">Questions</a></li>
+          <li><a href="#contact" class="text-[13px] text-white/60 hover:text-white transition-colors">Contact</a></li>
         </ul>
       </nav>
 

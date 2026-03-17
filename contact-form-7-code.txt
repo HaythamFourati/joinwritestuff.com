@@ -1,0 +1,78 @@
+Contact Form 7 - Form Code for Join Write Stuff
+================================================
+
+Copy and paste this code into your Contact Form 7 form editor.
+This form includes: Name, Email, Subject, and Message fields.
+
+FORM CODE:
+----------
+
+<div class="cf7-custom-form">
+  
+  <!-- Name Field -->
+  <div class="cf7-field">
+    <label class="cf7-label" for="name">Your Name *</label>
+    [text* your-name id:name class:cf7-input placeholder "Enter your name"]
+  </div>
+  
+  <!-- Email Field -->
+  <div class="cf7-field">
+    <label class="cf7-label" for="email">Your Email *</label>
+    [email* your-email id:email class:cf7-input placeholder "your@email.com"]
+  </div>
+  
+  <!-- Subject Field -->
+  <div class="cf7-field">
+    <label class="cf7-label" for="subject">Subject *</label>
+    [text* your-subject id:subject class:cf7-input placeholder "What's this about?"]
+  </div>
+  
+  <!-- Message Field -->
+  <div class="cf7-field">
+    <label class="cf7-label" for="message">Your Message *</label>
+    [textarea* your-message id:message class:cf7-textarea placeholder "Tell us what's on your mind..."]
+  </div>
+  
+  <!-- Submit Button -->
+  <div class="cf7-submit-wrap">
+    [submit class:cf7-submit "Send Message"]
+  </div>
+  
+</div>
+
+
+MAIL SETTINGS (Optional - Configure in CF7 Mail Tab):
+------------------------------------------------------
+
+To: info@joinwritestuff.com
+From: [your-name] <[your-email]>
+Subject: New Contact Form Submission: [your-subject]
+
+Message Body:
+From: [your-name]
+Email: [your-email]
+Subject: [your-subject]
+
+Message:
+[your-message]
+
+--
+This message was sent from the contact form on Join Write Stuff
+
+
+NOTES:
+------
+1. All fields are required (marked with *)
+2. The form uses custom CSS classes that match the pink feminine theme
+3. Form validation is built-in (email format, required fields)
+4. Success/error messages are styled automatically
+5. The form ID in your template is: 27f9550
+
+INSTALLATION:
+-------------
+1. Go to WordPress Admin → Contact → Contact Forms
+2. Edit your existing form (ID: 27f9550) or create a new one
+3. Paste the FORM CODE above into the form editor
+4. Configure the Mail settings if needed
+5. Save the form
+6. The form is already embedded in your Contact section template
