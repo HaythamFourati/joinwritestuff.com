@@ -5,7 +5,7 @@
  * Warm, feminine design with emotional connection
  */
 ?>
-<section id="hero-section" class="relative overflow-hidden pt-20 pb-24 lg:pt-28 lg:pb-32">
+<section id="hero-section" class="relative overflow-hidden pt-20 pb-12 lg:pt-28 lg:pb-16">
   <!-- Decorative background elements -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
     <div class="absolute top-20 right-10 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"></div>
@@ -120,7 +120,7 @@
         
         <!-- Subheadline with emotional hook -->
         <p class="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-3xl mx-auto font-light">
-          Real paper. Real laughter. Real connection. <span class="text-foreground font-medium">Every month</span>, we send you an envelope filled with comedy, kindness, and things that make you smile.
+          Real paper. Real connection. <span class="text-foreground font-medium">Every month</span>, we send you an envelope filled with things that make you smile.
         </p>
         
         <!-- Social proof -->

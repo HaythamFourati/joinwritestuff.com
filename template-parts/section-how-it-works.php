@@ -5,7 +5,7 @@
  * Shows the simple, joyful experience of receiving mail
  */
 ?>
-<section id="how-it-works" class="relative py-20 lg:py-28 bg-gradient-to-b from-muted/20 to-background overflow-hidden">
+<section id="how-it-works" class="relative py-10 lg:py-14 bg-gradient-to-b from-muted/20 to-background overflow-hidden">
   <!-- Decorative floating elements -->
   <div class="absolute inset-0 pointer-events-none overflow-hidden">
     <div class="absolute top-20 left-[10%] w-16 h-16 bg-primary/10 rounded-full blur-2xl animate-[gentle-float_8s_ease-in-out_infinite]"></div>
@@ -117,7 +117,7 @@
             
             <!-- Content -->
             <div class="flex-1 text-center md:text-left">
-              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary text-sm font-bold mb-4">
+              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-foreground text-sm font-bold mb-4">
                 <span>Step 3</span>
                 <span class="text-lg">→</span>
               </div>

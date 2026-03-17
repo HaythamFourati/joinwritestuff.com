@@ -5,7 +5,7 @@
  * Showcases the 6 items included in each monthly delivery
  */
 ?>
-<section id="whats-inside" class="relative py-20 lg:py-28 bg-gradient-to-b from-background to-muted/30">
+<section id="whats-inside" class="relative py-10 lg:py-14 bg-gradient-to-b from-background to-muted/30">
   <div class="max-w-6xl mx-auto px-4">
     <!-- Section Header -->
     <div class="text-center mb-16 max-w-2xl mx-auto">
@@ -21,20 +21,9 @@
     </div>
 
     <!-- Content Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
       
-      <!-- Item 1: Jokes -->
-      <div class="whats-inside-card group relative bg-gradient-to-br from-white to-primary/5 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border-2 border-primary/20 hover:border-primary/40 hover:scale-105">
-        <div class="mb-6 w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/30 rounded-3xl flex items-center justify-center mx-auto">
-          <span class="text-5xl">😄</span>
-        </div>
-        <h3 class="text-2xl font-bold text-foreground mb-4 text-center">Some Jokes</h3>
-        <p class="text-muted-foreground leading-relaxed text-center">
-          Lighthearted comedy that earns a genuine laugh — the kind you share out loud.
-        </p>
-      </div>
-
-      <!-- Item 2: Heartfelt Letter -->
+      <!-- Item 1: Heartfelt Letter -->
       <div class="whats-inside-card group relative bg-gradient-to-br from-white to-accent/5 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border-2 border-accent/20 hover:border-accent/40 hover:scale-105">
         <div class="mb-6 w-20 h-20 bg-gradient-to-br from-accent/20 to-secondary/30 rounded-3xl flex items-center justify-center mx-auto">
           <span class="text-5xl">💌</span>
@@ -50,7 +39,7 @@
         <div class="mb-6 w-20 h-20 bg-gradient-to-br from-secondary/20 to-primary/30 rounded-3xl flex items-center justify-center mx-auto">
           <span class="text-5xl">🌿</span>
         </div>
-        <h3 class="text-2xl font-bold text-foreground mb-4 text-center">A Short Reflection</h3>
+        <h3 class="text-2xl font-bold text-foreground mb-4 text-center">A Thoughtful Reflection</h3>
         <p class="text-muted-foreground leading-relaxed text-center">
           A philosophical insight or gentle wisdom to carry with you over time.
         </p>
@@ -68,7 +57,7 @@
       </div>
 
       <!-- Item 5: Pay It Forward Postcard -->
-      <div class="whats-inside-card group relative bg-gradient-to-br from-white to-mint/5 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border-2 border-mint/20 hover:border-mint/40 hover:scale-105">
+      <div class="whats-inside-card group relative bg-gradient-to-br from-white to-mint/5 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border-2 border-mint/20 hover:border-mint/40 hover:scale-105 lg:col-start-2">
         <div class="mb-6 w-20 h-20 bg-gradient-to-br from-mint/20 to-primary/30 rounded-3xl flex items-center justify-center mx-auto">
           <span class="text-5xl">📮</span>
         </div>
@@ -83,7 +72,7 @@
         <div class="mb-6 w-20 h-20 bg-gradient-to-br from-secondary/20 to-accent/30 rounded-3xl flex items-center justify-center mx-auto">
           <span class="text-5xl">🧘</span>
         </div>
-        <h3 class="text-2xl font-bold text-foreground mb-4 text-center">A Short Meditation</h3>
+        <h3 class="text-2xl font-bold text-foreground mb-4 text-center">A Guided Meditation</h3>
         <p class="text-muted-foreground leading-relaxed text-center">
           Joyful divinity in less than 5 minutes. A moment of peace in your busy day.
         </p>
@@ -93,10 +82,10 @@
 
     <!-- Bottom CTA -->
     <div class="text-center mt-16">
-      <p class="text-lg text-muted-foreground mb-6 italic">
+      <p class="text-2xl md:text-3xl text-muted-foreground mb-6 italic font-medium">
         "It's not a subscription. It's not content. It's a tiny pause in a busy world."
       </p>
-      <p class="text-sm text-muted-foreground">
+      <p class="text-lg md:text-xl text-muted-foreground font-medium">
         No screen required. 📭
       </p>
     </div>

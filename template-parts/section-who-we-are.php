@@ -5,7 +5,7 @@
  * Showcases the core values behind the mail club
  */
 ?>
-<section id="who-we-are" class="relative py-20 lg:py-28 bg-gradient-to-b from-background to-muted/20 overflow-hidden">
+<section id="who-we-are" class="relative py-10 lg:py-14 bg-gradient-to-b from-background to-muted/20 overflow-hidden">
   <!-- Decorative elements -->
   <div class="absolute inset-0 pointer-events-none overflow-hidden">
     <div class="absolute top-32 right-[10%] w-20 h-20 bg-primary/10 rounded-full blur-2xl animate-[gentle-float_10s_ease-in-out_infinite]"></div>
@@ -28,22 +28,9 @@
     </div>
 
     <!-- Values Grid -->
-    <div class="grid md:grid-cols-2 gap-8 mb-16">
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
       
-      <!-- Value 1: Humor -->
-      <div class="value-card group relative bg-gradient-to-br from-white to-primary/5 rounded-3xl p-8 lg:p-10 hover:shadow-xl transition-all duration-500 border-2 border-primary/20 hover:border-primary/40 hover:scale-105">
-        <div class="text-center">
-          <div class="mb-6 w-24 h-24 bg-gradient-to-br from-primary/20 to-accent/30 rounded-full flex items-center justify-center mx-auto">
-            <span class="text-6xl">😄</span>
-          </div>
-          <h3 class="text-2xl md:text-3xl font-bold text-foreground mb-4">We Love Humor</h3>
-          <p class="text-lg text-muted-foreground leading-relaxed">
-            We believe laughter is one of the most underrated medicines in the world. A well-timed joke can shift an entire day.
-          </p>
-        </div>
-      </div>
-
-      <!-- Value 2: Humanity -->
+      <!-- Value 1: Humanity -->
       <div class="value-card group relative bg-gradient-to-br from-white to-accent/5 rounded-3xl p-8 lg:p-10 hover:shadow-xl transition-all duration-500 border-2 border-accent/20 hover:border-accent/40 hover:scale-105">
         <div class="text-center">
           <div class="mb-6 w-24 h-24 bg-gradient-to-br from-accent/20 to-secondary/30 rounded-full flex items-center justify-center mx-auto">
@@ -56,7 +43,7 @@
         </div>
       </div>
 
-      <!-- Value 3: Connection -->
+      <!-- Value 2: Connection -->
       <div class="value-card group relative bg-gradient-to-br from-white to-secondary/5 rounded-3xl p-8 lg:p-10 hover:shadow-xl transition-all duration-500 border-2 border-secondary/20 hover:border-secondary/40 hover:scale-105">
         <div class="text-center">
           <div class="mb-6 w-24 h-24 bg-gradient-to-br from-secondary/20 to-primary/30 rounded-full flex items-center justify-center mx-auto">
@@ -69,7 +56,7 @@
         </div>
       </div>
 
-      <!-- Value 4: Warmth -->
+      <!-- Value 3: Warmth -->
       <div class="value-card group relative bg-gradient-to-br from-white to-peach/5 rounded-3xl p-8 lg:p-10 hover:shadow-xl transition-all duration-500 border-2 border-peach/20 hover:border-peach/40 hover:scale-105">
         <div class="text-center">
           <div class="mb-6 w-24 h-24 bg-gradient-to-br from-peach/20 to-accent/30 rounded-full flex items-center justify-center mx-auto">

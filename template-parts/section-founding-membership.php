@@ -5,7 +5,7 @@
  * Pricing, benefits, and primary CTA
  */
 ?>
-<section id="founding-membership" class="relative py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5 overflow-hidden">
+<section id="founding-membership" class="relative py-10 lg:py-14 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5 overflow-hidden">
   <!-- Decorative background -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
     <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
@@ -71,8 +71,8 @@
             <span class="text-foreground leading-relaxed">Founding member recognition in every issue</span>
           </li>
           <li class="flex items-start gap-3">
-            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center mt-0.5">
-              <svg class="w-4 h-4 text-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+              <svg class="w-4 h-4 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                 <polyline points="20 6 9 17 4 12"/>
               </svg>
             </div>

@@ -5,7 +5,7 @@
  * Playful, pretty contact section
  */
 ?>
-<section id="contact" class="relative py-20 lg:py-28 bg-gradient-to-b from-muted/20 to-background overflow-hidden">
+<section id="contact" class="relative py-10 lg:py-14 bg-gradient-to-b from-muted/20 to-background overflow-hidden">
   <!-- Decorative floating elements -->
   <div class="absolute inset-0 pointer-events-none overflow-hidden">
     <div class="absolute top-20 left-[8%] w-20 h-20 bg-primary/10 rounded-full blur-2xl animate-[gentle-float_10s_ease-in-out_infinite]"></div>
