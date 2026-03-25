@@ -27,7 +27,7 @@
         <a href="#whats-inside" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">What's Inside</a>
         <a href="#who-we-are" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">About</a>
         <a href="<?php echo home_url('/faq'); ?>" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">FAQ</a>
-        <a href="#contact" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">Contact</a>
+        <a href="#contact" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">Join</a>
       </div>
 
       <!-- Actions -->
@@ -64,7 +64,7 @@
           <a href="#whats-inside" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">What's Inside</a>
           <a href="#who-we-are" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">About</a>
           <a href="<?php echo home_url('/faq'); ?>" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">FAQ</a>
-          <a href="#contact" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">Contact</a>
+          <a href="#contact" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">Join</a>
         </div>
         
         <!-- Mobile CTA -->

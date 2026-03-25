@@ -42,7 +42,7 @@
                 </div>
                 <!-- Floating hearts -->
                 <div class="absolute -top-2 -right-2 animate-[gentle-float_3s_ease-in-out_infinite]">
-                  <span class="text-2xl">💕</span>
+                  <span class="text-2xl">❤️</span>
                 </div>
               </div>
             </div>
@@ -140,7 +140,7 @@
             <div class="flex-shrink-0">
               <div class="relative">
                 <div class="w-28 h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-peach/20 to-accent/30 flex items-center justify-center">
-                  <span class="text-7xl">😄</span>
+                  <span class="text-7xl">❤️</span>
                 </div>
                 <!-- Floating stars -->
                 <div class="absolute -bottom-2 -left-2 animate-[soft-pulse_3s_ease-in-out_infinite_1.5s]">
@@ -156,10 +156,10 @@
                 <span class="text-lg">🎉</span>
               </div>
               <h3 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Laugh Out Loud
+                Feel Connected
               </h3>
               <p class="text-lg text-muted-foreground leading-relaxed">
-                A genuine laugh that brightens your day. Share it with someone nearby. Spread the joy.
+                A moment of warmth and belonging. Real connection in a world that often feels too fast and too digital.
               </p>
             </div>
           </div>

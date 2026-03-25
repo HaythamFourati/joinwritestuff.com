@@ -112,10 +112,10 @@
           <span class="hero-text-reveal text-primary">bills and junk mail</span>
         </h1>
         
-        <!-- Warm welcome tag - moved below headline -->
+        <!-- Waiting list badge - moved below headline -->
         <div class="inline-flex items-center mb-10 px-5 py-2.5 rounded-full bg-primary/90 border border-primary">
           <svg class="w-4 h-4 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          <span class="text-[14px] text-white font-bold">Only <?php echo esc_html(FOUNDING_MEMBERS_LIMIT); ?> founding member spots available</span>
+          <span class="text-[14px] text-white font-bold">Join the waiting list for just $1</span>
         </div>
         
         <!-- Subheadline with emotional hook -->
@@ -123,30 +123,23 @@
           Real paper. Real connection. <span class="text-foreground font-medium">Every month</span>, we send you an envelope filled with things that make you smile.
         </p>
         
-        <!-- Social proof -->
+        <!-- Waiting list pricing -->
         <div class="flex flex-wrap items-center justify-center gap-8 mb-10">
-          <div class="flex items-center gap-3">
-            <div class="flex -space-x-3">
-              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary to-accent border-2 border-white shadow-md"></div>
-              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-primary border-2 border-white shadow-md"></div>
-              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary border-2 border-white shadow-md"></div>
-            </div>
-            <div class="text-left">
-              <p class="text-sm font-semibold text-foreground">Limited spots</p>
-              <p class="text-xs text-muted-foreground">Only <?php echo esc_html(FOUNDING_MEMBERS_LIMIT); ?> available</p>
-            </div>
+          <div class="text-center">
+            <p class="text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">$1</p>
+            <p class="text-sm text-muted-foreground mt-1">Reserve your spot today</p>
           </div>
           <div class="w-px h-12 bg-border hidden sm:block"></div>
           <div class="text-center sm:text-left">
-            <p class="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"><?php echo esc_html(MONTHLY_PRICE); ?></p>
-            <p class="text-sm text-muted-foreground">per month, cancel anytime</p>
+            <p class="text-sm font-semibold text-foreground">✨ Credited to first month</p>
+            <p class="text-xs text-muted-foreground">Be first in line when we launch</p>
           </div>
         </div>
         
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-5 mb-12 justify-center">
-          <a href="<?php echo !empty(STRIPE_PAYMENT_LINK) ? esc_url(STRIPE_PAYMENT_LINK) : '#founding-membership'; ?>" class="cta-pulse-button group inline-flex items-center justify-center px-10 py-5 rounded-2xl bg-gradient-to-r from-primary to-accent text-white text-lg font-bold hover:shadow-2xl hover:shadow-primary/40 transition-all duration-300 hover:-translate-y-1">
-            Become a Founding Member
+          <a href="<?php echo !empty(STRIPE_WAITLIST_LINK) ? esc_url(STRIPE_WAITLIST_LINK) : '#contact'; ?>" class="cta-pulse-button group inline-flex items-center justify-center px-10 py-5 rounded-2xl bg-gradient-to-r from-primary to-accent text-white text-lg font-bold hover:shadow-2xl hover:shadow-primary/40 transition-all duration-300 hover:-translate-y-1">
+            Join Waiting List for $1
             <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
           <a href="#whats-inside" class="inline-flex items-center justify-center px-10 py-5 rounded-2xl bg-white border-2 border-border text-foreground text-lg font-bold hover:bg-muted/50 hover:border-primary/50 transition-all duration-300">

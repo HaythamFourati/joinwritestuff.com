@@ -61,7 +61,7 @@
           <li><a href="#who-we-are" class="text-[13px] text-white/60 hover:text-white transition-colors">About Us</a></li>
           <li><a href="<?php echo home_url('/faq'); ?>" class="text-[13px] text-white/60 hover:text-white transition-colors">FAQ</a></li>
           <li><a href="#founding-membership" class="text-[13px] text-white/60 hover:text-white transition-colors">Join Now</a></li>
-          <li><a href="#contact" class="text-[13px] text-white/60 hover:text-white transition-colors">Contact</a></li>
+          <li><a href="#contact" class="text-[13px] text-white/60 hover:text-white transition-colors">Join</a></li>
         </ul>
       </nav>
 
