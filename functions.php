@@ -9,14 +9,14 @@
  */
 
 // Brand
-define('SITE_NAME', 'Join Write Stuff');
+define('SITE_NAME', 'Hug in the Mail');
 define('SITE_TAGLINE', 'Real Connection.');
-define('SITE_LOGO_INITIALS', 'WS');
+define('SITE_LOGO_INITIALS', 'HM');
 
 // Contact
 define('SITE_PHONE', '');
 define('SITE_PHONE_LINK', '');
-define('SITE_EMAIL', 'info@joinwritestuff.com ');
+define('SITE_EMAIL', 'info@huginthemail.com');
 
 // Social Links (leave empty to hide)
 define('SITE_SOCIAL_FACEBOOK', '');

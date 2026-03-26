@@ -9,9 +9,15 @@
     <div class="relative z-[60] mx-auto hidden w-full max-w-6xl flex-row items-center justify-between rounded-2xl bg-white/80 backdrop-blur-md border border-primary/10 px-6 py-3 lg:flex transition-all duration-500 ease-out shadow-sm">
       <!-- Logo -->
       <a href="<?php echo home_url(); ?>" class="relative z-20 flex items-center gap-3">
-        <!-- Modern logo mark using primary color -->
-        <div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center transition-all duration-300">
-          <span class="text-white font-semibold text-sm tracking-tight"><?php echo esc_html(SITE_LOGO_INITIALS); ?></span>
+        <!-- Creative logo: Envelope with heart hug -->
+        <div class="w-9 h-9 flex items-center justify-center transition-all duration-300">
+          <svg class="w-9 h-9" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Envelope -->
+            <rect x="6" y="12" width="28" height="20" rx="2" class="fill-primary" opacity="0.9"/>
+            <path d="M6 14 L20 24 L34 14" class="stroke-white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Heart on top -->
+            <path d="M20 10 C20 10, 17 6, 14 6 C11 6, 9 8, 9 10.5 C9 13, 11 15, 20 20 C29 15, 31 13, 31 10.5 C31 8, 29 6, 26 6 C23 6, 20 10, 20 10 Z" class="fill-accent" opacity="0.95"/>
+          </svg>
         </div>
         <div class="flex flex-col">
           <span class="font-semibold text-[15px] leading-tight text-foreground tracking-tight transition-colors duration-300"><?php echo esc_html(SITE_NAME); ?></span>
@@ -42,8 +48,15 @@
     <div id="mobile-nav-root" class="relative z-50 mx-auto flex w-full flex-col bg-white/80 backdrop-blur-md rounded-2xl border border-primary/10 px-4 py-3 lg:hidden">
       <div class="flex w-full flex-row items-center justify-between">
         <a href="<?php echo home_url(); ?>" class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-            <span class="text-white font-semibold text-xs tracking-tight"><?php echo esc_html(SITE_LOGO_INITIALS); ?></span>
+          <!-- Creative logo: Envelope with heart hug (mobile) -->
+          <div class="w-8 h-8 flex items-center justify-center">
+            <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Envelope -->
+              <rect x="6" y="12" width="28" height="20" rx="2" class="fill-primary" opacity="0.9"/>
+              <path d="M6 14 L20 24 L34 14" class="stroke-white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Heart on top -->
+              <path d="M20 10 C20 10, 17 6, 14 6 C11 6, 9 8, 9 10.5 C9 13, 11 15, 20 20 C29 15, 31 13, 31 10.5 C31 8, 29 6, 26 6 C23 6, 20 10, 20 10 Z" class="fill-accent" opacity="0.95"/>
+            </svg>
           </div>
           <span class="font-semibold text-sm text-foreground tracking-tight"><?php echo esc_html(SITE_NAME); ?></span>
         </a>
