@@ -1,6 +1,6 @@
 <?php
 /**
- * Front Page Template - Komedy & Kindness Mail Club Homepage
+ * Front Page Template - Hug in the Mail Homepage
  * PHP renders all content, React enhances with GSAP animations
  */
 

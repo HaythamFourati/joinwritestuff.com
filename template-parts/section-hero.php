@@ -1,152 +1,140 @@
 <?php
 /**
- * Hero Section - Komedy & Kindness Mail Club
+ * Hero Section - Hug in the Mail
  * ============================================
- * Warm, feminine design with emotional connection
+ * 2-column editorial hero: copy left, envelope illustration right
  */
 ?>
-<section id="hero-section" class="relative overflow-hidden pt-20 pb-12 lg:pt-28 lg:pb-16">
-  <!-- Decorative background elements -->
-  <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <div class="absolute top-20 right-10 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-20 left-10 w-72 h-72 bg-accent/20 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-    
-    <!-- Floating decorative hearts -->
-    <div class="absolute top-32 left-[15%] animate-[gentle-float_6s_ease-in-out_infinite]">
-      <svg class="w-12 h-12 text-accent/40" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-      </svg>
-    </div>
-    
-    <div class="absolute top-[45%] right-[12%] animate-[gentle-float_7s_ease-in-out_infinite_1s]">
-      <svg class="w-10 h-10 text-primary/30" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-      </svg>
-    </div>
-    
-    <div class="absolute bottom-32 left-[20%] animate-[gentle-float_8s_ease-in-out_infinite_2s]">
-      <svg class="w-8 h-8 text-secondary/40" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-      </svg>
-    </div>
-    
-    <!-- Floating mini envelopes -->
-    <div class="absolute top-[25%] right-[20%] animate-[gentle-float_9s_ease-in-out_infinite]">
-      <svg class="w-14 h-14 text-primary/25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <rect x="2" y="4" width="20" height="16" rx="2" />
-        <path d="M2 7l10 7 10-7" />
-      </svg>
-    </div>
-    
-    <div class="absolute bottom-[35%] left-[10%] animate-[gentle-float_7.5s_ease-in-out_infinite_1.5s]">
-      <svg class="w-12 h-12 text-accent/20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <rect x="2" y="4" width="20" height="16" rx="2" />
-        <path d="M2 7l10 7 10-7" />
-      </svg>
-    </div>
-    
-    <!-- Sparkles/stars -->
-    <div class="absolute top-[15%] left-[25%] animate-[soft-pulse_4s_ease-in-out_infinite]">
-      <svg class="w-6 h-6 text-peach/40" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.8 5.6 21.2 8 14l-6-4.8h7.6L12 2z"/>
-      </svg>
-    </div>
-    
-    <div class="absolute top-[60%] right-[8%] animate-[soft-pulse_5s_ease-in-out_infinite_2s]">
-      <svg class="w-5 h-5 text-secondary/50" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.8 5.6 21.2 8 14l-6-4.8h7.6L12 2z"/>
-      </svg>
-    </div>
-    
-    <div class="absolute bottom-[20%] right-[25%] animate-[soft-pulse_4.5s_ease-in-out_infinite_1s]">
-      <svg class="w-4 h-4 text-primary/35" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.8 5.6 21.2 8 14l-6-4.8h7.6L12 2z"/>
-      </svg>
-    </div>
+<section id="hero-section" class="relative overflow-hidden pt-18 pb-16 lg:pt-16 lg:pb-24">
+  <!-- Subtle background wash -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 right-0 w-[50%] h-full bg-secondary/20 blur-3xl rounded-full -translate-y-1/4 translate-x-1/4"></div>
   </div>
   
-  <div class="max-w-7xl mx-auto px-4 relative z-10">
-    <div class="text-center">
-      <div class="hero-content max-w-6xl mx-auto">
-        <!-- Floating envelope decoration (animated by GSAP) - at the top -->
-        <div class="relative mb-8 max-w-fit mx-auto">
-          <div class="floating-envelope relative">
-            <svg class="w-24 h-24 md:w-32 md:h-32 drop-shadow-2xl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <rect x="10" y="25" width="80" height="50" rx="4" fill="#FFF" stroke="#F4A6A3" stroke-width="2"/>
-              <path d="M10 25 L50 55 L90 25" fill="none" stroke="#F4A6A3" stroke-width="2"/>
-              <circle cx="75" cy="35" r="8" fill="#E8B4D4"/>
-            </svg>
-            <!-- Heart decoration on envelope -->
-            <div class="absolute -top-2 -right-2 animate-[heart-beat_2s_ease-in-out_infinite]">
-              <svg class="w-6 h-6 text-accent drop-shadow-lg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-              </svg>
-            </div>
-            
-            <!-- Surrounding decorative elements -->
-            <div class="absolute -left-12 top-6 animate-[gentle-float_5s_ease-in-out_infinite]">
-              <svg class="w-8 h-8 text-primary/40" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-              </svg>
-            </div>
-            
-            <div class="absolute -right-12 top-8 animate-[gentle-float_6s_ease-in-out_infinite_1s]">
-              <svg class="w-6 h-6 text-secondary/50" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-              </svg>
-            </div>
-            
-            <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 animate-[soft-pulse_3s_ease-in-out_infinite]">
-              <svg class="w-5 h-5 text-peach/60" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.8 5.6 21.2 8 14l-6-4.8h7.6L12 2z"/>
-              </svg>
-            </div>
-          </div>
-        </div>
+  <div class="max-w-6xl mx-auto px-4 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+      
+      <!-- Left: Copy -->
+      <div class="hero-content order-2 lg:order-1 text-center lg:text-left">
+        <!-- Small label -->
+        <p class="text-sm font-medium text-muted-foreground mb-8 tracking-wide uppercase">A monthly envelope of warmth</p>
         
-        <!-- Powerful startup-style headline -->
-        <h1 class="hero-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-6 leading-[1.05] text-foreground px-4">
-          <span class="hero-text-reveal">Your mailbox deserves</span><br>
-          <span class="hero-text-reveal">better than</span><br>
-          <span class="hero-text-reveal text-primary">bills and junk mail</span>
+        <!-- Headline -->
+        <h1 class="hero-heading text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight mb-8 leading-[1.08] text-foreground">
+          Your mailbox<br class="hidden sm:block">
+          deserves
+          <span class="text-primary">better</span>
         </h1>
         
-        <!-- Waiting list badge - moved below headline -->
-        <div class="inline-flex items-center mb-10 px-5 py-2.5 rounded-full bg-primary/90 border border-primary">
-          <svg class="w-4 h-4 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          <span class="text-[14px] text-white font-bold">Join the waiting list for just $1</span>
-        </div>
-        
-        <!-- Subheadline with emotional hook -->
-        <p class="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-3xl mx-auto font-light">
-          Real paper. Real connection. <span class="text-foreground font-medium">Every month</span>, we send you an envelope filled with things that make you smile.
+        <!-- Subheadline -->
+        <p class="text-lg text-muted-foreground mb-10 leading-relaxed max-w-md mx-auto lg:mx-0">
+          Real paper. Real connection. Every month, an envelope filled with things that make you pause, reflect, and smile.
         </p>
         
-        <!-- Waiting list pricing -->
-        <div class="flex flex-wrap items-center justify-center gap-8 mb-10">
-          <div class="text-center">
-            <p class="text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">$1</p>
-            <p class="text-sm text-muted-foreground mt-1">Reserve your spot today</p>
-          </div>
-          <div class="w-px h-12 bg-border hidden sm:block"></div>
-          <div class="text-center sm:text-left">
-            <p class="text-sm font-semibold text-foreground">✨ Credited to first month</p>
-            <p class="text-xs text-muted-foreground">Be first in line when we launch</p>
-          </div>
-        </div>
-        
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-5 mb-12 justify-center">
-          <a href="<?php echo !empty(STRIPE_WAITLIST_LINK) ? esc_url(STRIPE_WAITLIST_LINK) : '#contact'; ?>" class="cta-pulse-button group inline-flex items-center justify-center px-10 py-5 rounded-2xl bg-gradient-to-r from-primary to-accent text-white text-lg font-bold hover:shadow-2xl hover:shadow-primary/40 transition-all duration-300 hover:-translate-y-1">
-            Join Waiting List for $1
-            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-8">
+          <a href="<?php echo !empty(STRIPE_WAITLIST_LINK) ? esc_url(STRIPE_WAITLIST_LINK) : '#contact'; ?>" class="group inline-flex items-center justify-center px-7 py-3.5 rounded-lg bg-primary text-white text-base font-semibold hover:bg-primary/90 transition-colors duration-200">
+            Join Waiting List — $1
+            <svg class="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="#whats-inside" class="inline-flex items-center justify-center px-10 py-5 rounded-2xl bg-white border-2 border-border text-foreground text-lg font-bold hover:bg-muted/50 hover:border-primary/50 transition-all duration-300">
+          <a href="#whats-inside" class="inline-flex items-center justify-center px-7 py-3.5 rounded-lg border border-border text-foreground text-base font-semibold hover:bg-muted transition-colors duration-200">
             See What's Inside
           </a>
         </div>
+
+        <!-- Trust line -->
+        <p class="text-sm text-muted-foreground">
+          $1 reserves your spot — credited to your first month. Cancel anytime.
+        </p>
       </div>
+
+      <!-- Right: Envelope Illustration -->
+      <div class="hero-illustration order-1 lg:order-2 flex justify-center lg:justify-end">
+        <div class="relative w-[300px] h-[300px] md:w-[380px] md:h-[380px] lg:w-[440px] lg:h-[440px]">
+          
+          <!-- Soft background circle -->
+          <div class="hero-bg-circle absolute inset-4 rounded-full bg-secondary/40"></div>
+          
+          <!-- Main SVG illustration -->
+          <svg class="relative w-full h-full" viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+            
+            <!-- Shadow filter for envelope -->
+            <defs>
+              <filter id="envelope-shadow" x="-5%" y="-5%" width="110%" height="115%">
+                <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="hsl(20 15% 20%)" flood-opacity="0.08"/>
+              </filter>
+            </defs>
+
+            <!-- Decorative dots -->
+            <g class="hero-dots">
+              <circle cx="65" cy="110" r="4" fill="hsl(350 55% 55%)" opacity="0.2"/>
+              <circle cx="400" cy="140" r="3" fill="hsl(350 55% 55%)" opacity="0.15"/>
+              <circle cx="50" cy="360" r="3" fill="hsl(30 25% 75%)" opacity="0.3"/>
+              <circle cx="410" cy="340" r="5" fill="hsl(30 25% 75%)" opacity="0.2"/>
+              <circle cx="200" cy="70" r="3" fill="hsl(350 45% 60%)" opacity="0.15"/>
+            </g>
+            
+            <!-- Small floating stamp (top-right) -->
+            <g class="hero-stamp" transform="translate(346, 108)">
+              <rect x="0" y="0" width="50" height="38" rx="4" fill="hsl(30 25% 92%)" stroke="hsl(30 15% 88%)" stroke-width="1"/>
+              <rect x="7" y="7" width="36" height="24" rx="2" fill="hsl(350 55% 55%)" opacity="0.15"/>
+              <path d="M13 19 L25 11 L37 19" stroke="hsl(350 55% 55%)" stroke-width="1.5" fill="none" opacity="0.4"/>
+            </g>
+
+            <!-- Small star burst (top-left) -->
+            <g class="hero-sparkle" transform="translate(96, 172)" opacity="0.25">
+              <line x1="0" y1="-10" x2="0" y2="10" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="-10" y1="0" x2="10" y2="0" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="-7" y1="-7" x2="7" y2="7" stroke="hsl(350 55% 55%)" stroke-width="1" stroke-linecap="round"/>
+              <line x1="7" y1="-7" x2="-7" y2="7" stroke="hsl(350 55% 55%)" stroke-width="1" stroke-linecap="round"/>
+            </g>
+
+            <!-- === MAIN COMPOSITION: centered at 230,230 === -->
+
+            <!-- Letter tucked into envelope (resting state) -->
+            <g class="hero-letter" transform="translate(140, 160)">
+              <rect x="0" y="0" width="180" height="130" rx="6" fill="white" stroke="hsl(30 15% 82%)" stroke-width="1.5"/>
+              <line x1="24" y1="30" x2="156" y2="30" stroke="hsl(30 15% 78%)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="24" y1="48" x2="142" y2="48" stroke="hsl(30 15% 82%)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="24" y1="64" x2="130" y2="64" stroke="hsl(30 15% 85%)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="24" y1="80" x2="110" y2="80" stroke="hsl(30 15% 85%)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M36 102 C36 97, 28 94, 28 98 C28 102, 36 110, 36 110 C36 110, 44 102, 44 98 C44 94, 36 97, 36 102Z" fill="hsl(350 55% 55%)" opacity="0.3"/>
+            </g>
+
+            <!-- Envelope body centered inside the circle -->
+            <g class="hero-envelope" transform="translate(90, 168)" filter="url(#envelope-shadow)">
+              <rect x="0" y="0" width="280" height="160" rx="10" fill="white" stroke="hsl(30 15% 82%)" stroke-width="2"/>
+              <!-- V-fold lines on envelope face -->
+              <path d="M4 4 L140 90 L276 4" stroke="hsl(30 15% 87%)" stroke-width="1.5" fill="none"/>
+              <!-- Envelope flap (open, tilted back) -->
+              <path class="hero-flap" d="M0 2 L140 -65 L280 2" fill="hsl(30 25% 96%)" stroke="hsl(30 15% 82%)" stroke-width="2" stroke-linejoin="round"/>
+              <path class="hero-flap-inner" d="M6 2 L140 -57 L274 2" fill="hsl(30 25% 93%)" opacity="0.8"/>
+            </g>
+
+            <!-- Wax seal (on the envelope face, lower-center) -->
+            <g class="hero-seal" transform="translate(230, 286)">
+              <circle cx="0" cy="0" r="20" fill="hsl(350 55% 55%)"/>
+              <circle cx="0" cy="0" r="16" fill="none" stroke="hsl(350 55% 65%)" stroke-width="1"/>
+              <path d="M0 -4 C0 -8, -7 -11, -7 -6 C-7 -2, 0 5, 0 5 C0 5, 7 -2, 7 -6 C7 -11, 0 -8, 0 -4Z" fill="white" opacity="0.9"/>
+            </g>
+
+            <!-- Small postcard floating (right side) -->
+            <g class="hero-postcard" transform="translate(350, 186) rotate(-8)">
+              <rect x="0" y="0" width="56" height="42" rx="4" fill="white" stroke="hsl(30 15% 86%)" stroke-width="1"/>
+              <line x1="10" y1="14" x2="46" y2="14" stroke="hsl(30 15% 84%)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="10" y1="24" x2="38" y2="24" stroke="hsl(30 15% 87%)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="10" y1="33" x2="28" y2="33" stroke="hsl(30 15% 90%)" stroke-width="1" stroke-linecap="round"/>
+            </g>
+
+            <!-- Small floating heart (bottom-right) -->
+            <g class="hero-heart" transform="translate(372, 304)" opacity="0.3">
+              <path d="M0 -3 C0 -7, -6 -9, -6 -5 C-6 -1, 0 5, 0 5 C0 5, 6 -1, 6 -5 C6 -9, 0 -7, 0 -3Z" fill="hsl(350 55% 55%)"/>
+            </g>
+
+          </svg>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

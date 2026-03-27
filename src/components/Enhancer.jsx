@@ -77,21 +77,19 @@ function Enhancer() {
 
       if (navbar) {
         if (scrolled) {
-          // Compact state - wider to fit all nav items
-          navbar.style.maxWidth = '900px'
+          navbar.style.maxWidth = '56rem'
           navbar.style.padding = '0.5rem 1.5rem'
-          navbar.style.borderRadius = '1rem'
-          navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)'
+          navbar.style.borderRadius = '0.75rem'
+          navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.06)'
           navbar.classList.add('bg-white/95')
-          navbar.classList.remove('bg-white/80')
+          navbar.classList.remove('bg-white/90')
         } else {
-          // Full state
-          navbar.style.maxWidth = '72rem'
+          navbar.style.maxWidth = '64rem'
           navbar.style.padding = '0.75rem 1.5rem'
-          navbar.style.borderRadius = '1rem'
-          navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)'
+          navbar.style.borderRadius = '0.75rem'
+          navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.04)'
           navbar.classList.remove('bg-white/95')
-          navbar.classList.add('bg-white/80')
+          navbar.classList.add('bg-white/90')
         }
       }
 
@@ -177,15 +175,11 @@ function Enhancer() {
   useEffect(() => {
     // Skip all animations if user prefers reduced motion
     if (prefersReducedMotion) {
-      // Just make everything visible immediately
       gsap.set([
-        "#site-header", ".hero-content > *", ".hero-badge", ".floating-envelope",
+        "#site-header", ".hero-content > *",
         ".whats-inside-card", ".timeline-step", ".value-card",
-        ".cta-pulse-button", "#contact > div > *"
-      ].join(', '), { opacity: 1, y: 0, x: 0, scale: 1 })
-      
-      // Hide image slices
-      gsap.set(".hero-image-slices > div", { scaleY: 0 })
+        "#contact > div > *"
+      ].join(', '), { opacity: 1, y: 0, x: 0 })
       
       return
     }
@@ -193,166 +187,153 @@ function Enhancer() {
     const ctx = gsap.context(() => {
       // === ON-LOAD ANIMATIONS (both mobile and desktop) ===
       
-      // Header slide in - simple, always runs
+      // Header fade in
       gsap.fromTo("#site-header",
-        { y: -50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }
+        { y: -20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }
       )
 
-      // Hero content simple fade in (mobile-friendly)
+      // Hero content fade in
       if (isMobile) {
-        // Mobile: Simple fade in, no text splitting
         gsap.fromTo(".hero-content > *", 
-          { y: 20, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: "power2.out", delay: 0.2 }
-        )
-        
-        // Simple image reveal on mobile
-        gsap.set(".hero-image-slices > div", { scaleY: 0 })
-        
-        // Hero badge simple fade
-        gsap.fromTo(".hero-badge",
-          { opacity: 0 },
-          { opacity: 1, duration: 0.4, delay: 0.5 }
+          { y: 15, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.4, stagger: 0.06, ease: "power2.out", delay: 0.2 }
         )
 
-        // Service page - simple fade on mobile
-        const serviceHeroContent = document.querySelector('.service-hero-content')
-        if (serviceHeroContent) {
-          gsap.fromTo('.service-hero-content > *',
-            { y: 20, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: "power2.out", delay: 0.2 }
-          )
-          gsap.set('.service-hero-image .hero-image-slices > div', { scaleY: 0 })
-        }
+        // Simple illustration fade on mobile
+        gsap.fromTo(".hero-illustration",
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out", delay: 0.1 }
+        )
 
-        // Blog page - simple fade on mobile
-        const blogHeroContent = document.querySelector('.blog-hero-content')
-        if (blogHeroContent) {
-          gsap.fromTo('.blog-hero-content > *',
-            { y: 20, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: "power2.out", delay: 0.2 }
-          )
-        }
-
-        // Single post - simple fade on mobile
-        const singlePostHeader = document.querySelector('.single-post-header')
-        if (singlePostHeader) {
-          gsap.fromTo('.single-post-header > *',
-            { y: 20, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.5, stagger: 0.06, ease: "power2.out", delay: 0.2 }
-          )
-        }
-
-        // Make all scroll-animated content visible on mobile (no scroll animations)
+        // Make all scroll-animated content visible on mobile
         gsap.set([
           ".whats-inside-card", ".timeline-step", ".value-card",
           "#contact > div > *"
-        ].join(', '), { opacity: 1, y: 0, scale: 1 })
+        ].join(', '), { opacity: 1, y: 0 })
         
-        return // Exit early for mobile - no scroll animations
+        return
       }
 
-      // === DESKTOP ONLY: Full animations ===
+      // === DESKTOP: Subtle fade-up animations ===
 
-      // Split text reveal animation for hero heading
-      const textElements = document.querySelectorAll('.hero-text-reveal')
-      textElements.forEach((el) => {
-        const text = el.innerHTML
-        let chars = ''
-        let inTag = false
-        let currentTag = ''
-        
-        for (let i = 0; i < text.length; i++) {
-          const char = text[i]
-          if (char === '<') {
-            inTag = true
-            currentTag = char
-          } else if (char === '>') {
-            inTag = false
-            currentTag += char
-            chars += currentTag
-            currentTag = ''
-          } else if (inTag) {
-            currentTag += char
-          } else if (char === ' ') {
-            chars += ' '
-          } else {
-            chars += `<span class="char" style="display:inline-block;opacity:0;transform:translateY(50px)">${char}</span>`
-          }
-        }
-        el.innerHTML = chars
-      })
-
-      // Animate characters
-      gsap.to(".hero-heading .char", {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.02,
-        ease: "power3.out",
-        delay: 0.2
-      })
-
-      // Hero content fade in
-      gsap.fromTo(".hero-content > *:not(.hero-heading)", 
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.12, ease: "power3.out", delay: 0.8 }
+      // Hero content staggered fade
+      gsap.fromTo(".hero-content > *", 
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, stagger: 0.12, ease: "power2.out", delay: 0.2 }
       )
 
-      // Hero image slice reveal
-      gsap.fromTo(".hero-image-slices > div",
-        { scaleY: 1 },
-        { scaleY: 0, transformOrigin: "top", duration: 0.7, stagger: 0.15, ease: "power3.inOut", delay: 0.5 }
+      // === HERO ILLUSTRATION: Orchestrated entrance sequence ===
+      const illoTl = gsap.timeline({ delay: 0.3 })
+
+      // 1. Background circle scales in
+      illoTl.fromTo(".hero-bg-circle",
+        { scale: 0, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.6, ease: "power2.out" }
       )
 
-      // Hero badge pop in
-      gsap.fromTo(".hero-badge",
-        { scale: 0.8, opacity: 0, y: 20 },
-        { scale: 1, opacity: 1, y: 0, duration: 0.6, ease: "back.out(1.7)", delay: 1.2 }
+      // 2. Envelope appears without coordinate shift
+      illoTl.fromTo(".hero-envelope",
+        { scale: 0.96, opacity: 0, transformOrigin: "center center" },
+        { scale: 1, opacity: 1, duration: 0.5, ease: "power2.out" },
+        "-=0.3"
       )
 
-      // Floating envelope gentle animation
-      gsap.to(".floating-envelope", {
-        y: -15,
-        duration: 2.5,
-        ease: "power1.inOut",
-        repeat: -1,
-        yoyo: true
+      // 3. Letter slides out of envelope
+      illoTl.fromTo(".hero-letter",
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.7, ease: "power2.out" },
+        "-=0.15"
+      )
+
+      // 4. Seal pops in
+      illoTl.fromTo(".hero-seal",
+        { scale: 0, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" },
+        "-=0.2"
+      )
+
+      // 5. Decorative elements fade in together
+      illoTl.fromTo([".hero-stamp", ".hero-postcard", ".hero-sparkle", ".hero-heart", ".hero-dots"],
+        { opacity: 0 },
+        { opacity: 1, duration: 0.5, stagger: 0.06, ease: "power2.out" },
+        "-=0.15"
+      )
+
+      // === IDLE FLOAT: Subtle looping motion after entrance ===
+      illoTl.call(() => {
+        // Letter gently bobs
+        gsap.to(".hero-letter", {
+          y: -8,
+          duration: 2.6,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true
+        })
+        // Seal breathes subtly
+        gsap.to(".hero-seal", {
+          scale: 1.03,
+          duration: 2.8,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+          transformOrigin: "center center"
+        })
+        // Stamp drifts via tiny rotation only
+        gsap.to(".hero-stamp", {
+          rotation: 1.5,
+          duration: 3,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+          transformOrigin: "center center"
+        })
+        // Postcard drifts opposite via tiny rotation only
+        gsap.to(".hero-postcard", {
+          rotation: -1.2,
+          duration: 3.5,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+          transformOrigin: "center center"
+        })
+        // Sparkle pulses
+        gsap.to(".hero-sparkle", {
+          scale: 1.15, duration: 2, ease: "sine.inOut", repeat: -1, yoyo: true, transformOrigin: "center center"
+        })
+        // Heart opacity pulse
+        gsap.to(".hero-heart", {
+          opacity: 0.55,
+          duration: 1.8,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true
+        })
       })
 
-      // CTA button gentle pulse
-      gsap.to(".cta-pulse-button", {
-        scale: 1.02,
-        duration: 1.5,
-        ease: "power1.inOut",
-        repeat: -1,
-        yoyo: true
-      })
+      // === SCROLL-TRIGGERED REVEALS ===
 
-      // === DESKTOP SCROLL ANIMATIONS WITH BATCH ===
-
-      // Batch "What's Inside" cards
+      // What's Inside cards
       ScrollTrigger.batch('.whats-inside-card', {
         onEnter: (elements) => {
           gsap.fromTo(elements,
-            { y: 50, opacity: 0, scale: 0.95 },
-            { y: 0, opacity: 1, scale: 1, duration: 0.7, stagger: 0.12, ease: "power2.out" }
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: "power2.out" }
           )
         },
         start: 'top 85%',
         once: true
       })
 
-      // Timeline steps (alternating animation)
+      // Timeline steps
       ScrollTrigger.batch('.timeline-step', {
         onEnter: (elements) => {
           gsap.fromTo(elements,
-            { y: 40, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.6, stagger: 0.2, ease: "power2.out" }
+            { y: 25, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power2.out" }
           )
         },
-        start: 'top 80%',
+        start: 'top 85%',
         once: true
       })
 
@@ -360,97 +341,32 @@ function Enhancer() {
       ScrollTrigger.batch('.value-card', {
         onEnter: (elements) => {
           gsap.fromTo(elements,
-            { y: 50, opacity: 0, scale: 0.95 },
-            { y: 0, opacity: 1, scale: 1, duration: 0.7, stagger: 0.15, ease: "power2.out" }
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: "power2.out" }
           )
         },
         start: 'top 85%',
         once: true
       })
 
-      // What's Inside section header
-      const whatsInsideSection = document.querySelector('#whats-inside')
-      if (whatsInsideSection) {
-        ScrollTrigger.create({
-          trigger: '#whats-inside',
-          start: 'top 80%',
-          once: true,
-          onEnter: () => {
-            gsap.fromTo('#whats-inside .text-center',
-              { y: 30, opacity: 0 },
-              { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }
-            )
-          }
-        })
-      }
-
-      // How It Works section header
-      const howItWorksSection = document.querySelector('#how-it-works')
-      if (howItWorksSection) {
-        ScrollTrigger.create({
-          trigger: '#how-it-works',
-          start: 'top 80%',
-          once: true,
-          onEnter: () => {
-            gsap.fromTo('#how-it-works .text-center',
-              { y: 30, opacity: 0 },
-              { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }
-            )
-          }
-        })
-      }
-
-      // Founding Membership section
-      const foundingSection = document.querySelector('#founding-membership')
-      if (foundingSection) {
-        ScrollTrigger.create({
-          trigger: '#founding-membership',
-          start: 'top 75%',
-          once: true,
-          onEnter: () => {
-            gsap.fromTo('#founding-membership .max-w-lg',
-              { y: 40, opacity: 0, scale: 0.95 },
-              { y: 0, opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.2)" }
-            )
-          }
-        })
-      }
-
-      // Who We Are section header
-      const whoWeAreSection = document.querySelector('#who-we-are')
-      if (whoWeAreSection) {
-        ScrollTrigger.create({
-          trigger: '#who-we-are',
-          start: 'top 80%',
-          once: true,
-          onEnter: () => {
-            gsap.fromTo('#who-we-are .text-center',
-              { y: 30, opacity: 0 },
-              { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }
-            )
-          }
-        })
-      }
-
-      // Contact section
-      const contactSection = document.querySelector('#contact')
-      if (contactSection) {
-        ScrollTrigger.create({
-          trigger: '#contact',
-          start: 'top 80%',
-          once: true,
-          onEnter: () => {
-            gsap.fromTo('#contact .contact-info',
-              { x: -30, opacity: 0 },
-              { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }
-            )
-            gsap.fromTo('#contact #contact-form-root',
-              { x: 30, opacity: 0 },
-              { x: 0, opacity: 1, duration: 0.6, ease: "power2.out", delay: 0.2 }
-            )
-          }
-        })
-      }
+      // Section headers
+      const sections = ['#whats-inside', '#how-it-works', '#founding-membership', '#who-we-are', '#contact']
+      sections.forEach(selector => {
+        const section = document.querySelector(selector)
+        if (section) {
+          ScrollTrigger.create({
+            trigger: selector,
+            start: 'top 80%',
+            once: true,
+            onEnter: () => {
+              gsap.fromTo(`${selector} .text-center`,
+                { y: 20, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }
+              )
+            }
+          })
+        }
+      })
     })
 
     return () => ctx.revert()

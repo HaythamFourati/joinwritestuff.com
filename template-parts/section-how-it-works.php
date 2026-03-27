@@ -1,182 +1,129 @@
 <?php
 /**
- * How It Works Section - Visual Timeline
+ * How It Works Section - Clean Timeline
  * ============================================
- * Shows the simple, joyful experience of receiving mail
+ * Shows the simple experience of receiving mail
  */
 ?>
-<section id="how-it-works" class="relative py-10 lg:py-14 bg-gradient-to-b from-muted/20 to-background overflow-hidden">
-  <!-- Decorative floating elements -->
-  <div class="absolute inset-0 pointer-events-none overflow-hidden">
-    <div class="absolute top-20 left-[10%] w-16 h-16 bg-primary/10 rounded-full blur-2xl animate-[gentle-float_8s_ease-in-out_infinite]"></div>
-    <div class="absolute top-40 right-[15%] w-20 h-20 bg-accent/10 rounded-full blur-2xl animate-[gentle-float_10s_ease-in-out_infinite_2s]"></div>
-    <div class="absolute bottom-32 left-[20%] w-24 h-24 bg-secondary/10 rounded-full blur-2xl animate-[gentle-float_12s_ease-in-out_infinite_4s]"></div>
+<section id="how-it-works" class="relative py-16 lg:py-24 bg-muted/30">
+  <!-- Decorative accents around timeline -->
+  <!-- Near header -->
+  <div class="absolute top-[7rem] left-[20%] opacity-18 hidden lg:block pointer-events-none">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <circle cx="3" cy="3" r="2" fill="hsl(350 55% 55%)"/>
+      <circle cx="13" cy="6" r="1.5" fill="hsl(30 25% 75%)"/>
+    </svg>
   </div>
-  
-  <div class="max-w-6xl mx-auto px-4 relative z-10">
+  <div class="absolute top-[9rem] right-[18%] opacity-16 hidden lg:block pointer-events-none">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <line x1="7" y1="0" x2="7" y2="14" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="0" y1="7" x2="14" y2="7" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <!-- Around timeline cards -->
+  <div class="absolute top-[14rem] left-[6%] opacity-15 hidden lg:block pointer-events-none">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <circle cx="3" cy="3" r="2" fill="hsl(350 45% 60%)"/>
+      <circle cx="13" cy="7" r="1.5" fill="hsl(350 55% 55%)"/>
+    </svg>
+  </div>
+  <div class="absolute top-[18rem] right-[8%] opacity-14 hidden lg:block pointer-events-none">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <circle cx="3" cy="3" r="2" fill="hsl(350 55% 55%)"/>
+      <circle cx="11" cy="8" r="1.5" fill="hsl(30 25% 75%)"/>
+    </svg>
+  </div>
+  <div class="absolute top-[26rem] left-[10%] opacity-16 hidden lg:block pointer-events-none">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <line x1="8" y1="0" x2="8" y2="16" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="0" y1="8" x2="16" y2="8" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="absolute bottom-[14rem] right-[12%] opacity-15 hidden lg:block pointer-events-none">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <circle cx="3" cy="3" r="2" fill="hsl(350 55% 55%)"/>
+      <circle cx="11" cy="6" r="1.5" fill="hsl(30 25% 75%)"/>
+    </svg>
+  </div>
+  <div class="absolute bottom-[8rem] left-[15%] opacity-12 hidden lg:block pointer-events-none">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <circle cx="3" cy="3" r="2" fill="hsl(350 45% 60%)"/>
+      <circle cx="13" cy="8" r="1.5" fill="hsl(350 55% 55%)"/>
+    </svg>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4">
     <!-- Section Header -->
-    <div class="text-center mb-20">
-      <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-accent/20 to-secondary/20 border border-accent/30 text-accent text-sm font-bold mb-6">
-        <span class="text-xl">✨</span>
-        <span>The Experience</span>
-      </div>
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-        Here's What Happens <span class="text-primary">Once a Month</span>
+    <div class="text-center mb-16">
+      <p class="text-sm font-medium text-muted-foreground mb-4 tracking-wide uppercase">The experience</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+        Here's what happens once a month
       </h2>
-      <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
-        When your envelope arrives 👇
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Four simple moments, from your mailbox to your heart.
       </p>
     </div>
 
-    <!-- Timeline Steps -->
-    <div class="relative space-y-12">
+    <!-- Steps -->
+    <div class="space-y-6">
       <!-- Step 1 -->
-      <div class="timeline-step relative">
-        <div class="bg-gradient-to-br from-white to-primary/10 rounded-3xl p-8 md:p-10 border-2 border-primary/30 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
-          <div class="flex flex-col md:flex-row items-center gap-8">
-            <!-- Big Emoji Icon -->
-            <div class="flex-shrink-0">
-              <div class="relative">
-                <div class="w-28 h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-primary/20 to-accent/30 flex items-center justify-center">
-                  <span class="text-7xl">📬</span>
-                </div>
-                <!-- Floating hearts -->
-                <div class="absolute -top-2 -right-2 animate-[gentle-float_3s_ease-in-out_infinite]">
-                  <span class="text-2xl">❤️</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Content -->
-            <div class="flex-1 text-center md:text-left">
-              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary text-sm font-bold mb-4">
-                <span>Step 1</span>
-                <span class="text-lg">→</span>
-              </div>
-              <h3 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Walk to Mailbox
-              </h3>
-              <p class="text-lg text-muted-foreground leading-relaxed">
-                Find something unexpected waiting for you — not a bill, not junk mail, but a genuine surprise.
-              </p>
-            </div>
+      <div class="timeline-step bg-white rounded-xl p-8 md:p-10 border border-border">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">1</div>
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold text-foreground mb-2">Walk to your mailbox</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              Find something unexpected waiting for you — not a bill, not junk mail, but a genuine surprise.
+            </p>
           </div>
         </div>
       </div>
 
       <!-- Step 2 -->
-      <div class="timeline-step relative">
-        <div class="bg-gradient-to-br from-white to-accent/10 rounded-3xl p-8 md:p-10 border-2 border-accent/30 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
-          <div class="flex flex-col md:flex-row-reverse items-center gap-8">
-            <!-- Big Emoji Icon -->
-            <div class="flex-shrink-0">
-              <div class="relative">
-                <div class="w-28 h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-accent/20 to-secondary/30 flex items-center justify-center">
-                  <span class="text-7xl">💌</span>
-                </div>
-                <!-- Floating sparkles -->
-                <div class="absolute -bottom-2 -left-2 animate-[soft-pulse_3s_ease-in-out_infinite_0.5s]">
-                  <span class="text-2xl">✨</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Content -->
-            <div class="flex-1 text-center md:text-right">
-              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-bold mb-4">
-                <span>Step 2</span>
-                <span class="text-lg">→</span>
-              </div>
-              <h3 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Open Envelope
-              </h3>
-              <p class="text-lg text-muted-foreground leading-relaxed">
-                Genuine curiosity unfolds. That feeling of anticipation — what's inside this time?
-              </p>
-            </div>
+      <div class="timeline-step bg-white rounded-xl p-8 md:p-10 border border-border">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">2</div>
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold text-foreground mb-2">Open the envelope</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              Genuine curiosity unfolds. That feeling of anticipation — what's inside this time?
+            </p>
           </div>
         </div>
       </div>
 
       <!-- Step 3 -->
-      <div class="timeline-step relative">
-        <div class="bg-gradient-to-br from-white to-secondary/10 rounded-3xl p-8 md:p-10 border-2 border-secondary/30 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
-          <div class="flex flex-col md:flex-row items-center gap-8">
-            <!-- Big Emoji Icon -->
-            <div class="flex-shrink-0">
-              <div class="relative">
-                <div class="w-28 h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-secondary/20 to-primary/30 flex items-center justify-center">
-                  <span class="text-7xl">📖</span>
-                </div>
-                <!-- Floating heart -->
-                <div class="absolute -top-2 -right-2 animate-[heart-beat_2s_ease-in-out_infinite]">
-                  <span class="text-2xl">❤️</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Content -->
-            <div class="flex-1 text-center md:text-left">
-              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-foreground text-sm font-bold mb-4">
-                <span>Step 3</span>
-                <span class="text-lg">→</span>
-              </div>
-              <h3 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Read a Story
-              </h3>
-              <p class="text-lg text-muted-foreground leading-relaxed">
-                Feel warmly connected to something real, something human, something that matters.
-              </p>
-            </div>
+      <div class="timeline-step bg-white rounded-xl p-8 md:p-10 border border-border">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">3</div>
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold text-foreground mb-2">Read a story</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              Feel warmly connected to something real, something human, something that matters.
+            </p>
           </div>
         </div>
       </div>
 
       <!-- Step 4 -->
-      <div class="timeline-step relative">
-        <div class="bg-gradient-to-br from-white to-peach/10 rounded-3xl p-8 md:p-10 border-2 border-peach/30 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
-          <div class="flex flex-col md:flex-row-reverse items-center gap-8">
-            <!-- Big Emoji Icon -->
-            <div class="flex-shrink-0">
-              <div class="relative">
-                <div class="w-28 h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-peach/20 to-accent/30 flex items-center justify-center">
-                  <span class="text-7xl">❤️</span>
-                </div>
-                <!-- Floating stars -->
-                <div class="absolute -bottom-2 -left-2 animate-[soft-pulse_3s_ease-in-out_infinite_1.5s]">
-                  <span class="text-2xl">⭐</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Content -->
-            <div class="flex-1 text-center md:text-right">
-              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-peach/20 text-foreground text-sm font-bold mb-4">
-                <span>Step 4</span>
-                <span class="text-lg">🎉</span>
-              </div>
-              <h3 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Feel Connected
-              </h3>
-              <p class="text-lg text-muted-foreground leading-relaxed">
-                A moment of warmth and belonging. Real connection in a world that often feels too fast and too digital.
-              </p>
-            </div>
+      <div class="timeline-step bg-white rounded-xl p-8 md:p-10 border border-border">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">4</div>
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold text-foreground mb-2">Feel connected</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              A moment of warmth and belonging. Real connection in a world that often feels too fast and too digital.
+            </p>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Bottom Message -->
-    <div class="text-center mt-16">
-      <div class="inline-block bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 rounded-3xl p-8 border-2 border-primary/20">
-        <p class="text-2xl md:text-3xl font-bold text-foreground mb-4">
-          A reminder that slow, thoughtful, and funny <br class="hidden md:block"/>still has a place in your life. ✨
-        </p>
-        <p class="text-lg text-muted-foreground">
-          No screen required. 💌
-        </p>
-      </div>
+    <div class="text-center mt-14">
+      <p class="text-xl md:text-2xl text-foreground font-medium leading-relaxed">
+        A little reminder that joy, curiosity, and connection are alive and well<br class="hidden md:block">  - sometimes arriving in an envelope.
+      </p>
     </div>
   </div>
 </section>

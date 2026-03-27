@@ -14,109 +14,64 @@
   }
 }
 
-@keyframes cell-ripple {
-  0% {
-    transform: scale(1);
-    opacity: 0.4;
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  50% {
-    transform: scale(1.15);
-    opacity: 0.9;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.4;
-  }
-}
-
-@keyframes gentle-float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes soft-pulse {
-  0%, 100% {
-    transform: scale(1);
+  to {
     opacity: 1;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.9;
-  }
-}
-
-@keyframes envelope-open {
-  0% {
-    transform: rotateX(0deg);
-  }
-  100% {
-    transform: rotateX(-180deg);
-  }
-}
-
-@keyframes heart-beat {
-  0%, 100% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(1);
+    transform: translateY(0);
   }
 }
 
 @theme {
-  --animate-cell-ripple: cell-ripple var(--duration, 400ms) ease-out var(--delay, 0ms);
+  --animate-fade-up: fade-up 0.6s ease-out both;
   
-  /* Ultra-Feminine Pink Palette - Soft, Dreamy, Elegant */
-  --color-background: hsl(330 50% 98%);       /* Soft pink-white background */
-  --color-foreground: hsl(330 30% 25%);       /* Deep rose-brown */
-  --color-card: hsl(0 0% 100%);               /* Pure white cards */
-  --color-card-foreground: hsl(330 30% 25%);
+  /* Warm Neutral + Dusty Rose — Editorial, Refined */
+  --color-background: hsl(30 20% 98%);        /* Warm off-white */
+  --color-foreground: hsl(20 15% 20%);        /* Near-black warm */
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(20 15% 20%);
   --color-popover: hsl(0 0% 100%);
-  --color-popover-foreground: hsl(330 30% 25%);
+  --color-popover-foreground: hsl(20 15% 20%);
   
-  /* Rose pink primary - feminine & elegant */
-  --color-primary: hsl(340 82% 65%);
+  /* Dusty rose primary — confident, warm */
+  --color-primary: hsl(350 55% 55%);
   --color-primary-foreground: hsl(0 0% 100%);
   
-  /* Soft lavender secondary - dreamy & calm */
-  --color-secondary: hsl(280 60% 88%);
-  --color-secondary-foreground: hsl(330 30% 25%);
+  /* Warm sand secondary */
+  --color-secondary: hsl(30 25% 92%);
+  --color-secondary-foreground: hsl(20 15% 20%);
   
-  /* Muted pink tones */
-  --color-muted: hsl(330 30% 95%);            /* Blush muted */
-  --color-muted-foreground: hsl(330 20% 50%); /* Mauve gray */
+  /* Muted tones */
+  --color-muted: hsl(30 15% 95%);
+  --color-muted-foreground: hsl(20 10% 50%);
   
-  /* Hot pink accent - playful & bold */
-  --color-accent: hsl(330 85% 70%);
+  /* Rose accent — for emphasis */
+  --color-accent: hsl(350 45% 60%);
   --color-accent-foreground: hsl(0 0% 100%);
   
-  /* Peach pink highlight - for special elements */
-  --color-peach: hsl(350 90% 75%);
-  --color-peach-foreground: hsl(330 30% 25%);
+  /* Warm blush — subtle highlights */
+  --color-peach: hsl(15 60% 70%);
+  --color-peach-foreground: hsl(20 15% 20%);
   
-  /* Mint - for success/positive states */
-  --color-mint: hsl(150 45% 75%);
-  --color-mint-foreground: hsl(330 30% 25%);
+  /* Sage — for success/positive */
+  --color-mint: hsl(155 25% 65%);
+  --color-mint-foreground: hsl(20 15% 20%);
   
-  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-destructive: hsl(0 65% 55%);
   --color-destructive-foreground: hsl(0 0% 98%);
-  --color-border: hsl(330 25% 88%);           /* Soft pink border */
-  --color-input: hsl(330 25% 88%);
-  --color-ring: hsl(340 82% 65%);
+  --color-border: hsl(30 15% 88%);
+  --color-input: hsl(30 15% 88%);
+  --color-ring: hsl(350 55% 55%);
   
-  /* Rounded, friendly aesthetic */
-  --radius: 1.5rem;
+  /* Refined radius */
+  --radius: 0.75rem;
   
   /* Font families */
   --font-heading: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-body: 'Crimson Pro', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 html {
