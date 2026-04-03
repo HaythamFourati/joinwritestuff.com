@@ -37,14 +37,8 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
       <!-- Brand Column -->
       <div class="lg:col-span-4">
-        <a href="<?php echo home_url(); ?>" class="flex items-center gap-2.5 mb-5">
-          <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-            <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="M2 7l10 7 10-7"/>
-            </svg>
-          </div>
-          <span class="font-semibold text-[15px] text-white"><?php echo esc_html(SITE_NAME); ?></span>
+        <a href="<?php echo home_url(); ?>" class="flex items-center gap-2 mb-5">
+          <img src="<?php echo esc_url(get_theme_file_uri('/assets/logo.png')); ?>" alt="<?php echo esc_attr(SITE_NAME); ?>" class="h-15 w-auto brightness-0 invert -ml-5">
         </a>
         <p class="text-[14px] text-white/50 leading-relaxed mb-6 max-w-xs">
           Bringing back the joy of real mail. One envelope at a time.

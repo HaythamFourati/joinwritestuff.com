@@ -7,42 +7,42 @@
 get_header();
 ?>
 
-<div class="min-h-screen bg-background text-foreground">
+<div class="min-h-screen text-foreground">
   <?php get_template_part('template-parts/header-nav'); ?>
   
   <main id="faq-page" class="relative">
   <!-- Hero Section -->
-  <section class="relative pt-24 pb-12 lg:pt-32 lg:pb-16 bg-background">
+  <section class="relative pt-24 pb-12 lg:pt-32 lg:pb-16">
     <!-- Decorative accents densely around FAQ content -->
     <div class="absolute top-[8rem] left-[16%] opacity-18 hidden lg:block pointer-events-none">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <line x1="8" y1="0" x2="8" y2="16" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="0" y1="8" x2="16" y2="8" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="2" y1="2" x2="14" y2="14" stroke="hsl(350 55% 55%)" stroke-width="1" stroke-linecap="round"/>
-        <line x1="14" y1="2" x2="2" y2="14" stroke="hsl(350 55% 55%)" stroke-width="1" stroke-linecap="round"/>
+        <line x1="8" y1="0" x2="8" y2="16" stroke="hsl(352 72% 38%)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="0" y1="8" x2="16" y2="8" stroke="hsl(352 72% 38%)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="2" y1="2" x2="14" y2="14" stroke="hsl(352 72% 38%)" stroke-width="1" stroke-linecap="round"/>
+        <line x1="14" y1="2" x2="2" y2="14" stroke="hsl(352 72% 38%)" stroke-width="1" stroke-linecap="round"/>
       </svg>
     </div>
     <div class="absolute top-[10rem] right-[18%] opacity-16 hidden lg:block pointer-events-none">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-        <circle cx="3" cy="3" r="2" fill="hsl(350 55% 55%)"/>
+        <circle cx="3" cy="3" r="2" fill="hsl(352 72% 38%)"/>
         <circle cx="11" cy="6" r="1.5" fill="hsl(30 25% 75%)"/>
       </svg>
     </div>
     <div class="absolute top-[14rem] left-[22%] opacity-15 hidden lg:block pointer-events-none">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-        <circle cx="3" cy="3" r="2" fill="hsl(350 45% 60%)"/>
-        <circle cx="11" cy="8" r="1.5" fill="hsl(350 55% 55%)"/>
+        <circle cx="3" cy="3" r="2" fill="hsl(30 92% 53%)"/>
+        <circle cx="11" cy="8" r="1.5" fill="hsl(352 72% 38%)"/>
       </svg>
     </div>
     <div class="absolute top-[18rem] right-[14%] opacity-14 hidden lg:block pointer-events-none">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <line x1="8" y1="0" x2="8" y2="16" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="0" y1="8" x2="16" y2="8" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="8" y1="0" x2="8" y2="16" stroke="hsl(352 72% 38%)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="0" y1="8" x2="16" y2="8" stroke="hsl(352 72% 38%)" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
     </div>
     <div class="absolute top-[24rem] left-[12%] opacity-16 hidden lg:block pointer-events-none">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-        <circle cx="3" cy="3" r="2" fill="hsl(350 55% 55%)"/>
+        <circle cx="3" cy="3" r="2" fill="hsl(352 72% 38%)"/>
         <circle cx="11" cy="7" r="1.5" fill="hsl(30 25% 75%)"/>
       </svg>
     </div>
@@ -61,7 +61,7 @@ get_header();
   </section>
 
   <!-- FAQ Content -->
-  <section class="py-12 lg:py-16 bg-background">
+  <section class="py-12 lg:py-16">
     <div class="max-w-3xl mx-auto px-4">
       <div class="space-y-4">
         
@@ -184,7 +184,7 @@ get_header();
   </section>
 
   <!-- CTA Section -->
-  <section class="py-16 lg:py-20 bg-muted/30">
+  <section class="py-16 lg:py-20">
     <div class="max-w-2xl mx-auto px-4 text-center">
       <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-4">
         Ready to join?

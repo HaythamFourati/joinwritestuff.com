@@ -5,7 +5,7 @@
  * $1 waiting list signup with Stripe payment
  */
 ?>
-<section id="contact" class="relative py-16 lg:py-24 bg-background">
+<section id="contact" class="relative py-16 lg:py-24">
   <div class="max-w-4xl mx-auto px-4">
     <!-- Section Header -->
     <div class="text-center mb-12">

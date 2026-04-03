@@ -8,14 +8,8 @@
   <nav id="navbar-root" class="relative z-40 w-full px-4">
     <div class="relative z-[60] mx-auto hidden w-full max-w-5xl flex-row items-center justify-between rounded-xl bg-white/90 backdrop-blur-md border border-border/60 px-6 py-3 lg:flex transition-all duration-300 shadow-sm">
       <!-- Logo -->
-      <a href="<?php echo home_url(); ?>" class="relative z-20 flex items-center gap-2.5">
-        <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-          <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <path d="M2 7l10 7 10-7"/>
-          </svg>
-        </div>
-        <span class="font-semibold text-[15px] text-foreground tracking-tight"><?php echo esc_html(SITE_NAME); ?></span>
+      <a href="<?php echo home_url(); ?>" class="relative z-20 flex items-center gap-2">
+        <img src="<?php echo esc_url(get_theme_file_uri('/assets/logo.png')); ?>" alt="<?php echo esc_attr(SITE_NAME); ?>" class="h-15 w-auto -ml-5">
       </a>
 
       <!-- Navigation Items -->
@@ -38,14 +32,8 @@
     <!-- Mobile Navigation -->
     <div id="mobile-nav-root" class="relative z-50 mx-auto flex w-full flex-col bg-white/90 backdrop-blur-md rounded-xl border border-border/60 px-4 py-3 lg:hidden">
       <div class="flex w-full flex-row items-center justify-between">
-        <a href="<?php echo home_url(); ?>" class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-            <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="M2 7l10 7 10-7"/>
-            </svg>
-          </div>
-          <span class="font-semibold text-sm text-foreground tracking-tight"><?php echo esc_html(SITE_NAME); ?></span>
+        <a href="<?php echo home_url(); ?>" class="flex items-center gap-2">
+          <img src="<?php echo esc_url(get_theme_file_uri('/assets/logo.png')); ?>" alt="<?php echo esc_attr(SITE_NAME); ?>" class="h-14 w-auto -ml-3">
         </a>
         <button id="mobile-menu-toggle" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-muted transition-colors" aria-label="Toggle menu">
           <svg id="mobile-menu-icon-open" class="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">

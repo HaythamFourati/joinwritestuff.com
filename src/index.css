@@ -28,43 +28,43 @@
 @theme {
   --animate-fade-up: fade-up 0.6s ease-out both;
   
-  /* Warm Neutral + Dusty Rose — Editorial, Refined */
+  /* Logo-matched palette — Crimson, Orange, Warm Dark */
   --color-background: hsl(30 20% 98%);        /* Warm off-white */
-  --color-foreground: hsl(20 15% 20%);        /* Near-black warm */
+  --color-foreground: hsl(15 8% 16%);         /* Warm near-black (logo dark) */
   --color-card: hsl(0 0% 100%);
-  --color-card-foreground: hsl(20 15% 20%);
+  --color-card-foreground: hsl(15 8% 16%);
   --color-popover: hsl(0 0% 100%);
-  --color-popover-foreground: hsl(20 15% 20%);
+  --color-popover-foreground: hsl(15 8% 16%);
   
-  /* Dusty rose primary — confident, warm */
-  --color-primary: hsl(350 55% 55%);
+  /* Crimson primary — bold, from logo "hug" */
+  --color-primary: hsl(352 72% 38%);
   --color-primary-foreground: hsl(0 0% 100%);
   
   /* Warm sand secondary */
   --color-secondary: hsl(30 25% 92%);
-  --color-secondary-foreground: hsl(20 15% 20%);
+  --color-secondary-foreground: hsl(15 8% 16%);
   
   /* Muted tones */
   --color-muted: hsl(30 15% 95%);
-  --color-muted-foreground: hsl(20 10% 50%);
+  --color-muted-foreground: hsl(20 10% 46%);
   
-  /* Rose accent — for emphasis */
-  --color-accent: hsl(350 45% 60%);
+  /* Orange accent — from logo "mail" */
+  --color-accent: hsl(30 92% 53%);
   --color-accent-foreground: hsl(0 0% 100%);
   
   /* Warm blush — subtle highlights */
   --color-peach: hsl(15 60% 70%);
-  --color-peach-foreground: hsl(20 15% 20%);
+  --color-peach-foreground: hsl(15 8% 16%);
   
   /* Sage — for success/positive */
   --color-mint: hsl(155 25% 65%);
-  --color-mint-foreground: hsl(20 15% 20%);
+  --color-mint-foreground: hsl(15 8% 16%);
   
   --color-destructive: hsl(0 65% 55%);
   --color-destructive-foreground: hsl(0 0% 98%);
   --color-border: hsl(30 15% 88%);
   --color-input: hsl(30 15% 88%);
-  --color-ring: hsl(350 55% 55%);
+  --color-ring: hsl(352 72% 38%);
   
   /* Refined radius */
   --radius: 0.75rem;
@@ -80,6 +80,10 @@ html {
 
 body {
   font-family: var(--font-body);
+  background-image: url('../assets/paper-texture2.webp');
+  background-size: 800px auto;
+  background-repeat: repeat;
+  background-color: hsl(30 20% 98%);
 }
 
 h1, h2, h3, h4, h5, h6 {

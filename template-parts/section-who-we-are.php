@@ -5,52 +5,52 @@
  * Showcases the core values behind the mail club
  */
 ?>
-<section id="who-we-are" class="relative py-16 lg:py-24 bg-muted/30">
+<section id="who-we-are" class="relative py-16 lg:py-24">
   <!-- Decorative accents densely around value cards -->
   <!-- Near header -->
   <div class="absolute top-[6rem] left-[24%] opacity-18 hidden lg:block pointer-events-none">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <circle cx="3" cy="3" r="2" fill="hsl(350 55% 55%)"/>
+      <circle cx="3" cy="3" r="2" fill="hsl(352 72% 38%)"/>
       <circle cx="13" cy="7" r="1.5" fill="hsl(30 25% 75%)"/>
     </svg>
   </div>
   <div class="absolute top-[8rem] right-[22%] opacity-16 hidden lg:block pointer-events-none">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-      <line x1="7" y1="0" x2="7" y2="14" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="0" y1="7" x2="14" y2="7" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="7" y1="0" x2="7" y2="14" stroke="hsl(352 72% 38%)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="0" y1="7" x2="14" y2="7" stroke="hsl(352 72% 38%)" stroke-width="1.5" stroke-linecap="round"/>
     </svg>
   </div>
   <!-- Around value cards -->
   <div class="absolute top-[13rem] left-[7%] opacity-16 hidden lg:block pointer-events-none">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <line x1="8" y1="0" x2="8" y2="16" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="0" y1="8" x2="16" y2="8" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="2" y1="2" x2="14" y2="14" stroke="hsl(350 55% 55%)" stroke-width="1" stroke-linecap="round"/>
-      <line x1="14" y1="2" x2="2" y2="14" stroke="hsl(350 55% 55%)" stroke-width="1" stroke-linecap="round"/>
+      <line x1="8" y1="0" x2="8" y2="16" stroke="hsl(352 72% 38%)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="0" y1="8" x2="16" y2="8" stroke="hsl(352 72% 38%)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="2" y1="2" x2="14" y2="14" stroke="hsl(352 72% 38%)" stroke-width="1" stroke-linecap="round"/>
+      <line x1="14" y1="2" x2="2" y2="14" stroke="hsl(352 72% 38%)" stroke-width="1" stroke-linecap="round"/>
     </svg>
   </div>
   <div class="absolute top-[16rem] right-[9%] opacity-14 hidden lg:block pointer-events-none">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-      <circle cx="3" cy="3" r="2" fill="hsl(350 55% 55%)"/>
+      <circle cx="3" cy="3" r="2" fill="hsl(352 72% 38%)"/>
       <circle cx="11" cy="7" r="1.5" fill="hsl(30 25% 75%)"/>
     </svg>
   </div>
   <div class="absolute top-[21rem] left-[26%] opacity-15 hidden lg:block pointer-events-none">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-      <circle cx="3" cy="3" r="2" fill="hsl(350 45% 60%)"/>
-      <circle cx="11" cy="8" r="1.5" fill="hsl(350 55% 55%)"/>
+      <circle cx="3" cy="3" r="2" fill="hsl(30 92% 53%)"/>
+      <circle cx="11" cy="8" r="1.5" fill="hsl(352 72% 38%)"/>
     </svg>
   </div>
   <div class="absolute bottom-[12rem] right-[18%] opacity-16 hidden lg:block pointer-events-none">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <circle cx="3" cy="3" r="2" fill="hsl(350 55% 55%)"/>
+      <circle cx="3" cy="3" r="2" fill="hsl(352 72% 38%)"/>
       <circle cx="13" cy="6" r="1.5" fill="hsl(30 25% 75%)"/>
-      <circle cx="7" cy="12" r="1.5" fill="hsl(350 45% 60%)"/>
+      <circle cx="7" cy="12" r="1.5" fill="hsl(30 92% 53%)"/>
     </svg>
   </div>
   <div class="absolute bottom-[8rem] left-[14%] opacity-12 hidden lg:block pointer-events-none">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-      <circle cx="3" cy="3" r="2" fill="hsl(350 55% 55%)"/>
+      <circle cx="3" cy="3" r="2" fill="hsl(352 72% 38%)"/>
       <circle cx="11" cy="7" r="1.5" fill="hsl(30 25% 75%)"/>
     </svg>
   </div>

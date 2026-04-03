@@ -6,10 +6,6 @@
  */
 ?>
 <section id="hero-section" class="relative overflow-hidden pt-18 pb-16 lg:pt-16 lg:pb-24">
-  <!-- Subtle background wash -->
-  <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute top-0 right-0 w-[50%] h-full bg-secondary/20 blur-3xl rounded-full -translate-y-1/4 translate-x-1/4"></div>
-  </div>
   
   <div class="max-w-6xl mx-auto px-4 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
@@ -67,26 +63,26 @@
 
             <!-- Decorative dots -->
             <g class="hero-dots">
-              <circle cx="65" cy="110" r="4" fill="hsl(350 55% 55%)" opacity="0.2"/>
-              <circle cx="400" cy="140" r="3" fill="hsl(350 55% 55%)" opacity="0.15"/>
+              <circle cx="65" cy="110" r="4" fill="hsl(352 72% 38%)" opacity="0.2"/>
+              <circle cx="400" cy="140" r="3" fill="hsl(352 72% 38%)" opacity="0.15"/>
               <circle cx="50" cy="360" r="3" fill="hsl(30 25% 75%)" opacity="0.3"/>
               <circle cx="410" cy="340" r="5" fill="hsl(30 25% 75%)" opacity="0.2"/>
-              <circle cx="200" cy="70" r="3" fill="hsl(350 45% 60%)" opacity="0.15"/>
+              <circle cx="200" cy="70" r="3" fill="hsl(30 92% 53%)" opacity="0.15"/>
             </g>
             
             <!-- Small floating stamp (top-right) -->
             <g class="hero-stamp" transform="translate(346, 108)">
               <rect x="0" y="0" width="50" height="38" rx="4" fill="hsl(30 25% 92%)" stroke="hsl(30 15% 88%)" stroke-width="1"/>
-              <rect x="7" y="7" width="36" height="24" rx="2" fill="hsl(350 55% 55%)" opacity="0.15"/>
-              <path d="M13 19 L25 11 L37 19" stroke="hsl(350 55% 55%)" stroke-width="1.5" fill="none" opacity="0.4"/>
+              <rect x="7" y="7" width="36" height="24" rx="2" fill="hsl(352 72% 38%)" opacity="0.15"/>
+              <path d="M13 19 L25 11 L37 19" stroke="hsl(352 72% 38%)" stroke-width="1.5" fill="none" opacity="0.4"/>
             </g>
 
             <!-- Small star burst (top-left) -->
             <g class="hero-sparkle" transform="translate(96, 172)" opacity="0.25">
-              <line x1="0" y1="-10" x2="0" y2="10" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="-10" y1="0" x2="10" y2="0" stroke="hsl(350 55% 55%)" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="-7" y1="-7" x2="7" y2="7" stroke="hsl(350 55% 55%)" stroke-width="1" stroke-linecap="round"/>
-              <line x1="7" y1="-7" x2="-7" y2="7" stroke="hsl(350 55% 55%)" stroke-width="1" stroke-linecap="round"/>
+              <line x1="0" y1="-10" x2="0" y2="10" stroke="hsl(352 72% 38%)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="-10" y1="0" x2="10" y2="0" stroke="hsl(352 72% 38%)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="-7" y1="-7" x2="7" y2="7" stroke="hsl(352 72% 38%)" stroke-width="1" stroke-linecap="round"/>
+              <line x1="7" y1="-7" x2="-7" y2="7" stroke="hsl(352 72% 38%)" stroke-width="1" stroke-linecap="round"/>
             </g>
 
             <!-- === MAIN COMPOSITION: centered at 230,230 === -->
@@ -98,7 +94,7 @@
               <line x1="24" y1="48" x2="142" y2="48" stroke="hsl(30 15% 82%)" stroke-width="2" stroke-linecap="round"/>
               <line x1="24" y1="64" x2="130" y2="64" stroke="hsl(30 15% 85%)" stroke-width="2" stroke-linecap="round"/>
               <line x1="24" y1="80" x2="110" y2="80" stroke="hsl(30 15% 85%)" stroke-width="2" stroke-linecap="round"/>
-              <path d="M36 102 C36 97, 28 94, 28 98 C28 102, 36 110, 36 110 C36 110, 44 102, 44 98 C44 94, 36 97, 36 102Z" fill="hsl(350 55% 55%)" opacity="0.3"/>
+              <path d="M36 102 C36 97, 28 94, 28 98 C28 102, 36 110, 36 110 C36 110, 44 102, 44 98 C44 94, 36 97, 36 102Z" fill="hsl(352 72% 38%)" opacity="0.3"/>
             </g>
 
             <!-- Envelope body centered inside the circle -->
@@ -113,8 +109,8 @@
 
             <!-- Wax seal (on the envelope face, lower-center) -->
             <g class="hero-seal" transform="translate(230, 286)">
-              <circle cx="0" cy="0" r="20" fill="hsl(350 55% 55%)"/>
-              <circle cx="0" cy="0" r="16" fill="none" stroke="hsl(350 55% 65%)" stroke-width="1"/>
+              <circle cx="0" cy="0" r="20" fill="hsl(352 72% 38%)"/>
+              <circle cx="0" cy="0" r="16" fill="none" stroke="hsl(352 72% 48%)" stroke-width="1"/>
               <path d="M0 -4 C0 -8, -7 -11, -7 -6 C-7 -2, 0 5, 0 5 C0 5, 7 -2, 7 -6 C7 -11, 0 -8, 0 -4Z" fill="white" opacity="0.9"/>
             </g>
 
@@ -128,7 +124,7 @@
 
             <!-- Small floating heart (bottom-right) -->
             <g class="hero-heart" transform="translate(372, 304)" opacity="0.3">
-              <path d="M0 -3 C0 -7, -6 -9, -6 -5 C-6 -1, 0 5, 0 5 C0 5, 6 -1, 6 -5 C6 -9, 0 -7, 0 -3Z" fill="hsl(350 55% 55%)"/>
+              <path d="M0 -3 C0 -7, -6 -9, -6 -5 C-6 -1, 0 5, 0 5 C0 5, 6 -1, 6 -5 C6 -9, 0 -7, 0 -3Z" fill="hsl(352 72% 38%)"/>
             </g>
 
           </svg>
