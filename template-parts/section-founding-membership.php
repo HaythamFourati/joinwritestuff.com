@@ -18,11 +18,9 @@
       </p>
     </div>
 
-    <!-- Pricing Cards - Side by Side -->
-    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-14">
-
-      <!-- Card 1: Waiting List ($1) -->
-      <div class="bg-white rounded-xl border border-border p-8 md:p-10">
+    <!-- Pricing Card -->
+    <div class="max-w-md mx-auto mb-14">
+      <div class="p-10 md:p-12 bg-no-repeat transition-all duration-300" style="background-image: url('<?php echo esc_url(get_theme_file_uri('/assets/torn paper card.webp')); ?>'); background-size: 100% 100%;">
         <p class="text-sm font-semibold text-muted-foreground mb-6">Reserve Your Spot</p>
 
         <div class="mb-8">
@@ -53,7 +51,7 @@
           </li>
         </ul>
 
-        <a href="<?php echo !empty(STRIPE_WAITLIST_LINK) ? esc_url(STRIPE_WAITLIST_LINK) : '#'; ?>" class="block w-full py-4 rounded-lg bg-foreground text-white text-base font-semibold text-center hover:bg-foreground/90 transition-colors duration-200">
+        <a href="<?php echo !empty(STRIPE_WAITLIST_LINK) ? esc_url(STRIPE_WAITLIST_LINK) : '#'; ?>" class="block w-full py-4 rounded-lg bg-primary text-white text-base font-semibold text-center hover:bg-primary/90 transition-colors duration-200">
           Join Waiting List for $1
         </a>
 
@@ -64,59 +62,6 @@
           Secure payment. Cancel anytime.
         </p>
       </div>
-
-      <!-- Card 2: Founding Member ($11/mo) -->
-      <div class="bg-white rounded-xl border-2 border-primary p-8 md:p-10 relative">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-semibold px-4 py-1 rounded-full">Most Popular</div>
-        <p class="text-sm font-semibold text-primary mb-6">Founding Member</p>
-
-        <div class="mb-8">
-          <div class="flex items-baseline gap-2 mb-2">
-            <span class="text-5xl font-bold text-foreground"><?php echo esc_html(MONTHLY_PRICE); ?></span>
-            <span class="text-lg text-muted-foreground">/month</span>
-          </div>
-          <p class="text-sm text-muted-foreground">Cancel anytime. Joy guaranteed every month.</p>
-        </div>
-
-        <ul class="space-y-4 mb-8">
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-            <span class="text-foreground text-[15px]">Monthly envelope delivered to your door</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-            <span class="text-foreground text-[15px]">Founding member recognition in every issue</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-            <span class="text-foreground text-[15px]">Direct input on future content and surprises</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-            <span class="text-foreground text-[15px]">Be first to receive every new edition</span>
-          </li>
-        </ul>
-
-        <a href="<?php echo !empty(STRIPE_PAYMENT_LINK) ? esc_url(STRIPE_PAYMENT_LINK) : '#'; ?>" class="block w-full py-4 rounded-lg bg-primary text-white text-base font-semibold text-center hover:bg-primary/90 transition-colors duration-200">
-          Join the Founding Members
-        </a>
-
-        <p class="text-center text-sm text-muted-foreground mt-5 flex items-center justify-center gap-1.5">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-          Secure payment. Cancel anytime.
-        </p>
-      </div>
-
     </div>
 
     <!-- Value Proposition -->

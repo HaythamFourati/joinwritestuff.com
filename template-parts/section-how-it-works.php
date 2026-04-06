@@ -67,7 +67,7 @@
     <!-- Steps -->
     <div class="space-y-6">
       <!-- Step 1 -->
-      <div class="timeline-step bg-white rounded-xl p-8 md:p-10 border border-border">
+      <div class="timeline-step p-10 md:p-12 bg-no-repeat transition-all duration-300" style="background-image: url('<?php echo esc_url(get_theme_file_uri('/assets/torn paper card.webp')); ?>'); background-size: 100% 100%;">
         <div class="flex items-start gap-6">
           <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">1</div>
           <div>
@@ -80,7 +80,7 @@
       </div>
 
       <!-- Step 2 -->
-      <div class="timeline-step bg-white rounded-xl p-8 md:p-10 border border-border">
+      <div class="timeline-step p-10 md:p-12 bg-no-repeat transition-all duration-300" style="background-image: url('<?php echo esc_url(get_theme_file_uri('/assets/torn paper card.webp')); ?>'); background-size: 100% 100%;">
         <div class="flex items-start gap-6">
           <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">2</div>
           <div>
@@ -93,7 +93,7 @@
       </div>
 
       <!-- Step 3 -->
-      <div class="timeline-step bg-white rounded-xl p-8 md:p-10 border border-border">
+      <div class="timeline-step p-10 md:p-12 bg-no-repeat transition-all duration-300" style="background-image: url('<?php echo esc_url(get_theme_file_uri('/assets/torn paper card.webp')); ?>'); background-size: 100% 100%;">
         <div class="flex items-start gap-6">
           <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">3</div>
           <div>
@@ -106,7 +106,7 @@
       </div>
 
       <!-- Step 4 -->
-      <div class="timeline-step bg-white rounded-xl p-8 md:p-10 border border-border">
+      <div class="timeline-step p-10 md:p-12 bg-no-repeat transition-all duration-300" style="background-image: url('<?php echo esc_url(get_theme_file_uri('/assets/torn paper card.webp')); ?>'); background-size: 100% 100%;">
         <div class="flex items-start gap-6">
           <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">4</div>
           <div>

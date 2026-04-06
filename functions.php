@@ -28,7 +28,7 @@ define('SITE_SOCIAL_INSTAGRAM', '');
 define('FOUNDING_MEMBERS_LIMIT', '50');
 define('MONTHLY_PRICE', '$11');
 define('STRIPE_PAYMENT_LINK', ''); // TODO: Add Stripe payment link here when ready
-define('STRIPE_WAITLIST_LINK', ''); // TODO: Add Stripe waitlist payment link ($1) here when ready
+define('STRIPE_WAITLIST_LINK', 'https://book.stripe.com/9B6cN45Mb6Xm5wtfVzbwk00');
 
 // Office Address (optional - leave empty if not needed)
 define('SITE_OFFICE_PRIMARY_ADDRESS', '');

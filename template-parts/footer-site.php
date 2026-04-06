@@ -113,9 +113,10 @@
         <p class="text-[13px] text-white/40">
           &copy; <?php echo date('Y'); ?> <?php echo esc_html(SITE_NAME); ?>. All rights reserved.
         </p>
-        <p class="text-[12px] text-white/30 text-center md:text-right">
-          Bringing warmth back to your mailbox, one envelope at a time.
-        </p>
+        <div class="flex items-center gap-4">
+          <a href="<?php echo home_url('/privacy-policy/'); ?>" class="text-[12px] text-white/40 hover:text-white transition-colors">Privacy Policy</a>
+          <a href="<?php echo home_url('/terms-of-service/'); ?>" class="text-[12px] text-white/40 hover:text-white transition-colors">Terms of Service</a>
+        </div>
       </div>
     </div>
   </div>

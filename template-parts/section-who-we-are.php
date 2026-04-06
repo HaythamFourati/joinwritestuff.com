@@ -63,7 +63,7 @@
         Who is behind this
       </h2>
       <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-        Created by three people who got tired of doomscrolling and decided to do something about it — with stamps.
+        We believe the world needs more real moments — and fewer notifications.
       </p>
     </div>
 
@@ -71,7 +71,7 @@
     <div class="grid md:grid-cols-3 gap-6 mb-14">
       
       <!-- Value 1: Humanity -->
-      <div class="value-card bg-white rounded-xl p-8 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+      <div class="value-card p-10 bg-no-repeat transition-all duration-300" style="background-image: url('<?php echo esc_url(get_theme_file_uri('/assets/torn paper card.webp')); ?>'); background-size: 100% 100%;">
         <div class="mb-5 w-12 h-12 bg-primary/8 rounded-lg flex items-center justify-center">
           <svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -87,7 +87,7 @@
       </div>
 
       <!-- Value 2: Connection -->
-      <div class="value-card bg-white rounded-xl p-8 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+      <div class="value-card p-10 bg-no-repeat transition-all duration-300" style="background-image: url('<?php echo esc_url(get_theme_file_uri('/assets/torn paper card.webp')); ?>'); background-size: 100% 100%;">
         <div class="mb-5 w-12 h-12 bg-primary/8 rounded-lg flex items-center justify-center">
           <svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
@@ -101,7 +101,7 @@
       </div>
 
       <!-- Value 3: Warmth -->
-      <div class="value-card bg-white rounded-xl p-8 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+      <div class="value-card p-10 bg-no-repeat transition-all duration-300" style="background-image: url('<?php echo esc_url(get_theme_file_uri('/assets/torn paper card.webp')); ?>'); background-size: 100% 100%;">
         <div class="mb-5 w-12 h-12 bg-primary/8 rounded-lg flex items-center justify-center">
           <svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
