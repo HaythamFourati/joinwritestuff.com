@@ -65,6 +65,28 @@
       <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
         We believe the world needs more real moments — and fewer notifications.
       </p>
+
+      <!-- Team Photos -->
+      <div class="flex justify-center items-center gap-8 md:gap-14 mt-10">
+        <div class="text-center">
+          <div class="w-32 h-32 md:w-44 md:h-44 mx-auto mb-4 rounded-full overflow-hidden border-3 border-accent/15 shadow-lg">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/Elaine Williams.webp')); ?>" alt="Elaine Williams" class="w-full h-full object-cover" loading="lazy" width="176" height="176">
+          </div>
+          <p class="text-base md:text-lg font-bold text-foreground">Elaine</p>
+        </div>
+        <div class="text-center">
+          <div class="w-32 h-32 md:w-44 md:h-44 mx-auto mb-4 rounded-full overflow-hidden border-3 border-primary/15 shadow-lg">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/GareySimmons.webp')); ?>" alt="Garey Simmons" class="w-full h-full object-cover" loading="lazy" width="176" height="176">
+          </div>
+          <p class="text-base md:text-lg font-bold text-foreground">Garey</p>
+        </div>
+        <div class="text-center">
+          <div class="w-32 h-32 md:w-44 md:h-44 mx-auto mb-4 rounded-full overflow-hidden border-3 border-primary/15 shadow-lg">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/Linda Tighe.webp')); ?>" alt="Linda Tighe" class="w-full h-full object-cover" loading="lazy" width="176" height="176">
+          </div>
+          <p class="text-base md:text-lg font-bold text-foreground">Linda</p>
+        </div>
+      </div>
     </div>
 
     <!-- Values Grid -->
