@@ -76,29 +76,24 @@ function Enhancer() {
       }
 
       if (navbar) {
+        const logo = navbar.querySelector('img')
         if (scrolled) {
           navbar.style.maxWidth = '56rem'
           navbar.style.padding = '0.5rem 1.5rem'
-          navbar.style.borderRadius = '0.75rem'
           navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.06)'
-          navbar.classList.add('bg-white/95')
-          navbar.classList.remove('bg-white/90')
+          navbar.style.borderColor = 'rgba(0, 0, 0, 0.08)'
+          navbar.style.borderWidth = '1px'
+          navbar.classList.add('bg-white/95', 'backdrop-blur-md')
+          if (logo) logo.style.height = '3.5rem'
         } else {
           navbar.style.maxWidth = '64rem'
-          navbar.style.padding = '0.75rem 1.5rem'
-          navbar.style.borderRadius = '0.75rem'
-          navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.04)'
-          navbar.classList.remove('bg-white/95')
-          navbar.classList.add('bg-white/90')
+          navbar.style.padding = '0.75rem 2rem'
+          navbar.style.boxShadow = 'none'
+          navbar.style.borderColor = 'transparent'
+          navbar.style.borderWidth = '1px'
+          navbar.classList.remove('bg-white/95', 'backdrop-blur-md')
+          if (logo) logo.style.height = ''
         }
-      }
-
-      // Fade phone link on compact
-      if (phoneLink) {
-        phoneLink.style.opacity = scrolled ? '0' : '1'
-        phoneLink.style.width = scrolled ? '0' : 'auto'
-        phoneLink.style.overflow = 'hidden'
-        phoneLink.style.pointerEvents = scrolled ? 'none' : 'auto'
       }
     }
 

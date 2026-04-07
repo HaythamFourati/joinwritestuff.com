@@ -78,6 +78,7 @@
           <li><a href="#how-it-works" class="text-[14px] text-white/60 hover:text-white transition-colors">How It Works</a></li>
           <li><a href="#who-we-are" class="text-[14px] text-white/60 hover:text-white transition-colors">About Us</a></li>
           <li><a href="<?php echo home_url('/faq'); ?>" class="text-[14px] text-white/60 hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="<?php echo get_permalink(get_option('page_for_posts')) ?: home_url('/blog/'); ?>" class="text-[14px] text-white/60 hover:text-white transition-colors">Blog</a></li>
           <li><a href="#contact" class="text-[14px] text-white/60 hover:text-white transition-colors">Join</a></li>
         </ul>
       </nav>
