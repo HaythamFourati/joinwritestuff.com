@@ -30,7 +30,7 @@
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-8">
           <a href="<?php echo !empty(STRIPE_WAITLIST_LINK) ? esc_url(STRIPE_WAITLIST_LINK) : '#contact'; ?>" class="group inline-flex items-center justify-center px-7 py-3.5 rounded-lg bg-primary text-white text-base font-semibold hover:bg-primary/90 transition-colors duration-200">
-            Join Waiting List — $1
+            Subscribe — $11/mo
             <svg class="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
           <a href="#whats-inside" class="inline-flex items-center justify-center px-7 py-3.5 rounded-lg border border-border text-foreground text-base font-semibold hover:bg-muted transition-colors duration-200">
@@ -40,7 +40,7 @@
 
         <!-- Trust line -->
         <p class="text-sm text-muted-foreground">
-          $1 reserves your spot — credited to your first month. Cancel anytime.
+          Founding member pricing — locked in forever. Cancel anytime.
         </p>
       </div>
 
