@@ -45,7 +45,7 @@
       </div>
 
       <!-- Right: YouTube Short Video -->
-      <div class="hero-illustration order-1 lg:order-2 flex justify-center lg:justify-center">
+      <div class="hero-illustration order-1 lg:order-2 flex justify-center lg:justify-end">
         <div class="relative w-[260px] md:w-[300px] lg:w-[340px] rounded-2xl overflow-hidden shadow-2xl shadow-foreground/10">
           <div class="aspect-[3/4.2]">
             <iframe
