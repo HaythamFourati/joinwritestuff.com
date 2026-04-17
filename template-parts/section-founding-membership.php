@@ -21,7 +21,7 @@
     <!-- Pricing Cards -->
     <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-14">
 
-      <!-- Card 1: Regular Subscription -->
+      <!-- Card 1: Monthly Plan -->
       <div class="p-8 md:p-10 bg-no-repeat transition-all duration-300" style="background-image: url('<?php echo esc_url(get_theme_file_uri('/assets/torn paper card.webp')); ?>'); background-size: 100% 100%;">
         <div class="mb-2 w-10 h-10 bg-primary/8 rounded-lg flex items-center justify-center">
           <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -29,15 +29,15 @@
             <path d="M2 7l10 7 10-7"/>
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-foreground mb-1">Hug in the Mail</h3>
-        <p class="text-sm text-muted-foreground mb-6">Monthly subscription for yourself</p>
+        <h3 class="text-xl font-bold text-foreground mb-1">Monthly Plan</h3>
+        <p class="text-sm text-muted-foreground mb-6">Pay month-to-month</p>
 
         <div class="mb-6">
           <div class="flex items-baseline gap-1 mb-1">
             <span class="text-4xl font-bold text-foreground">$11</span>
             <span class="text-sm text-muted-foreground">/ month</span>
           </div>
-          <p class="text-xs text-muted-foreground">Founding member price — locked in forever</p>
+          <p class="text-xs text-muted-foreground">Billed monthly — cancel anytime</p>
         </div>
 
         <ul class="space-y-3 mb-8">
@@ -51,7 +51,7 @@
             <svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12"/>
             </svg>
-            <span class="text-foreground text-[14px]">Founding member pricing forever</span>
+            <span class="text-foreground text-[14px]">Founding member pricing</span>
           </li>
           <li class="flex items-start gap-2.5">
             <svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -61,38 +61,39 @@
           </li>
         </ul>
 
-        <a href="https://buy.stripe.com/fZudR8gqP95u6AxcJnbwk02" class="block w-full py-3.5 rounded-lg bg-primary text-white text-[15px] font-semibold text-center hover:bg-primary/90 transition-colors duration-200">
-          Subscribe Now
+        <a href="https://link.fastpaydirect.com/payment-link/69e1fdd4557558e89e5208b7" class="block w-full py-3.5 rounded-lg bg-primary text-white text-[15px] font-semibold text-center hover:bg-primary/90 transition-colors duration-200">
+          Subscribe Monthly
         </a>
 
         <p class="text-center text-xs text-muted-foreground mt-4 flex items-center justify-center gap-1.5">
           <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           </svg>
-          Secure payment via Stripe
+          Secure payment
         </p>
       </div>
 
-      <!-- Card 2: Gift Subscription -->
-      <div class="p-8 md:p-10 bg-no-repeat transition-all duration-300" style="background-image: url('<?php echo esc_url(get_theme_file_uri('/assets/torn paper card.webp')); ?>'); background-size: 100% 100%;">
+      <!-- Card 2: Yearly Plan (Best Value) -->
+      <div class="relative p-8 md:p-10 bg-no-repeat transition-all duration-300" style="background-image: url('<?php echo esc_url(get_theme_file_uri('/assets/torn paper card.webp')); ?>'); background-size: 100% 100%;">
+        <!-- Best Value Badge -->
+        <div class="absolute -top-3 -right-3 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+          Save $22
+        </div>
+
         <div class="mb-2 w-10 h-10 bg-accent/15 rounded-lg flex items-center justify-center">
           <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M20 12v10H4V12"/>
-            <path d="M2 7h20v5H2z"/>
-            <path d="M12 22V7"/>
-            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
-            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-foreground mb-1">Gift to a Friend</h3>
-        <p class="text-sm text-muted-foreground mb-6">Send a hug to someone you love</p>
+        <h3 class="text-xl font-bold text-foreground mb-1">Yearly Plan</h3>
+        <p class="text-sm text-muted-foreground mb-6">Best value — save $22/year</p>
 
         <div class="mb-6">
-          <div class="flex items-baseline gap-1 mb-1">
-            <span class="text-4xl font-bold text-foreground">$11</span>
-            <span class="text-sm text-muted-foreground">/ month</span>
+          <div class="flex items-baseline gap-2 mb-1">
+            <span class="text-4xl font-bold text-foreground">$110</span>
+            <span class="text-sm text-muted-foreground line-through">$132</span>
           </div>
-          <p class="text-xs text-muted-foreground">Gift a monthly hug to someone special</p>
+          <p class="text-xs text-muted-foreground">Billed annually — just $9.17/month</p>
         </div>
 
         <ul class="space-y-3 mb-8">
@@ -100,31 +101,31 @@
             <svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12"/>
             </svg>
-            <span class="text-foreground text-[14px]">Gift a monthly envelope of joy</span>
+            <span class="text-foreground text-[14px]">12 monthly envelopes</span>
           </li>
           <li class="flex items-start gap-2.5">
             <svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12"/>
             </svg>
-            <span class="text-foreground text-[14px]">We'll include a personal note</span>
+            <span class="text-foreground text-[14px]">Save $22 compared to monthly</span>
           </li>
           <li class="flex items-start gap-2.5">
             <svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12"/>
             </svg>
-            <span class="text-foreground text-[14px]">The kindest surprise they'll get</span>
+            <span class="text-foreground text-[14px]">Founding member pricing locked in</span>
           </li>
         </ul>
 
-        <a href="https://buy.stripe.com/cNieVcgqP2H61gd6kZbwk03" class="block w-full py-3.5 rounded-lg border-2 border-primary text-primary text-[15px] font-semibold text-center hover:bg-primary hover:text-white transition-colors duration-200">
-          Gift a Subscription
+        <a href="https://link.fastpaydirect.com/payment-link/69e204797dd3512d92076d68" class="block w-full py-3.5 rounded-lg border-2 border-primary text-primary text-[15px] font-semibold text-center hover:bg-primary hover:text-white transition-colors duration-200">
+          Subscribe Yearly
         </a>
 
         <p class="text-center text-xs text-muted-foreground mt-4 flex items-center justify-center gap-1.5">
           <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           </svg>
-          Secure payment via Stripe
+          Secure payment
         </p>
       </div>
 

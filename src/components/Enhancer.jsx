@@ -63,43 +63,43 @@ function Enhancer() {
 
   // Navbar scroll effect - shrink on scroll
   useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY > 80
-      setNavbarScrolled(scrolled)
+    let wasScrolled = null
+    let rafId = null
 
-      const header = document.querySelector('#site-header')
-      const navbar = document.querySelector('#navbar-root > div:first-child')
-      const phoneLink = document.querySelector('#navbar-root a[href^="tel:"]')
+    const navRoot = document.querySelector('#navbar-root')
+    const navBg = document.querySelector('#navbar-bg')
+    const logo = document.querySelector('#navbar-logo')
 
-      if (header) {
-        header.style.paddingTop = scrolled ? '0.5rem' : '1rem'
+    const applyScrollState = (scrolled) => {
+      if (scrolled === wasScrolled) return
+      wasScrolled = scrolled
+
+      if (navBg) {
+        navBg.style.opacity = scrolled ? '1' : '0'
       }
-
-      if (navbar) {
-        const logo = navbar.querySelector('img')
-        if (scrolled) {
-          navbar.style.maxWidth = '56rem'
-          navbar.style.padding = '0.5rem 1.5rem'
-          navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.06)'
-          navbar.style.borderColor = 'rgba(0, 0, 0, 0.08)'
-          navbar.style.borderWidth = '1px'
-          navbar.classList.add('bg-white/95', 'backdrop-blur-md')
-          if (logo) logo.style.height = '3.5rem'
-        } else {
-          navbar.style.maxWidth = '64rem'
-          navbar.style.padding = '0.75rem 2rem'
-          navbar.style.boxShadow = 'none'
-          navbar.style.borderColor = 'transparent'
-          navbar.style.borderWidth = '1px'
-          navbar.classList.remove('bg-white/95', 'backdrop-blur-md')
-          if (logo) logo.style.height = ''
-        }
+      if (navRoot) {
+        navRoot.style.paddingTop = scrolled ? '0.25rem' : '0.75rem'
+        navRoot.style.paddingBottom = scrolled ? '0.25rem' : '0.75rem'
+      }
+      if (logo) {
+        logo.style.height = scrolled ? '3.5rem' : ''
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
-    handleScroll() // Initial check
-    return () => window.removeEventListener('scroll', handleScroll)
+    const handleScroll = () => {
+      if (rafId) return
+      rafId = requestAnimationFrame(() => {
+        rafId = null
+        applyScrollState(window.scrollY > 80)
+      })
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    applyScrollState(window.scrollY > 80)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (rafId) cancelAnimationFrame(rafId)
+    }
   }, [])
 
   // Mobile menu toggle
