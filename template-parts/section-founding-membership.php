@@ -19,7 +19,7 @@
     </div>
 
     <!-- Explainer Block -->
-    <div class="max-w-3xl mx-auto mb-10 grid sm:grid-cols-2 gap-5">
+    <div class="max-w-3xl mx-auto mb-0 grid sm:grid-cols-2 gap-5">
       <div class="p-6 rounded-xl bg-secondary/40 border border-border/50">
         <p class="text-xs font-semibold text-primary uppercase tracking-wide mb-2">Where Should We Send the Hug?</p>
         <p class="text-sm text-muted-foreground leading-relaxed">Enter the details of the person receiving the Hug in the Mail — whether that's you or someone special.</p>

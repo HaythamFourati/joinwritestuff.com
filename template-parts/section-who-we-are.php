@@ -145,7 +145,7 @@
       <p class="text-muted-foreground mb-8">
         One envelope at a time. One smile at a time. One connection at a time.
       </p>
-      <a href="https://buy.stripe.com/fZudR8gqP95u6AxcJnbwk02" class="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-white text-base font-semibold hover:bg-primary/90 transition-colors duration-200">
+      <a href="#contact" class="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-white text-base font-semibold hover:bg-primary/90 transition-colors duration-200">
         Become a Founding Member
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M5 12h14"/>

@@ -5,9 +5,10 @@
  * 2-column editorial hero: copy left, envelope illustration right
  */
 ?>
-<section id="hero-section" class="relative overflow-hidden pt-10 pb-12 lg:pt-8 lg:pb-16">
+<section id="hero-section" class="relative overflow-hidden pt-8 pb-12 lg:pt-10 lg:pb-16">
   
   <div class="max-w-6xl mx-auto px-4 relative z-10">
+
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
       
       <!-- Left: Copy -->
@@ -29,7 +30,7 @@
         
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-8">
-          <a href="<?php echo !empty(STRIPE_WAITLIST_LINK) ? esc_url(STRIPE_WAITLIST_LINK) : '#contact'; ?>" class="group inline-flex items-center justify-center px-7 py-3.5 rounded-lg bg-primary text-white text-base font-semibold hover:bg-primary/90 transition-colors duration-200">
+          <a href="#contact" class="group inline-flex items-center justify-center px-7 py-3.5 rounded-lg bg-primary text-white text-base font-semibold hover:bg-primary/90 transition-colors duration-200">
             Subscribe — $11/mo
             <svg class="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>

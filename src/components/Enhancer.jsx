@@ -70,6 +70,8 @@ function Enhancer() {
     const navBg = document.querySelector('#navbar-bg')
     const logo = document.querySelector('#navbar-logo')
 
+    if (!navRoot && !navBg) return
+
     const applyScrollState = (scrolled) => {
       if (scrolled === wasScrolled) return
       wasScrolled = scrolled
