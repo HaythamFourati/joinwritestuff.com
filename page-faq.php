@@ -158,7 +158,7 @@ get_header();
             Can I gift a subscription?
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            Yes. A <?php echo esc_html(SITE_NAME); ?> subscription makes a wonderful gift. Reach out to us at <a href="mailto:<?php echo esc_attr(SITE_EMAIL); ?>" class="text-primary hover:underline"><?php echo esc_html(SITE_EMAIL); ?></a> and we'll help you set one up.
+            Yes — and it's one of the most meaningful gifts you can give. Add your recipient's information at checkout, use your own payment details, and we'll deliver a monthly reminder that they're loved.
           </p>
         </div>
 
