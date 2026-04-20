@@ -18,8 +18,20 @@
       </p>
     </div>
 
+    <!-- Explainer Block -->
+    <div class="max-w-3xl mx-auto mb-10 grid sm:grid-cols-2 gap-5">
+      <div class="p-6 rounded-xl bg-secondary/40 border border-border/50">
+        <p class="text-xs font-semibold text-primary uppercase tracking-wide mb-2">Where Should We Send the Hug?</p>
+        <p class="text-sm text-muted-foreground leading-relaxed">Enter the details of the person receiving the Hug in the Mail — whether that's you or someone special.</p>
+      </div>
+      <div class="p-6 rounded-xl bg-secondary/40 border border-border/50">
+        <p class="text-xs font-semibold text-primary uppercase tracking-wide mb-2">Taking Care of the Details</p>
+        <p class="text-sm text-muted-foreground leading-relaxed">Enter the payment information for the person covering the subscription — you, or a generous gift-giver.</p>
+      </div>
+    </div>
+
     <!-- Pricing Cards -->
-    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-14">
+    <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-14">
 
       <!-- Card 1: Monthly Plan -->
       <div class="p-8 md:p-10 bg-no-repeat transition-all duration-300" style="background-image: url('<?php echo esc_url(get_theme_file_uri('/assets/torn paper card.webp')); ?>'); background-size: 100% 100%;">
@@ -129,66 +141,6 @@
         </p>
       </div>
 
-      <!-- Card 3: Gift to a Friend -->
-      <div class="relative p-8 md:p-10 bg-no-repeat transition-all duration-300" style="background-image: url('<?php echo esc_url(get_theme_file_uri('/assets/torn paper card.webp')); ?>'); background-size: 100% 100%;">
-        <!-- Gift Badge -->
-        <div class="absolute -top-3 -right-3 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
-          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-          Perfect Gift
-        </div>
-
-        <div class="mb-2 w-10 h-10 bg-emerald-600/10 rounded-lg flex items-center justify-center">
-          <svg class="w-5 h-5 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M20 12v10H4V12"/>
-            <path d="M2 7h20v5H2z"/>
-            <path d="M12 22V7"/>
-            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
-            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-foreground mb-1">Gift to a Friend</h3>
-        <p class="text-sm text-muted-foreground mb-6">Send a hug to someone you love</p>
-
-        <div class="mb-6">
-          <div class="flex items-baseline gap-1 mb-1">
-            <span class="text-4xl font-bold text-foreground">$11</span>
-            <span class="text-sm text-muted-foreground">/ month</span>
-          </div>
-          <p class="text-xs text-muted-foreground">Billed to you — joy delivered to them</p>
-        </div>
-
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-start gap-2.5">
-            <svg class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-            <span class="text-foreground text-[14px]">Monthly envelope sent to a friend</span>
-          </li>
-          <li class="flex items-start gap-2.5">
-            <svg class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-            <span class="text-foreground text-[14px]">We'll include a personal note</span>
-          </li>
-          <li class="flex items-start gap-2.5">
-            <svg class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-            <span class="text-foreground text-[14px]">The kindest surprise they'll get</span>
-          </li>
-        </ul>
-
-        <a href="https://buy.stripe.com/cNieVcgqP2H61gd6kZbwk03" class="block w-full py-3.5 rounded-lg bg-emerald-600 text-white text-[15px] font-semibold text-center hover:bg-emerald-700 transition-colors duration-200">
-          Gift a Subscription
-        </a>
-
-        <p class="text-center text-xs text-muted-foreground mt-4 flex items-center justify-center gap-1.5">
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-          Secure payment via Stripe
-        </p>
-      </div>
 
     </div>
 
