@@ -6,7 +6,18 @@
  */
 ?>
 <section id="kindness-ripple" class="relative py-20 lg:py-32 overflow-hidden">
-  <div class="max-w-5xl mx-auto px-4">
+  <!-- Decorative founder polaroids -->
+  <div class="absolute top-12 right-4 xl:right-12 hidden lg:block pointer-events-none z-0" style="transform: rotate(-8deg);">
+    <div class="bg-white p-2 pb-6 shadow-2xl shadow-foreground/15">
+      <img src="<?php echo esc_url(get_theme_file_uri('/assets/decopics/GreenOpenMouthHeadshot.webp')); ?>" alt="" class="block w-[140px] h-[170px] object-cover" loading="lazy">
+    </div>
+  </div>
+  <div class="absolute bottom-16 left-4 xl:left-12 hidden lg:block pointer-events-none z-0" style="transform: rotate(7deg);">
+    <div class="bg-white p-2 pb-6 shadow-2xl shadow-foreground/15">
+      <img src="<?php echo esc_url(get_theme_file_uri('/assets/decopics/Garey with baby.webp')); ?>" alt="" class="block w-[150px] h-[180px] object-cover" loading="lazy">
+    </div>
+  </div>
+  <div class="max-w-5xl mx-auto px-4 relative z-10">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6 items-center">
 
       <!-- Left: Text -->

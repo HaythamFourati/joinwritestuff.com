@@ -5,7 +5,18 @@
  * Shows the simple experience of receiving mail
  */
 ?>
-<section id="how-it-works" class="relative py-16 lg:py-24">
+<section id="how-it-works" class="relative py-16 lg:py-24 overflow-hidden">
+  <!-- Decorative founder polaroids -->
+  <div class="absolute top-12 left-4 xl:left-12 hidden lg:block pointer-events-none z-0" style="transform: rotate(6deg);">
+    <div class="bg-white p-2 pb-6 shadow-2xl shadow-foreground/15">
+      <img src="<?php echo esc_url(get_theme_file_uri('/assets/decopics/Linda at cafe.webp')); ?>" alt="" class="block w-[140px] h-[170px] object-cover" loading="lazy">
+    </div>
+  </div>
+  <div class="absolute bottom-16 right-4 xl:right-14 hidden lg:block pointer-events-none z-0" style="transform: rotate(-5deg);">
+    <div class="bg-white p-2 pb-6 shadow-2xl shadow-foreground/15">
+      <img src="<?php echo esc_url(get_theme_file_uri('/assets/decopics/Linda walking in the woods with Luna.webp')); ?>" alt="" class="block w-[150px] h-[180px] object-cover" loading="lazy">
+    </div>
+  </div>
   <!-- Decorative accents around timeline -->
   <!-- Near header -->
   <div class="absolute top-[7rem] left-[20%] opacity-18 hidden lg:block pointer-events-none">

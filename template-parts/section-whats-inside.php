@@ -5,7 +5,13 @@
  * Showcases the items included in each monthly delivery
  */
 ?>
-<section id="whats-inside" class="relative py-16 lg:py-24">
+<section id="whats-inside" class="relative py-16 lg:py-24 overflow-hidden">
+  <!-- Decorative founder polaroid -->
+  <div class="absolute top-10 right-6 xl:right-16 hidden lg:block pointer-events-none z-0" style="transform: rotate(-7deg);">
+    <div class="bg-white p-2 pb-6 shadow-2xl shadow-foreground/15">
+      <img src="<?php echo esc_url(get_theme_file_uri('/assets/decopics/Garey ice cream.jpeg')); ?>" alt="" class="block w-[150px] h-[180px] object-cover" loading="lazy">
+    </div>
+  </div>
   <!-- Decorative accents scattered around content -->
   <!-- Near header -->
   <div class="absolute top-[8rem] left-[22%] opacity-20 hidden lg:block pointer-events-none">
@@ -162,7 +168,7 @@
     <!-- Bottom Quote -->
     <div class="text-center mt-16 max-w-2xl mx-auto">
       <blockquote class="text-xl md:text-2xl text-foreground font-medium italic leading-relaxed">
-        "It's not a subscription. It's not content. It's a tiny pause in a busy world."
+        "It's not just a subscription. It's not just content. It's a tiny pause in a busy world."
       </blockquote>
       <p class="text-base text-muted-foreground mt-4">
         No screen required.
