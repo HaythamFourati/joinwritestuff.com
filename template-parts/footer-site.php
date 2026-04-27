@@ -97,6 +97,16 @@
               <a href="mailto:<?php echo esc_attr(SITE_EMAIL); ?>" class="text-[14px] text-white/80 hover:text-white transition-colors break-all"><?php echo esc_html(SITE_EMAIL); ?></a>
             </div>
           </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-white/40 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+              <path d="M16 3H8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z"/>
+            </svg>
+            <div>
+              <p class="text-[13px] text-white/40">Manage your subscription</p>
+              <a href="https://billing.stripe.com/p/login/9B6cN45Mb6Xm5wtfVzbwk00" class="text-[14px] text-white/80 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Customer Portal</a>
+            </div>
+          </li>
           <li class="pt-2">
             <p class="text-[13px] text-white/40 leading-relaxed">
               Questions? Send us a message and we'll respond as soon as possible.

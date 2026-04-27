@@ -6,12 +6,6 @@
  */
 ?>
 <section id="whats-inside" class="relative py-16 lg:py-24 overflow-hidden">
-  <!-- Decorative founder polaroid -->
-  <div class="absolute top-10 right-6 xl:right-16 hidden lg:block pointer-events-none z-0" style="transform: rotate(-7deg);">
-    <div class="bg-white p-2 pb-6 shadow-2xl shadow-foreground/15">
-      <img src="<?php echo esc_url(get_theme_file_uri('/assets/decopics/Garey ice cream.jpeg')); ?>" alt="" class="block w-[150px] h-[180px] object-cover" loading="lazy">
-    </div>
-  </div>
   <!-- Decorative accents scattered around content -->
   <!-- Near header -->
   <div class="absolute top-[8rem] left-[22%] opacity-20 hidden lg:block pointer-events-none">
@@ -61,7 +55,13 @@
     </svg>
   </div>
 
-  <div class="max-w-5xl mx-auto px-4">
+  <div class="max-w-5xl mx-auto px-4 relative">
+    <!-- Decorative founder polaroid -->
+    <div class="absolute top-8 -right-[200px] hidden xl:block pointer-events-none z-0" style="transform: rotate(-7deg);">
+      <div class="bg-white p-2 pb-6 shadow-2xl shadow-foreground/15">
+        <img src="<?php echo esc_url(get_theme_file_uri('/assets/decopics/Garey ice cream.jpeg')); ?>" alt="" class="block w-[180px] h-[216px] object-cover" loading="lazy">
+      </div>
+    </div>
     <!-- Section Header -->
     <div class="text-center mb-14 max-w-2xl mx-auto relative">
       <p class="text-sm font-medium text-muted-foreground mb-4 tracking-wide uppercase">What arrives in your mailbox</p>

@@ -6,13 +6,13 @@
  */
 ?>
 <section id="contact" class="relative py-16 lg:py-24 overflow-hidden">
-  <!-- Decorative founder polaroid -->
-  <div class="absolute top-10 right-4 xl:right-14 hidden lg:block pointer-events-none z-0" style="transform: rotate(8deg);">
-    <div class="bg-white p-2 pb-6 shadow-2xl shadow-foreground/15">
-      <img src="<?php echo esc_url(get_theme_file_uri('/assets/decopics/lookupsunbrickLOVE.webp')); ?>" alt="" class="block w-[140px] h-[170px] object-cover" loading="lazy">
-    </div>
-  </div>
   <div class="max-w-5xl mx-auto px-4 relative z-10">
+    <!-- Decorative founder polaroid -->
+    <div class="absolute top-8 -right-[200px] hidden xl:block pointer-events-none z-0" style="transform: rotate(8deg);">
+      <div class="bg-white p-2 pb-6 shadow-2xl shadow-foreground/15">
+        <img src="<?php echo esc_url(get_theme_file_uri('/assets/decopics/lookupsunbrickLOVE.webp')); ?>" alt="" class="block w-[168px] h-[204px] object-cover" loading="lazy">
+      </div>
+    </div>
     <!-- Section Header -->
     <div class="text-center mb-14">
       <p class="text-sm font-medium text-muted-foreground mb-4 tracking-wide uppercase">Limited founding membership</p>
