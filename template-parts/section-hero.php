@@ -35,7 +35,7 @@
           Your mailbox<br class="hidden sm:block">
           deserves
           <span class="relative inline-block text-primary">
-            better
+            a hug
             <!-- Hand-drawn underline -->
             <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 120 8" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M2 5.5 C20 2, 50 7, 80 4 S110 6, 118 5" stroke="hsl(30 92% 53%)" stroke-width="3" stroke-linecap="round"/>
