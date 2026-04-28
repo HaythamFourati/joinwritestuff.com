@@ -54,12 +54,12 @@
 
   <div class="max-w-4xl mx-auto px-4 relative">
     <!-- Decorative founder polaroids -->
-    <div class="absolute top-24 -left-[200px] hidden xl:block pointer-events-none z-0" style="transform: rotate(6deg);">
+    <div class="deco-polaroid absolute top-24 -left-[200px] hidden xl:block pointer-events-none z-0" data-rotation="6" style="transform: rotate(6deg);">
       <div class="bg-white p-2 pb-6 shadow-2xl shadow-foreground/15">
         <img src="<?php echo esc_url(get_theme_file_uri('/assets/decopics/Linda at cafe.webp')); ?>" alt="" class="block w-[168px] h-[204px] object-cover" loading="lazy">
       </div>
     </div>
-    <div class="absolute bottom-24 -right-[200px] hidden xl:block pointer-events-none z-0" style="transform: rotate(-5deg);">
+    <div class="deco-polaroid absolute bottom-24 -right-[200px] hidden xl:block pointer-events-none z-0" data-rotation="-5" style="transform: rotate(-5deg);">
       <div class="bg-white p-2 pb-6 shadow-2xl shadow-foreground/15">
         <img src="<?php echo esc_url(get_theme_file_uri('/assets/decopics/Linda walking in the woods with Luna.webp')); ?>" alt="" class="block w-[180px] h-[216px] object-cover" loading="lazy">
       </div>

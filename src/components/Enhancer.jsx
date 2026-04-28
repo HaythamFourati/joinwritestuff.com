@@ -61,6 +61,28 @@ function Enhancer() {
     `
   }, [currentReview, memberReviews])
 
+  // Hero video poster → iframe on click
+  useEffect(() => {
+    const poster = document.getElementById('hero-video-poster')
+    const wrapper = document.getElementById('hero-video-wrapper')
+    if (!poster || !wrapper) return
+
+    const handleClick = () => {
+      const iframe = document.createElement('iframe')
+      iframe.src = 'https://www.youtube.com/embed/iGQefR6aLe8?autoplay=1&loop=1&playlist=iGQefR6aLe8&controls=1&rel=0&modestbranding=1&playsinline=1'
+      iframe.title = 'The Monthly Detox — A hug in the mail'
+      iframe.className = 'absolute inset-0 w-full h-full block'
+      iframe.frameBorder = '0'
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+      iframe.allowFullscreen = true
+      poster.remove()
+      wrapper.appendChild(iframe)
+    }
+
+    poster.addEventListener('click', handleClick)
+    return () => poster.removeEventListener('click', handleClick)
+  }, [])
+
   // Navbar scroll effect - shrink on scroll
   useEffect(() => {
     let wasScrolled = null
@@ -344,6 +366,40 @@ function Enhancer() {
         },
         start: 'top 85%',
         once: true
+      })
+
+      // === DECO POLAROIDS: scroll-triggered entrance + idle float ===
+      document.querySelectorAll('.deco-polaroid').forEach((el) => {
+        const baseRotation = parseFloat(el.dataset.rotation) || 0
+
+        // Start hidden, slightly off to the side
+        gsap.set(el, { opacity: 0, y: 30, rotation: baseRotation - 4 })
+
+        ScrollTrigger.create({
+          trigger: el.closest('section') || el,
+          start: 'top 80%',
+          once: true,
+          onEnter: () => {
+            gsap.to(el, {
+              opacity: 1,
+              y: 0,
+              rotation: baseRotation,
+              duration: 0.8,
+              ease: 'power2.out',
+              onComplete: () => {
+                // Gentle idle float after entrance
+                gsap.to(el, {
+                  y: -10,
+                  rotation: baseRotation + 1.5,
+                  duration: 3 + Math.random() * 1.5,
+                  ease: 'sine.inOut',
+                  repeat: -1,
+                  yoyo: true,
+                })
+              }
+            })
+          }
+        })
       })
 
       // Section headers

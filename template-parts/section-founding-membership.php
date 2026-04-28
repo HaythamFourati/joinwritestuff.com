@@ -8,7 +8,7 @@
 <section id="contact" class="relative py-16 lg:py-24 overflow-hidden">
   <div class="max-w-5xl mx-auto px-4 relative z-10">
     <!-- Decorative founder polaroid -->
-    <div class="absolute top-8 -right-[200px] hidden xl:block pointer-events-none z-0" style="transform: rotate(8deg);">
+    <div class="deco-polaroid absolute top-8 -right-[200px] hidden xl:block pointer-events-none z-0" data-rotation="8" style="transform: rotate(8deg);">
       <div class="bg-white p-2 pb-6 shadow-2xl shadow-foreground/15">
         <img src="<?php echo esc_url(get_theme_file_uri('/assets/decopics/lookupsunbrickLOVE.webp')); ?>" alt="" class="block w-[168px] h-[204px] object-cover" loading="lazy">
       </div>
