@@ -61,26 +61,45 @@ function Enhancer() {
     `
   }, [currentReview, memberReviews])
 
-  // Hero video poster → iframe on click
+  // Video poster → iframe on click (hero + testimonial)
   useEffect(() => {
-    const poster = document.getElementById('hero-video-poster')
-    const wrapper = document.getElementById('hero-video-wrapper')
-    if (!poster || !wrapper) return
+    const videos = [
+      {
+        posterId: 'hero-video-poster',
+        wrapperId: 'hero-video-wrapper',
+        videoId: 'iGQefR6aLe8',
+        title: 'The Monthly Detox — A hug in the mail',
+      },
+      {
+        posterId: 'testimonial-video-poster',
+        wrapperId: 'testimonial-video-wrapper',
+        videoId: 'HiV3nH6TyQM',
+        title: 'Hug In The Mail — Subscriber testimonial',
+      },
+    ]
 
-    const handleClick = () => {
-      const iframe = document.createElement('iframe')
-      iframe.src = 'https://www.youtube.com/embed/iGQefR6aLe8?autoplay=1&loop=1&playlist=iGQefR6aLe8&controls=1&rel=0&modestbranding=1&playsinline=1'
-      iframe.title = 'The Monthly Detox — A hug in the mail'
-      iframe.className = 'absolute inset-0 w-full h-full block'
-      iframe.frameBorder = '0'
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-      iframe.allowFullscreen = true
-      poster.remove()
-      wrapper.appendChild(iframe)
-    }
+    const cleanups = videos.map(({ posterId, wrapperId, videoId, title }) => {
+      const poster = document.getElementById(posterId)
+      const wrapper = document.getElementById(wrapperId)
+      if (!poster || !wrapper) return null
 
-    poster.addEventListener('click', handleClick)
-    return () => poster.removeEventListener('click', handleClick)
+      const handleClick = () => {
+        const iframe = document.createElement('iframe')
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=1&rel=0&modestbranding=1&playsinline=1`
+        iframe.title = title
+        iframe.className = 'absolute inset-0 w-full h-full block'
+        iframe.frameBorder = '0'
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+        iframe.allowFullscreen = true
+        poster.remove()
+        wrapper.appendChild(iframe)
+      }
+
+      poster.addEventListener('click', handleClick)
+      return () => poster.removeEventListener('click', handleClick)
+    })
+
+    return () => cleanups.forEach((fn) => fn && fn())
   }, [])
 
   // Navbar scroll effect - shrink on scroll
