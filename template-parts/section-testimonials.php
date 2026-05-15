@@ -27,10 +27,8 @@ $video_id = 'HiV3nH6TyQM';
         </div>
 
         <!-- Headline -->
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6 leading-[1.1]">
-          Hear it from someone
-          <span class="relative inline-block text-primary">
-            who lived it
+        <h2 class="text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-foreground mb-6 leading-[1.1]">
+          Hear it from someone <span class="relative inline-block text-primary">who lived it
             <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 120 8" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M2 5.5 C20 2, 50 7, 80 4 S110 6, 118 5" stroke="hsl(30 92% 53%)" stroke-width="3" stroke-linecap="round"/>
             </svg>
@@ -45,9 +43,12 @@ $video_id = 'HiV3nH6TyQM';
         </div>
 
         <!-- Body -->
-        <p class="text-base text-muted-foreground leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
-          She sat down with her envelope, opened it on camera, and shared what it meant to her after losing both her parents this year. In her own words: <span class="text-foreground font-medium">"In this world we're so disconnected, we truly need each other."</span>
-        </p>
+        <div class="flex flex-col gap-2 mb-8 max-w-md mx-auto lg:mx-0 text-base text-muted-foreground leading-relaxed">
+          <p>After losing both of her parents and a dear friend this past year, Leslie shared something that deeply moved us.</p>
+          <p>She said that in a world that can feel so disconnected, we truly need each other — and that receiving her Hug in the Mail felt like exactly what her heart needed.</p>
+          <p class="text-foreground/80 font-medium">Not just to send pretty mail. But to send comfort. Connection. Humanity.</p>
+          <p>A reminder that someone, somewhere, is thinking about you.</p>
+        </div>
 
         <!-- CTA -->
         <a href="#contact" class="group inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-primary text-white text-base font-semibold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-200">
