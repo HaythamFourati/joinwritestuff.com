@@ -76,6 +76,21 @@
       <p class="text-lg text-muted-foreground leading-relaxed">
         Light as a smile, and packed with everything your soul needs in the moment.
       </p>
+
+      <!-- Envelope contents photo -->
+      <div class="mt-10 relative inline-block w-full">
+        <div class="bg-white p-3 pb-8 shadow-2xl shadow-foreground/15 rotate-1 mx-auto max-w-xl" style="border-radius: 4px;">
+          <img
+            src="<?php echo esc_url(get_theme_file_uri('/assets/inside the mail.webp')); ?>"
+            alt="A look inside the monthly envelope — letters, postcards, stickers and more"
+            class="block w-full object-cover"
+            style="border-radius: 2px;"
+            loading="lazy"
+            width="800"
+            height="500"
+          >
+        </div>
+      </div>
     </div>
 
     <!-- Content Grid -->
