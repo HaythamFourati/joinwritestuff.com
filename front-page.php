@@ -14,7 +14,6 @@ get_header(); ?>
   <?php get_template_part('template-parts/section-testimonials'); ?>
   <?php get_template_part('template-parts/section-who-we-are'); ?>
   <?php get_template_part('template-parts/section-founding-membership'); ?>
-  <?php get_template_part('template-parts/section-latest-posts'); ?>
   <?php get_template_part('template-parts/section-kindness-ripple'); ?>
   <?php get_template_part('template-parts/footer-site'); ?>
 </div>
