@@ -61,45 +61,211 @@ function Enhancer() {
     `
   }, [currentReview, memberReviews])
 
-  // Video poster → iframe on click (hero + testimonial)
+  // Hero video poster → iframe on click (hero only — standalone)
   useEffect(() => {
-    const videos = [
-      {
-        posterId: 'hero-video-poster',
-        wrapperId: 'hero-video-wrapper',
-        videoId: 'iGQefR6aLe8',
-        title: 'The Monthly Detox — A hug in the mail',
-      },
-      {
-        posterId: 'testimonial-video-poster',
-        wrapperId: 'testimonial-video-wrapper',
-        videoId: 'HiV3nH6TyQM',
-        title: 'Hug In The Mail — Subscriber testimonial',
-      },
+    const poster = document.getElementById('hero-video-poster')
+    const wrapper = document.getElementById('hero-video-wrapper')
+    if (!poster || !wrapper) return
+
+    const handleClick = () => {
+      const iframe = document.createElement('iframe')
+      iframe.src = 'https://www.youtube.com/embed/HiV3nH6TyQM?autoplay=1&loop=1&playlist=HiV3nH6TyQM&controls=1&rel=0&modestbranding=1&playsinline=1'
+      iframe.title = 'Leslie — Hug In The Mail subscriber'
+      iframe.className = 'absolute inset-0 w-full h-full block'
+      iframe.frameBorder = '0'
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+      iframe.allowFullscreen = true
+      poster.remove()
+      wrapper.appendChild(iframe)
+    }
+
+    poster.addEventListener('click', handleClick)
+    return () => poster.removeEventListener('click', handleClick)
+  }, [])
+
+  // Testimonials carousel — video + auto-advance + UX rules
+  useEffect(() => {
+    const carousel = document.getElementById('testimonials-carousel')
+    if (!carousel) return
+
+    const slides = carousel.querySelectorAll('.testimonial-slide')
+    const dots = carousel.querySelectorAll('.testimonial-dot')
+    const counter = document.getElementById('testimonials-counter')
+    const prevBtn = document.getElementById('testimonials-prev')
+    const nextBtn = document.getElementById('testimonials-next')
+    const total = slides.length
+    if (!total) return
+
+    // Per-slide video metadata
+    const slideVideos = [
+      { videoId: 'HiV3nH6TyQM', title: 'Leslie — Hug In The Mail subscriber', label: '— LESLIE, SUBSCRIBER' },
+      { videoId: 'UaJ2BirDlEk', title: 'Subscriber testimonial — Hug In The Mail', label: '— A SUBSCRIBER' },
+      { videoId: 'vmaqV76Ujx0', title: 'Subscriber testimonial — Hug In The Mail', label: '— A SUBSCRIBER' },
     ]
 
-    const cleanups = videos.map(({ posterId, wrapperId, videoId, title }) => {
-      const poster = document.getElementById(posterId)
-      const wrapper = document.getElementById(wrapperId)
-      if (!poster || !wrapper) return null
+    // Track auto-advance timer
+    let autoTimer = null
+    let isHovered = false
 
-      const handleClick = () => {
-        const iframe = document.createElement('iframe')
-        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=1&rel=0&modestbranding=1&playsinline=1`
-        iframe.title = title
-        iframe.className = 'absolute inset-0 w-full h-full block'
-        iframe.frameBorder = '0'
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-        iframe.allowFullscreen = true
-        poster.remove()
-        wrapper.appendChild(iframe)
+    // Returns true if the slide at [index] has a live iframe (video playing)
+    const slideHasActiveVideo = (index) => {
+      const wrapper = document.getElementById(`testimonial-video-wrapper-${index}`)
+      return wrapper ? !!wrapper.querySelector('iframe') : false
+    }
+
+    // Destroy the iframe in a slide and restore the poster thumbnail
+    const killVideo = (index) => {
+      const wrapper = document.getElementById(`testimonial-video-wrapper-${index}`)
+      if (!wrapper) return
+      const iframe = wrapper.querySelector('iframe')
+      if (!iframe) return
+
+      // Remove the iframe (stops playback)
+      iframe.remove()
+
+      // Re-inject the poster thumbnail
+      const { videoId, title, label } = slideVideos[index]
+
+      const poster = document.createElement('div')
+      poster.id = `testimonial-video-poster-${index}`
+      poster.className = 'absolute inset-0 cursor-pointer group'
+      poster.innerHTML = `
+        <img
+          src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg"
+          alt="${title}"
+          class="w-full h-full object-cover block"
+          width="480" height="360"
+        >
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+        <div class="absolute bottom-3 right-3 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
+          <svg class="w-5 h-5 text-white ml-0.5" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        ${label ? `<div class="absolute bottom-3 left-3 bg-white/95 text-foreground text-[10px] font-bold tracking-wide px-2.5 py-1 rounded-full shadow">${label}</div>` : ''}
+      `
+      wrapper.appendChild(poster)
+
+      // Re-attach click handler on the new poster
+      poster.addEventListener('click', () => playVideo(index))
+    }
+
+    // Inject iframe into a slide's wrapper
+    const playVideo = (index) => {
+      const wrapper = document.getElementById(`testimonial-video-wrapper-${index}`)
+      if (!wrapper || wrapper.querySelector('iframe')) return
+
+      const poster = document.getElementById(`testimonial-video-poster-${index}`)
+      const { videoId, title } = slideVideos[index]
+
+      const iframe = document.createElement('iframe')
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=1&rel=0&modestbranding=1&playsinline=1`
+      iframe.title = title
+      iframe.className = 'absolute inset-0 w-full h-full block'
+      iframe.frameBorder = '0'
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+      iframe.allowFullscreen = true
+
+      poster?.remove()
+      wrapper.appendChild(iframe)
+
+      // Stop auto-advance while video plays
+      stopAuto()
+    }
+
+    // Update dots + counter UI
+    const updateUI = (index) => {
+      dots.forEach((dot, i) => {
+        const active = i === index
+        dot.classList.toggle('bg-primary', active)
+        dot.classList.toggle('scale-125', active)
+        dot.classList.toggle('bg-foreground/20', !active)
+        dot.setAttribute('aria-selected', active ? 'true' : 'false')
+      })
+      if (counter) counter.textContent = `${index + 1} / ${total}`
+    }
+
+    // Core slide transition
+    const goTo = (index, fromAuto = false) => {
+      const current = parseInt(carousel.dataset.active, 10) || 0
+      if (index === current && !fromAuto) return
+
+      // If a video is playing in the current slide, kill it before leaving
+      if (slideHasActiveVideo(current)) {
+        killVideo(current)
       }
 
-      poster.addEventListener('click', handleClick)
-      return () => poster.removeEventListener('click', handleClick)
+      slides[current].classList.add('hidden')
+      slides[index].classList.remove('hidden')
+      updateUI(index)
+      carousel.dataset.active = index
+    }
+
+    // Auto-advance logic
+    const startAuto = () => {
+      stopAuto()
+      autoTimer = setInterval(() => {
+        if (isHovered) return
+        const current = parseInt(carousel.dataset.active, 10) || 0
+        // Don't advance if a video is actively playing in the current slide
+        if (slideHasActiveVideo(current)) return
+        goTo((current + 1) % total, true)
+      }, 5000)
+    }
+
+    const stopAuto = () => {
+      if (autoTimer) {
+        clearInterval(autoTimer)
+        autoTimer = null
+      }
+    }
+
+    // Attach initial click handlers to all poster thumbnails
+    slideVideos.forEach((_, i) => {
+      const poster = document.getElementById(`testimonial-video-poster-${i}`)
+      poster?.addEventListener('click', () => playVideo(i))
     })
 
-    return () => cleanups.forEach((fn) => fn && fn())
+    // Prev / Next / Dot handlers — always stop playing video first
+    const handlePrev = () => {
+      const current = parseInt(carousel.dataset.active, 10) || 0
+      goTo((current - 1 + total) % total)
+      startAuto()
+    }
+
+    const handleNext = () => {
+      const current = parseInt(carousel.dataset.active, 10) || 0
+      goTo((current + 1) % total)
+      startAuto()
+    }
+
+    const dotHandlers = Array.from(dots).map((dot) => {
+      const handler = () => {
+        goTo(parseInt(dot.dataset.dot, 10))
+        startAuto()
+      }
+      dot.addEventListener('click', handler)
+      return { dot, handler }
+    })
+
+    // Pause auto-advance on hover
+    const handleMouseEnter = () => { isHovered = true }
+    const handleMouseLeave = () => { isHovered = false }
+
+    prevBtn?.addEventListener('click', handlePrev)
+    nextBtn?.addEventListener('click', handleNext)
+    carousel.addEventListener('mouseenter', handleMouseEnter)
+    carousel.addEventListener('mouseleave', handleMouseLeave)
+
+    // Kick off auto-advance
+    startAuto()
+
+    return () => {
+      stopAuto()
+      prevBtn?.removeEventListener('click', handlePrev)
+      nextBtn?.removeEventListener('click', handleNext)
+      carousel.removeEventListener('mouseenter', handleMouseEnter)
+      carousel.removeEventListener('mouseleave', handleMouseLeave)
+      dotHandlers.forEach(({ dot, handler }) => dot.removeEventListener('click', handler))
+    }
   }, [])
 
   // Navbar scroll effect - shrink on scroll

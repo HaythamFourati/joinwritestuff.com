@@ -68,9 +68,8 @@
         </div>
       </div>
 
-      <!-- Right: YouTube Short Video -->
+      <!-- Right: Real Subscriber Testimonial Video -->
       <div class="hero-illustration order-1 lg:order-2 flex justify-center lg:justify-end">
-        <!-- Decorative ring behind video -->
         <div class="relative">
           <div class="absolute inset-[-20px] rounded-[2rem] border-2 border-dashed border-primary/15 pointer-events-none" aria-hidden="true"></div>
           <div class="absolute inset-[-40px] rounded-[2.5rem] border border-accent/10 pointer-events-none" aria-hidden="true"></div>
@@ -82,15 +81,25 @@
                 <!-- Thumbnail shown by default -->
                 <div id="hero-video-poster" class="absolute inset-0 cursor-pointer group">
                   <img
-                    src="https://i.ytimg.com/vi/iGQefR6aLe8/hqdefault.jpg"
-                    alt="Watch our story"
+                    src="https://i.ytimg.com/vi/HiV3nH6TyQM/hqdefault.jpg"
+                    alt="Leslie's subscriber story"
                     class="w-full h-full object-cover block"
                   >
-                  <!-- Play button: bottom-right, away from face -->
+                  <!-- Gradient overlay -->
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  <!-- Quote chip top-left -->
+                  <div class="absolute top-3 left-3 right-3">
+                    <p class="text-white text-[11px] font-semibold leading-snug drop-shadow-sm italic">"I could really use a hug — and one came in the mail."</p>
+                  </div>
+                  <!-- Play button: bottom-right -->
                   <div class="absolute bottom-3 right-3 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
                     <svg class="w-5 h-5 text-white ml-0.5" viewBox="0 0 24 24" fill="currentColor">
                       <polygon points="5,3 19,12 5,21"/>
                     </svg>
+                  </div>
+                  <!-- Name tag bottom-left -->
+                  <div class="absolute bottom-3 left-3 bg-white/95 text-foreground text-[10px] font-bold tracking-wide px-2.5 py-1 rounded-full shadow">
+                    — LESLIE, SUBSCRIBER
                   </div>
                 </div>
                 <!-- iframe injected on click -->
@@ -100,7 +109,7 @@
 
           <!-- Small accent tag on the polaroid -->
           <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-accent text-white text-[11px] font-bold tracking-wide px-3 py-1 rounded-full shadow-md whitespace-nowrap">
-            Watch our story ✉
+            ✉ Real subscriber, real words
           </div>
         </div>
       </div>
