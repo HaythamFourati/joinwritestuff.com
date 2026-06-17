@@ -79,7 +79,7 @@
             <div class="w-[240px] md:w-[275px] lg:w-[310px] overflow-hidden" style="border-radius: 2px;">
               <div class="aspect-[3/4.2] relative" id="hero-video-wrapper">
                 <!-- Thumbnail shown by default -->
-                <div id="hero-video-poster" class="absolute inset-0 cursor-pointer group">
+                <div id="hero-video-poster" class="absolute inset-0 cursor-pointer group" style="touch-action: manipulation;">
                   <img
                     src="https://i.ytimg.com/vi/HiV3nH6TyQM/hqdefault.jpg"
                     alt="Leslie's subscriber story"

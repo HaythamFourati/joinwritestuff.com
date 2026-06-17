@@ -63,11 +63,19 @@ function Enhancer() {
 
   // Hero video poster → iframe on click (hero only — standalone)
   useEffect(() => {
-    const poster = document.getElementById('hero-video-poster')
     const wrapper = document.getElementById('hero-video-wrapper')
-    if (!poster || !wrapper) return
+    if (!wrapper) return
 
-    const handleClick = () => {
+    const handleClick = (e) => {
+      const poster = document.getElementById('hero-video-poster')
+      if (!poster) return
+      
+      // Prevent if already has iframe
+      if (wrapper.querySelector('iframe')) return
+      
+      e.preventDefault()
+      e.stopPropagation()
+
       const iframe = document.createElement('iframe')
       iframe.src = 'https://www.youtube.com/embed/HiV3nH6TyQM?autoplay=1&loop=1&playlist=HiV3nH6TyQM&controls=1&rel=0&modestbranding=1&playsinline=1'
       iframe.title = 'Leslie — Hug In The Mail subscriber'
@@ -75,12 +83,48 @@ function Enhancer() {
       iframe.frameBorder = '0'
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
       iframe.allowFullscreen = true
+      
+      // Create close button overlay
+      const closeBtn = document.createElement('button')
+      closeBtn.className = 'absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/90 transition-all duration-200'
+      closeBtn.setAttribute('aria-label', 'Close video')
+      closeBtn.innerHTML = '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>'
+      closeBtn.onclick = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        // Restore hero poster
+        iframe.remove()
+        closeBtn.remove()
+        const restoredPoster = document.createElement('div')
+        restoredPoster.id = 'hero-video-poster'
+        restoredPoster.className = 'absolute inset-0 cursor-pointer group'
+        restoredPoster.style.touchAction = 'manipulation'
+        restoredPoster.innerHTML = `
+          <img src="https://i.ytimg.com/vi/HiV3nH6TyQM/hqdefault.jpg" alt="Leslie's subscriber story" class="w-full h-full object-cover block">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+          <div class="absolute top-3 left-3 right-3">
+            <p class="text-white text-[11px] font-semibold leading-snug drop-shadow-sm italic">"I could really use a hug — and one came in the mail."</p>
+          </div>
+          <div class="absolute bottom-3 right-3 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
+            <svg class="w-5 h-5 text-white ml-0.5" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+          <div class="absolute bottom-3 left-3 bg-white/95 text-foreground text-[10px] font-bold tracking-wide px-2.5 py-1 rounded-full shadow">— LESLIE, SUBSCRIBER</div>
+        `
+        wrapper.appendChild(restoredPoster)
+      }
+      
       poster.remove()
       wrapper.appendChild(iframe)
+      wrapper.appendChild(closeBtn)
     }
 
-    poster.addEventListener('click', handleClick)
-    return () => poster.removeEventListener('click', handleClick)
+    // Use event delegation on wrapper for better mobile support
+    wrapper.addEventListener('click', handleClick)
+    wrapper.addEventListener('touchend', handleClick)
+    return () => {
+      wrapper.removeEventListener('click', handleClick)
+      wrapper.removeEventListener('touchend', handleClick)
+    }
   }, [])
 
   // Testimonials carousel — video + auto-advance + UX rules
@@ -98,9 +142,24 @@ function Enhancer() {
 
     // Per-slide video metadata
     const slideVideos = [
-      { videoId: 'HiV3nH6TyQM', title: 'Leslie — Hug In The Mail subscriber', label: '— LESLIE, SUBSCRIBER' },
-      { videoId: 'UaJ2BirDlEk', title: 'Subscriber testimonial — Hug In The Mail', label: '— A SUBSCRIBER' },
-      { videoId: 'vmaqV76Ujx0', title: 'Subscriber testimonial — Hug In The Mail', label: '— A SUBSCRIBER' },
+      { 
+        videoId: 'HiV3nH6TyQM', 
+        title: 'Leslie — Hug In The Mail subscriber', 
+        label: '— LESLIE, SUBSCRIBER',
+        quote: '"I could really use a hug — and one came in the mail."'
+      },
+      { 
+        videoId: 'UaJ2BirDlEk', 
+        title: 'Subscriber testimonial — Hug In The Mail', 
+        label: '— A SUBSCRIBER',
+        quote: '"Something in the mail that actually made me smile."'
+      },
+      { 
+        videoId: 'vmaqV76Ujx0', 
+        title: 'Subscriber testimonial — Hug In The Mail', 
+        label: '— A SUBSCRIBER',
+        quote: '"It feels like getting a hug from a stranger who somehow knows you."'
+      },
     ]
 
     // Track auto-advance timer
@@ -122,13 +181,18 @@ function Enhancer() {
 
       // Remove the iframe (stops playback)
       iframe.remove()
+      
+      // Remove close button if it exists
+      const closeBtn = wrapper.querySelector('button[aria-label="Close video"]')
+      closeBtn?.remove()
 
       // Re-inject the poster thumbnail
-      const { videoId, title, label } = slideVideos[index]
+      const { videoId, title, label, quote } = slideVideos[index]
 
       const poster = document.createElement('div')
       poster.id = `testimonial-video-poster-${index}`
       poster.className = 'absolute inset-0 cursor-pointer group'
+      poster.style.touchAction = 'manipulation' // Better mobile touch
       poster.innerHTML = `
         <img
           src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg"
@@ -137,15 +201,15 @@ function Enhancer() {
           width="480" height="360"
         >
         <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+        <div class="absolute top-3 left-3 right-3">
+          <p class="text-white text-[11px] font-semibold leading-snug drop-shadow-sm italic">${quote}</p>
+        </div>
         <div class="absolute bottom-3 right-3 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
           <svg class="w-5 h-5 text-white ml-0.5" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
         </div>
         ${label ? `<div class="absolute bottom-3 left-3 bg-white/95 text-foreground text-[10px] font-bold tracking-wide px-2.5 py-1 rounded-full shadow">${label}</div>` : ''}
       `
       wrapper.appendChild(poster)
-
-      // Re-attach click handler on the new poster
-      poster.addEventListener('click', () => playVideo(index))
     }
 
     // Inject iframe into a slide's wrapper
@@ -164,8 +228,21 @@ function Enhancer() {
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
       iframe.allowFullscreen = true
 
+      // Create close button overlay
+      const closeBtn = document.createElement('button')
+      closeBtn.className = 'absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/90 transition-all duration-200'
+      closeBtn.setAttribute('aria-label', 'Close video')
+      closeBtn.innerHTML = '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>'
+      closeBtn.onclick = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        killVideo(index)
+        startAuto()
+      }
+
       poster?.remove()
       wrapper.appendChild(iframe)
+      wrapper.appendChild(closeBtn)
 
       // Stop auto-advance while video plays
       stopAuto()
@@ -218,10 +295,29 @@ function Enhancer() {
       }
     }
 
-    // Attach initial click handlers to all poster thumbnails
+    // Use event delegation on each wrapper for mobile-friendly video play
     slideVideos.forEach((_, i) => {
-      const poster = document.getElementById(`testimonial-video-poster-${i}`)
-      poster?.addEventListener('click', () => playVideo(i))
+      const wrapper = document.getElementById(`testimonial-video-wrapper-${i}`)
+      if (!wrapper) return
+      
+      const handleVideoClick = (e) => {
+        // Only trigger if clicking the poster (not the iframe)
+        const poster = document.getElementById(`testimonial-video-poster-${i}`)
+        if (!poster || wrapper.querySelector('iframe')) return
+        
+        e.preventDefault()
+        e.stopPropagation()
+        playVideo(i)
+      }
+      
+      wrapper.addEventListener('click', handleVideoClick)
+      wrapper.addEventListener('touchend', handleVideoClick)
+      
+      // Store cleanup function
+      wrapper._cleanupVideo = () => {
+        wrapper.removeEventListener('click', handleVideoClick)
+        wrapper.removeEventListener('touchend', handleVideoClick)
+      }
     })
 
     // Prev / Next / Dot handlers — always stop playing video first
@@ -265,6 +361,12 @@ function Enhancer() {
       carousel.removeEventListener('mouseenter', handleMouseEnter)
       carousel.removeEventListener('mouseleave', handleMouseLeave)
       dotHandlers.forEach(({ dot, handler }) => dot.removeEventListener('click', handler))
+      
+      // Clean up video wrapper listeners
+      slideVideos.forEach((_, i) => {
+        const wrapper = document.getElementById(`testimonial-video-wrapper-${i}`)
+        wrapper?._cleanupVideo?.()
+      })
     }
   }, [])
 

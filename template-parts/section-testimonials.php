@@ -54,7 +54,7 @@ $testimonials = [
           </svg>
         </span>
       </h2>
-      <p class="text-base text-muted-foreground max-w-md mx-auto">Real words from real people who </br> opened their mailbox and felt it.</p>
+      <p class="text-base text-muted-foreground max-w-md mx-auto">Real words from real people who opened their mailbox and felt it.</p>
     </div>
 
     <!-- Testimonial Carousel -->
@@ -100,7 +100,7 @@ $testimonials = [
             <div class="bg-white p-3 pb-8 shadow-2xl shadow-foreground/20 <?php echo esc_attr( $t['rotation'] ); ?> hover:rotate-0 transition-transform duration-500" style="border-radius: 4px;">
               <div class="w-[240px] md:w-[275px] lg:w-[310px] overflow-hidden" style="border-radius: 2px;">
                 <div class="aspect-[3/4.2] relative" id="testimonial-video-wrapper-<?php echo $i; ?>">
-                  <div id="testimonial-video-poster-<?php echo $i; ?>" class="absolute inset-0 cursor-pointer group">
+                  <div id="testimonial-video-poster-<?php echo $i; ?>" class="absolute inset-0 cursor-pointer group" style="touch-action: manipulation;">
                     <img
                       src="https://i.ytimg.com/vi/<?php echo esc_attr( $t['video_id'] ); ?>/hqdefault.jpg"
                       alt="<?php echo esc_attr( $t['name'] ); ?> subscriber testimonial"
