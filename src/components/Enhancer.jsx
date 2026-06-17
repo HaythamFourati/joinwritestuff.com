@@ -66,65 +66,76 @@ function Enhancer() {
     const wrapper = document.getElementById('hero-video-wrapper')
     if (!wrapper) return
 
-    const handleClick = (e) => {
-      const poster = document.getElementById('hero-video-poster')
-      if (!poster) return
-      
-      // Prevent if already has iframe
+    const videoId = 'HiV3nH6TyQM'
+    const title = 'Leslie — Hug In The Mail subscriber'
+    const quote = '"I could really use a hug — and one came in the mail."'
+    const label = '— LESLIE, SUBSCRIBER'
+
+    const buildPoster = () => {
+      const poster = document.createElement('div')
+      poster.id = 'hero-video-poster'
+      poster.className = 'absolute inset-0 cursor-pointer group'
+      poster.style.touchAction = 'manipulation'
+      poster.innerHTML = `
+        <img src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg" alt="Leslie's subscriber story" class="w-full h-full object-cover block">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+        <div class="absolute top-3 left-3 right-3">
+          <p class="text-white text-[11px] font-semibold leading-snug drop-shadow-sm italic">${quote}</p>
+        </div>
+        <div class="absolute bottom-3 right-3 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
+          <svg class="w-5 h-5 text-white ml-0.5" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        <div class="absolute bottom-3 left-3 bg-white/95 text-foreground text-[10px] font-bold tracking-wide px-2.5 py-1 rounded-full shadow">${label}</div>
+      `
+      return poster
+    }
+
+    const stopVideo = () => {
+      wrapper.querySelector('iframe')?.remove()
+      wrapper.querySelector('button[aria-label="Close video"]')?.remove()
+      if (!document.getElementById('hero-video-poster')) {
+        wrapper.appendChild(buildPoster())
+      }
+    }
+
+    const playVideo = () => {
       if (wrapper.querySelector('iframe')) return
-      
-      e.preventDefault()
-      e.stopPropagation()
 
       const iframe = document.createElement('iframe')
-      iframe.src = 'https://www.youtube.com/embed/HiV3nH6TyQM?autoplay=1&loop=1&playlist=HiV3nH6TyQM&controls=1&rel=0&modestbranding=1&playsinline=1'
-      iframe.title = 'Leslie — Hug In The Mail subscriber'
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=1&rel=0&modestbranding=1&playsinline=1`
+      iframe.title = title
       iframe.className = 'absolute inset-0 w-full h-full block'
       iframe.frameBorder = '0'
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
       iframe.allowFullscreen = true
-      
-      // Create close button overlay
+
       const closeBtn = document.createElement('button')
-      closeBtn.className = 'absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/90 transition-all duration-200'
+      closeBtn.type = 'button'
+      closeBtn.className = 'absolute top-2 right-2 z-10 w-9 h-9 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/90 transition-all duration-200'
       closeBtn.setAttribute('aria-label', 'Close video')
       closeBtn.innerHTML = '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>'
-      closeBtn.onclick = (e) => {
-        e.preventDefault()
+      closeBtn.addEventListener('click', (e) => {
         e.stopPropagation()
-        // Restore hero poster
-        iframe.remove()
-        closeBtn.remove()
-        const restoredPoster = document.createElement('div')
-        restoredPoster.id = 'hero-video-poster'
-        restoredPoster.className = 'absolute inset-0 cursor-pointer group'
-        restoredPoster.style.touchAction = 'manipulation'
-        restoredPoster.innerHTML = `
-          <img src="https://i.ytimg.com/vi/HiV3nH6TyQM/hqdefault.jpg" alt="Leslie's subscriber story" class="w-full h-full object-cover block">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-          <div class="absolute top-3 left-3 right-3">
-            <p class="text-white text-[11px] font-semibold leading-snug drop-shadow-sm italic">"I could really use a hug — and one came in the mail."</p>
-          </div>
-          <div class="absolute bottom-3 right-3 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
-            <svg class="w-5 h-5 text-white ml-0.5" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-          </div>
-          <div class="absolute bottom-3 left-3 bg-white/95 text-foreground text-[10px] font-bold tracking-wide px-2.5 py-1 rounded-full shadow">— LESLIE, SUBSCRIBER</div>
-        `
-        wrapper.appendChild(restoredPoster)
-      }
-      
-      poster.remove()
+        stopVideo()
+      })
+
+      document.getElementById('hero-video-poster')?.remove()
       wrapper.appendChild(iframe)
       wrapper.appendChild(closeBtn)
     }
 
-    // Use event delegation on wrapper for better mobile support
-    wrapper.addEventListener('click', handleClick)
-    wrapper.addEventListener('touchend', handleClick)
-    return () => {
-      wrapper.removeEventListener('click', handleClick)
-      wrapper.removeEventListener('touchend', handleClick)
+    // Single delegated click handler on the wrapper
+    const handleClick = (e) => {
+      // Ignore clicks on the close button (handled separately)
+      if (e.target.closest('button[aria-label="Close video"]')) return
+      // Only play if poster is present (not when iframe is showing)
+      if (document.getElementById('hero-video-poster')) {
+        playVideo()
+      }
     }
+
+    wrapper.addEventListener('click', handleClick)
+    return () => wrapper.removeEventListener('click', handleClick)
   }, [])
 
   // Testimonials carousel — video + auto-advance + UX rules
@@ -230,15 +241,15 @@ function Enhancer() {
 
       // Create close button overlay
       const closeBtn = document.createElement('button')
-      closeBtn.className = 'absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/90 transition-all duration-200'
+      closeBtn.type = 'button'
+      closeBtn.className = 'absolute top-2 right-2 z-10 w-9 h-9 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/90 transition-all duration-200'
       closeBtn.setAttribute('aria-label', 'Close video')
       closeBtn.innerHTML = '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>'
-      closeBtn.onclick = (e) => {
-        e.preventDefault()
+      closeBtn.addEventListener('click', (e) => {
         e.stopPropagation()
         killVideo(index)
         startAuto()
-      }
+      })
 
       poster?.remove()
       wrapper.appendChild(iframe)
@@ -295,29 +306,22 @@ function Enhancer() {
       }
     }
 
-    // Use event delegation on each wrapper for mobile-friendly video play
+    // Click-only delegation on each wrapper (reliable on mobile + desktop)
     slideVideos.forEach((_, i) => {
       const wrapper = document.getElementById(`testimonial-video-wrapper-${i}`)
       if (!wrapper) return
-      
+
       const handleVideoClick = (e) => {
-        // Only trigger if clicking the poster (not the iframe)
+        // Ignore close button clicks (handled separately)
+        if (e.target.closest('button[aria-label="Close video"]')) return
+        // Only play when the poster is present (no active iframe)
         const poster = document.getElementById(`testimonial-video-poster-${i}`)
         if (!poster || wrapper.querySelector('iframe')) return
-        
-        e.preventDefault()
-        e.stopPropagation()
         playVideo(i)
       }
-      
+
       wrapper.addEventListener('click', handleVideoClick)
-      wrapper.addEventListener('touchend', handleVideoClick)
-      
-      // Store cleanup function
-      wrapper._cleanupVideo = () => {
-        wrapper.removeEventListener('click', handleVideoClick)
-        wrapper.removeEventListener('touchend', handleVideoClick)
-      }
+      wrapper._cleanupVideo = () => wrapper.removeEventListener('click', handleVideoClick)
     })
 
     // Prev / Next / Dot handlers — always stop playing video first
