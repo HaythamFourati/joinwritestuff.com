@@ -2,16 +2,16 @@
   Theme Name: joinwritestuff.com
   Author: Haytham Fourati
   Author URI: https://github.com/HaythamFourati/joinwritestuff.com
-  Description: A warm, feminine WordPress theme for the Komedy & Kindness Mail Club. Built with Tailwind CSS v4, React enhancements, and gentle GSAP animations. Bringing back the joy of real mail.
-  Version: 1.0.0
+  Description: Hug in the Mail — a warm, editorial WordPress theme. Cozy paper-and-warmth design system, hand-authored in plain CSS. Bringing back the joy of real mail.
+  Version: 1.1.0
   Text Domain: joinwritestuff
   License: GPL-2.0-or-later
   License URI: https://www.gnu.org/licenses/gpl-2.0.html
-  Tags: subscription, mail-club, feminine, warm, custom-colors, featured-images, one-column
+  Tags: subscription, mail-club, warm, editorial, custom-colors, featured-images, one-column
 */
 
 /*
   This file only exists for WordPress to recognize the theme.
-  All styles are compiled from src/index.css to build/index.css via Tailwind CLI.
-  Do not add CSS here - it won't be loaded on the front-end.
+  All front-end styles live in assets/design.css (loaded site-wide via functions.php).
+  Do not add CSS here — it won't be loaded on the front-end.
 */

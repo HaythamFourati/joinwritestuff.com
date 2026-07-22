@@ -42,8 +42,9 @@ define('SITE_RATING', '');
 define('SITE_RATING_SOURCE', '');
 
 function boilerplate_load_assets() {
-  wp_enqueue_script('ourmainjs', get_theme_file_uri('/build/index.js'), array('wp-element', 'react-jsx-runtime'), '1.0', true);
-  wp_enqueue_style('ourmaincss', get_theme_file_uri('/build/index.css'));
+  // Single site-wide design system — "Hug in the Mail" 2026 redesign.
+  wp_enqueue_style('hitm-design', get_theme_file_uri('/assets/design.css'), array(), '1.1');
+  wp_enqueue_script('hitm-design', get_theme_file_uri('/assets/design.js'), array(), '1.1', true);
 }
 
 add_action('wp_enqueue_scripts', 'boilerplate_load_assets');
@@ -55,22 +56,13 @@ function boilerplate_add_support() {
 
 add_action('after_setup_theme', 'boilerplate_add_support');
 
-// Preload hero image for LCP optimization
+// Preload hero letter photo for LCP optimization
 function boilerplate_preload_hero_image() {
   if (is_front_page()) {
-    echo '<link rel="preload" as="image" href="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?q=80&w=2000&auto=format&fit=crop" fetchpriority="high">';
+    echo '<link rel="preload" as="image" href="' . esc_url(get_theme_file_uri('/assets/decopics/LookUpLaughBlue.webp')) . '" fetchpriority="high">';
   }
 }
 add_action('wp_head', 'boilerplate_preload_hero_image', 1);
-
-// Add defer attribute to theme script
-function boilerplate_defer_scripts($tag, $handle, $src) {
-  if ($handle === 'ourmainjs') {
-    return '<script src="' . esc_url($src) . '" id="' . $handle . '-js" defer></script>';
-  }
-  return $tag;
-}
-add_filter('script_loader_tag', 'boilerplate_defer_scripts', 10, 3);
 
 /**
  * Generate Table of Contents from post content headings
@@ -128,18 +120,15 @@ function render_table_of_contents() {
   
   ob_start();
   ?>
-  <nav class="toc-container mb-10 p-6 rounded-2xl bg-muted/30 border border-border/50">
-    <h2 class="text-[15px] font-semibold text-foreground mb-4 flex items-center gap-2">
-      <svg class="w-4 h-4 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h12"/></svg>
+  <nav class="toc" aria-label="Table of contents">
+    <h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h12"/></svg>
       Table of Contents
     </h2>
-    <ul class="space-y-2">
+    <ul>
       <?php foreach ($toc_items as $item) : ?>
-        <li class="<?php echo $item['level'] === '3' ? 'ml-4' : ''; ?>">
-          <a href="#<?php echo esc_attr($item['id']); ?>" class="text-[14px] text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
-            <?php echo esc_html($item['text']); ?>
-          </a>
+        <li class="<?php echo $item['level'] === '3' ? 'sub' : ''; ?>">
+          <a href="#<?php echo esc_attr($item['id']); ?>"><?php echo esc_html($item['text']); ?></a>
         </li>
       <?php endforeach; ?>
     </ul>
