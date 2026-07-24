@@ -30,4 +30,43 @@
       frame.appendChild(iframe);
     });
   });
+
+  // Single-post polish: reading progress bar + TOC scroll-spy.
+  var article = document.querySelector(".article");
+  if (article) {
+    var bar = document.querySelector(".reading-bar > span");
+    if (bar) {
+      var updateBar = function () {
+        var rect = article.getBoundingClientRect();
+        var total = rect.height - window.innerHeight;
+        var done = Math.min(Math.max(-rect.top, 0), total);
+        bar.style.width = (total > 0 ? (done / total) * 100 : 0) + "%";
+      };
+      window.addEventListener("scroll", updateBar, { passive: true });
+      window.addEventListener("resize", updateBar);
+      updateBar();
+    }
+
+    // Scroll-spy: highlight the TOC link for the heading nearest the top.
+    var tocLinks = {};
+    document.querySelectorAll(".toc a").forEach(function (a) {
+      tocLinks[a.getAttribute("href").slice(1)] = a;
+    });
+    var headings = document.querySelectorAll(".prose [id]");
+    if (Object.keys(tocLinks).length && headings.length) {
+      var spy = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          var a = tocLinks[e.target.id];
+          if (a && e.isIntersecting) {
+            // ponytail: last heading crossing the band wins — fine for top-down reading
+            document.querySelectorAll(".toc a.active").forEach(function (x) {
+              x.classList.remove("active");
+            });
+            a.classList.add("active");
+          }
+        });
+      }, { rootMargin: "-100px 0px -70% 0px" });
+      headings.forEach(function (h) { spy.observe(h); });
+    }
+  }
 })();

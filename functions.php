@@ -43,8 +43,8 @@ define('SITE_RATING_SOURCE', '');
 
 function boilerplate_load_assets() {
   // Single site-wide design system — "Hug in the Mail" 2026 redesign.
-  wp_enqueue_style('hitm-design', get_theme_file_uri('/assets/design.css'), array(), '1.1');
-  wp_enqueue_script('hitm-design', get_theme_file_uri('/assets/design.js'), array(), '1.1', true);
+  wp_enqueue_style('hitm-design', get_theme_file_uri('/assets/design.css'), array(), '1.7');
+  wp_enqueue_script('hitm-design', get_theme_file_uri('/assets/design.js'), array(), '1.2', true);
 }
 
 add_action('wp_enqueue_scripts', 'boilerplate_load_assets');
@@ -56,10 +56,10 @@ function boilerplate_add_support() {
 
 add_action('after_setup_theme', 'boilerplate_add_support');
 
-// Preload hero letter photo for LCP optimization
+// Preload the central hero letter for LCP optimization.
 function boilerplate_preload_hero_image() {
   if (is_front_page()) {
-    echo '<link rel="preload" as="image" href="' . esc_url(get_theme_file_uri('/assets/decopics/LookUpLaughBlue.webp')) . '" fetchpriority="high">';
+    echo '<link rel="preload" as="image" href="' . esc_url(get_theme_file_uri('/assets/hero-mail/letter.webp')) . '" fetchpriority="high">';
   }
 }
 add_action('wp_head', 'boilerplate_preload_hero_image', 1);

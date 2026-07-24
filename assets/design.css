@@ -341,7 +341,7 @@ html { scroll-behavior: smooth; }
   position: relative;
   perspective: 1600px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   /* Push the envelope down so the letter tip clears the fixed header */
   padding-top: clamp(32px, 5vw, 64px);
 }
@@ -349,9 +349,9 @@ html { scroll-behavior: smooth; }
 /* Envelope stage */
 .hitm .envelope-stage {
   position: relative;
-  width: min(100%, 440px);
+  width: min(100%, 416px);
   aspect-ratio: 5 / 6;
-  margin: 0 auto;
+  margin: 0;
   animation: stageRise 1s cubic-bezier(.2,.8,.2,1);
 }
 @keyframes stageRise {
@@ -373,65 +373,74 @@ html { scroll-behavior: smooth; }
   z-index: 1;
 }
 
-.hitm .letter {
+.hitm .mail-contents {
   position: absolute;
-  left: 9%;
-  right: 9%;
-  top: -10%;
-  height: 78%;
-  background: var(--paper);
-  border-radius: 3px;
-  box-shadow: 0 14px 30px rgba(60,30,20,0.16), 0 0 0 1px rgba(0,0,0,0.05) inset;
-  overflow: hidden;
+  inset: 0;
   z-index: 3;
-  animation: letterRise 1.1s 0.25s cubic-bezier(.2,.8,.2,1);
+  pointer-events: none;
 }
-@keyframes letterRise {
-  from { transform: translateY(16%); }
-}
-.hitm .letter-photo {
+
+.hitm .mail-piece {
+  --piece-rotation: 0deg;
   position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center 35%;
+  display: block;
+  overflow: hidden;
+  border: 5px solid var(--paper);
+  border-radius: 3px;
+  background: var(--paper);
+  box-shadow: 0 12px 24px rgba(60,30,20,0.16);
+  width: 36%;
+  height: 68%;
+  transform: rotate(var(--piece-rotation));
+  transform-origin: 50% 100%;
+  animation: mailPieceRise 1.1s var(--piece-delay, 0.15s) cubic-bezier(.2,.8,.2,1) both;
 }
-.hitm .letter-photo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.05) 20%, rgba(0,0,0,0.0) 45%);
+
+.hitm .mail-piece img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.hitm .letter-caption {
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  top: 14px;
-  color: #FBF7EE;
+
+.hitm .mail-piece-letter {
+  --piece-rotation: -8deg;
+  --piece-delay: 0.08s;
+  left: 8%;
+  top: -7%;
+  z-index: 1;
+}
+
+.hitm .mail-piece-letter img {
+  object-position: center top;
+}
+
+.hitm .mail-piece-postcard {
+  --piece-rotation: 8deg;
+  --piece-delay: 0.18s;
+  top: -7%;
+  right: 8%;
   z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 8px;
 }
-.hitm .letter-caption small {
-  font: 500 9px var(--mono);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  background: rgba(0,0,0,0.32);
-  backdrop-filter: blur(4px);
-  padding: 4px 8px;
-  border-radius: 999px;
-  white-space: nowrap;
+
+.hitm .mail-piece-postcard img {
+  object-position: center 22%;
 }
-.hitm .letter-caption .badge {
-  background: var(--flame);
-  font: 500 9px var(--mono);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  padding: 4px 8px;
-  border-radius: 999px;
-  white-space: nowrap;
+
+.hitm .mail-piece-reflection {
+  --piece-rotation: 0deg;
+  --piece-delay: 0.13s;
+  left: 32%;
+  top: -12%;
+  z-index: 3;
+}
+
+.hitm .mail-piece-reflection img {
+  object-position: center top;
+}
+
+@keyframes mailPieceRise {
+  from { transform: translateY(14%) rotate(var(--piece-rotation)); }
 }
 
 .hitm .env-pocket {
@@ -440,7 +449,7 @@ html { scroll-behavior: smooth; }
   right: 0;
   bottom: 0;
   height: 55%;
-  z-index: 4;
+  z-index: 6;
   background: linear-gradient(180deg, #E5D2AB 0%, #D2BC8E 100%);
   border-radius: 0 0 6px 6px;
   box-shadow: inset 0 1px 0 rgba(0,0,0,0.08), inset 0 -1px 0 rgba(0,0,0,0.06);
@@ -472,8 +481,8 @@ html { scroll-behavior: smooth; }
 .hitm .postmark {
   position: absolute;
   top: 58%;
-  right: -8%;
-  z-index: 6;
+  right: 1%;
+  z-index: 8;
   transform: rotate(10deg);
   color: var(--brand);
   opacity: 0.7;
@@ -485,7 +494,7 @@ html { scroll-behavior: smooth; }
   position: absolute;
   top: 50%;
   left: 8%;
-  z-index: 5;
+  z-index: 7;
   height: 72px;
   width: auto;
   transform: rotate(-3deg);
@@ -495,8 +504,8 @@ html { scroll-behavior: smooth; }
 .hitm .stamp {
   position: absolute;
   top: 52%;
-  right: 6%;
-  z-index: 5;
+  right: 9%;
+  z-index: 7;
   width: 70px;
   height: 86px;
   background: var(--paper);
@@ -521,7 +530,7 @@ html { scroll-behavior: smooth; }
   position: absolute;
   bottom: 9%;
   left: 12%;
-  z-index: 5;
+  z-index: 7;
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.04em;
@@ -537,7 +546,7 @@ html { scroll-behavior: smooth; }
   bottom: -16px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 7;
+  z-index: 9;
   background: var(--flame);
   color: #FBF7EE;
   padding: 10px 18px;
@@ -573,7 +582,7 @@ html { scroll-behavior: smooth; }
   line-height: 1.15;
   transform: rotate(-8deg);
   pointer-events: none;
-  z-index: 8;
+  z-index: 10;
 }
 .hitm .hand-note .arrow {
   display: inline-block;
@@ -1435,14 +1444,18 @@ html { scroll-behavior: smooth; }
 }
 @media (prefers-reduced-motion: reduce) {
   .js-aos .hitm [data-aos] { opacity: 1 !important; transform: none !important; transition: none; }
+  .hitm .chip::before,
+  .hitm .envelope-stage,
+  .hitm .env-flap,
+  .hitm .mail-piece { animation: none; }
 }
 
 /* Responsive */
 @media (max-width: 1100px) {
   .hitm .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-  .hitm .hero-card { order: -1; }
+  .hitm .hero-card { order: -1; justify-content: center; }
   .hitm .hero h1 { font-size: clamp(48px, 11vw, 96px); }
-  .hitm .envelope-stage { max-width: 380px; }
+  .hitm .envelope-stage { max-width: 352px; margin: 0 auto; }
 }
 @media (max-width: 980px) {
   .hitm .spread, .hitm .wrap-grid, .hitm .ripple-grid, .hitm .pricing,
@@ -1452,6 +1465,10 @@ html { scroll-behavior: smooth; }
   .hitm .mission-cards, .hitm .founders { grid-template-columns: repeat(2, 1fr); }
   .hitm .inside-grid > .in-card { grid-column: span 6; }
   .hitm .nav-links { display: none; }
+  /* Higher-specificity base rule (.hitm .letter-section .wrap-grid) needs an
+     equally-specific override, or the testimonials grid stays 2-col on phones. */
+  .hitm .letter-section .wrap-grid { grid-template-columns: 1fr; }
+  .hitm .testimonial-side .portrait { margin-inline: auto; }
 }
 @media (max-width: 600px) {
   .hitm .mission-cards, .hitm .founders { grid-template-columns: 1fr; }
@@ -1642,7 +1659,7 @@ html { scroll-behavior: smooth; }
 .hitm .article-meta .who { display: inline-flex; align-items: center; gap: 8px; color: var(--ink-soft); font-weight: 500; }
 .hitm .article-meta img { width: 30px; height: 30px; border-radius: 50%; }
 .hitm .article-meta .sep { width: 4px; height: 4px; border-radius: 50%; background: color-mix(in oklab, var(--ink-mute) 50%, transparent); }
-.hitm .article-hero-img { margin: 0 auto clamp(32px, 5vw, 56px); border-radius: 8px; overflow: hidden; box-shadow: 0 30px 60px rgba(60,30,20,0.16); }
+.hitm .article-hero-img { margin: 0 auto clamp(36px, 5vw, 60px); border-radius: 6px; overflow: hidden; }
 .hitm .article-hero-img img { width: 100%; height: auto; display: block; }
 
 .hitm .article-tags { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
@@ -1656,24 +1673,19 @@ html { scroll-behavior: smooth; }
 .hitm .article-tags a:hover { background: color-mix(in oklab, var(--brand) 12%, transparent); color: var(--brand); }
 
 .hitm .author-box {
-  margin-top: 40px;
-  background: var(--paper);
-  border-radius: 6px;
-  padding: 28px;
-  box-shadow: 0 1px 0 var(--rule), 0 14px 28px rgba(60,30,20,0.06);
-  display: flex; gap: 18px; align-items: flex-start;
+  margin-top: 56px;
+  padding-top: 34px;
+  border-top: 1px solid var(--rule);
+  display: flex; gap: 20px; align-items: flex-start;
 }
-.hitm .author-box img { width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0; }
+.hitm .author-box img { width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; }
 .hitm .author-box .lbl { font: 500 10px var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mute); }
 .hitm .author-box h3 { font-family: var(--display); font-size: 24px; margin: 4px 0 6px; }
 .hitm .author-box p { color: var(--ink-soft); font-size: 14.5px; line-height: 1.55; }
 
-.hitm .post-nav { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.hitm .post-nav a {
-  padding: 18px 20px; border-radius: 8px; border: 1px solid var(--rule);
-  transition: border-color .2s ease, background .2s ease;
-}
-.hitm .post-nav a:hover { border-color: color-mix(in oklab, var(--brand) 40%, transparent); background: color-mix(in oklab, var(--brand) 5%, transparent); }
+.hitm .post-nav { margin-top: 56px; padding-top: 34px; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.hitm .post-nav a { display: block; }
+.hitm .post-nav .next { border-left: 1px solid var(--rule); padding-left: 32px; }
 .hitm .post-nav .lbl { font: 500 10px var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mute); display: inline-flex; align-items: center; gap: 6px; }
 .hitm .post-nav .lbl svg { width: 12px; height: 12px; }
 .hitm .post-nav .t { margin-top: 8px; font-size: 15px; font-weight: 500; color: var(--ink); }
@@ -1686,11 +1698,10 @@ html { scroll-behavior: smooth; }
    ========================================================================== */
 
 .hitm .toc {
-  margin: 0 0 40px;
-  padding: 24px 28px;
-  border-radius: 8px;
-  background: var(--paper);
-  box-shadow: 0 1px 0 var(--rule), 0 12px 28px rgba(60,30,20,0.05);
+  margin: 0 0 44px;
+  padding: 24px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
 }
 .hitm .toc h2 {
   font: 500 11px var(--mono);
@@ -1731,11 +1742,64 @@ html { scroll-behavior: smooth; }
   line-height: 1.3;
   color: var(--ink);
 }
-.hitm .prose img { border-radius: 8px; max-width: 100%; height: auto; box-shadow: 0 18px 36px rgba(60,30,20,0.12); }
+.hitm .prose img { border-radius: 6px; max-width: 100%; height: auto; }
 .hitm .prose code { font-family: var(--mono); font-size: 0.85em; color: var(--brand); background: color-mix(in oklab, var(--brand) 10%, transparent); padding: 2px 6px; border-radius: 4px; }
 .hitm .prose pre { background: var(--ink); color: var(--paper); padding: 20px; border-radius: 10px; overflow-x: auto; }
 .hitm .prose pre code { color: inherit; background: none; padding: 0; }
 .hitm .prose hr { border: 0; border-top: 1px solid var(--rule); margin: 2em 0; }
+
+/* ==========================================================================
+   Single post — polish (reading bar, sticky/scroll-spy TOC, editorial type)
+   ========================================================================== */
+
+/* Reading progress bar — sits above the sticky nav, driven by design.js */
+.hitm .reading-bar {
+  position: fixed; inset: 0 0 auto 0; height: 3px;
+  z-index: 100; pointer-events: none; background: transparent;
+}
+.hitm .reading-bar > span {
+  display: block; height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--flame), var(--brand));
+}
+
+/* Scroll-spy: active TOC link */
+.hitm .toc a.active { color: var(--brand); font-weight: 600; }
+.hitm .toc a.active::before { background: var(--brand); transform: scale(1.4); }
+
+/* Drop cap on the first paragraph */
+.hitm .prose > p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--display);
+  font-weight: var(--display-weight, 400);
+  font-size: 3.4em;
+  line-height: 0.78;
+  padding: 6px 12px 0 0;
+  color: var(--brand);
+}
+
+/* Decorative quote mark on pull-quotes */
+.hitm .prose blockquote { position: relative; }
+.hitm .prose blockquote::before {
+  content: "\201D";
+  position: absolute; top: -12px; right: 2px;
+  font-family: var(--display); font-size: 72px; line-height: 1;
+  color: color-mix(in oklab, var(--flame) 20%, transparent);
+  pointer-events: none;
+}
+
+/* Sticky TOC in the left margin — only where there's room for it */
+@media (min-width: 1440px) {
+  .hitm .article-narrow > .toc {
+    position: sticky;
+    top: 110px;
+    float: left;
+    width: 220px;
+    margin: 0 0 0 calc(-220px - 56px);
+    padding: 4px 0;
+    border: 0;
+  }
+  .hitm .article-narrow > .toc a { font-size: 13.5px; }
+}
 
 /* Generic page content (page.php) */
 .hitm .page-body { padding: clamp(96px, 12vw, 150px) 0 clamp(64px, 9vw, 110px); }

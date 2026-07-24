@@ -27,7 +27,12 @@ $blog_url = get_permalink(get_option('page_for_posts')) ?: home_url('/blog/');
 <header class="nav">
   <div class="wrap nav-inner">
     <a href="<?php echo esc_url(home_url()); ?>" class="logo-mark logo-mark--icon-only" aria-label="<?php echo esc_attr(SITE_NAME); ?>">
-      <img src="<?php echo esc_url(get_theme_file_uri('/assets/logo.png')); ?>" alt="<?php echo esc_attr(SITE_NAME); ?>">
+      <img
+        src="<?php echo esc_url(get_theme_file_uri('/assets/logo-cropped.png')); ?>"
+        alt="<?php echo esc_attr(SITE_NAME); ?>"
+        width="69"
+        height="72"
+      >
     </a>
     <nav class="nav-links">
       <a href="<?php echo esc_url(home_url('/#whats-inside')); ?>">What's Inside</a>

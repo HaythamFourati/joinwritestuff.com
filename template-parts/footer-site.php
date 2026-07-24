@@ -10,7 +10,12 @@ $blog_url = get_permalink(get_option('page_for_posts')) ?: home_url('/blog/');
     <div class="foot-grid">
       <div class="foot-brand">
         <a href="<?php echo esc_url(home_url()); ?>" class="logo-mark" aria-label="<?php echo esc_attr(SITE_NAME); ?>">
-          <img src="<?php echo esc_url(get_theme_file_uri('/assets/logo.png')); ?>" alt="<?php echo esc_attr(SITE_NAME); ?>">
+          <img
+            src="<?php echo esc_url(get_theme_file_uri('/assets/logo-cropped.png')); ?>"
+            alt="<?php echo esc_attr(SITE_NAME); ?>"
+            width="69"
+            height="72"
+          >
         </a>
         <p>Bringing back the joy of real mail. One envelope at a time.</p>
       </div>

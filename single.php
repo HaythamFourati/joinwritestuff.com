@@ -7,6 +7,8 @@ get_header(); ?>
 <div class="hitm">
   <?php get_template_part('template-parts/header-nav'); ?>
 
+  <div class="reading-bar" aria-hidden="true"><span></span></div>
+
   <?php if (have_posts()) : while (have_posts()) : the_post();
     $categories = get_the_category();
     $blog_url   = get_permalink(get_option('page_for_posts')) ?: home_url('/blog/');

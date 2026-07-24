@@ -1,9 +1,13 @@
 <?php
 /**
  * Hero Section — Hug in the Mail 2026 redesign
- * Editorial split: copy left, animated envelope card right.
+ * Editorial split: copy left, envelope with real monthly contents right.
  */
-$hero_photo = get_theme_file_uri('/assets/decopics/LookUpLaughBlue.webp');
+$hero_mail = array(
+  'letter'     => get_theme_file_uri('/assets/hero-mail/letter.webp'),
+  'postcard'   => get_theme_file_uri('/assets/hero-mail/postcard-art.webp'),
+  'reflection' => get_theme_file_uri('/assets/hero-mail/reflection-card.webp'),
+);
 ?>
 <section class="hero" id="hero-section">
   <div class="wrap hero-grid">
@@ -36,21 +40,29 @@ $hero_photo = get_theme_file_uri('/assets/decopics/LookUpLaughBlue.webp');
       <div class="envelope-stage">
         <div class="env-back"></div>
 
-        <div class="letter">
-          <div class="letter-photo" style="background-image:url('<?php echo esc_url($hero_photo); ?>')"></div>
-          <div class="letter-caption">
-            <small>Subscriber's box</small>
-            <span class="badge">№ 042</span>
-          </div>
+        <div
+          class="mail-contents"
+          role="img"
+          aria-label="A personal letter, a reflection card, and original art spilling from a Hug in the Mail envelope"
+        >
+          <span class="mail-piece mail-piece-letter">
+            <img src="<?php echo esc_url($hero_mail['letter']); ?>" alt="" width="700" height="1100" loading="eager" fetchpriority="high" decoding="async">
+          </span>
+          <span class="mail-piece mail-piece-reflection">
+            <img src="<?php echo esc_url($hero_mail['reflection']); ?>" alt="" width="560" height="880" loading="eager" decoding="async">
+          </span>
+          <span class="mail-piece mail-piece-postcard">
+            <img src="<?php echo esc_url($hero_mail['postcard']); ?>" alt="" width="700" height="906" loading="eager" decoding="async">
+          </span>
         </div>
 
         <div class="env-pocket"></div>
 
         <img
           class="env-logo"
-          src="<?php echo esc_url(get_theme_file_uri('/assets/logo.png')); ?>"
+          src="<?php echo esc_url(get_theme_file_uri('/assets/logo-cropped.png')); ?>"
           alt="<?php echo esc_attr(SITE_NAME); ?>"
-          width="64" height="80"
+          width="69" height="72"
         >
 
         <div class="env-flap">
