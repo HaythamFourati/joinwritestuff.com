@@ -19,10 +19,12 @@ define('SITE_PHONE_LINK', '');
 define('SITE_EMAIL', 'info@huginthemail.com');
 
 // Social Links (leave empty to hide)
-define('SITE_SOCIAL_FACEBOOK', '');
+define('SITE_SOCIAL_YOUTUBE', 'https://www.youtube.com/@HugInTheMail');
+define('SITE_SOCIAL_FACEBOOK', 'https://www.facebook.com/profile.php?id=61567239342701');
+define('SITE_SOCIAL_TIKTOK', 'https://www.tiktok.com/@hug.in.the.mail.c');
 define('SITE_SOCIAL_LINKEDIN', '');
 define('SITE_SOCIAL_TWITTER', '');
-define('SITE_SOCIAL_INSTAGRAM', '');
+define('SITE_SOCIAL_INSTAGRAM', 'https://www.instagram.com/huginthemailclub/');
 
 // Subscription Details
 define('FOUNDING_MEMBERS_LIMIT', '50');
@@ -43,7 +45,7 @@ define('SITE_RATING_SOURCE', '');
 
 function boilerplate_load_assets() {
   // Single site-wide design system — "Hug in the Mail" 2026 redesign.
-  wp_enqueue_style('hitm-design', get_theme_file_uri('/assets/design.css'), array(), '1.7');
+  wp_enqueue_style('hitm-design', get_theme_file_uri('/assets/design.css'), array(), '1.8');
   wp_enqueue_script('hitm-design', get_theme_file_uri('/assets/design.js'), array(), '1.2', true);
 }
 

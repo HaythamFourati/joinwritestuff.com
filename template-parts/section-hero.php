@@ -101,7 +101,8 @@ $hero_mail = array(
         </div>
 
         <a href="#testimonials" class="watch">
-          <span class="play">▶</span> Watch our story
+          <span class="watch-mark" aria-hidden="true">“</span>
+          <span>See why people love it</span>
         </a>
       </div>
     </div>

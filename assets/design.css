@@ -186,8 +186,48 @@ html { scroll-behavior: smooth; }
   gap: 24px;
   padding: 16px 0;
 }
-.hitm .nav-inner > .btn { justify-self: end; }
-.hitm .nav-inner > a:last-child { justify-self: end; }
+.hitm .nav-actions {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 12px;
+}
+.hitm .nav-social {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.hitm .social-link {
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--brand) 20%, transparent);
+  border-radius: 50%;
+  color: var(--brand);
+  transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.hitm .social-link:hover {
+  border-color: color-mix(in srgb, var(--brand) 38%, transparent);
+  background: color-mix(in srgb, var(--brand) 8%, transparent);
+  color: var(--brand-soft);
+  transform: translateY(-1px);
+}
+.hitm .social-link:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+.hitm .social-icon {
+  width: 15px;
+  height: 15px;
+  background: currentColor;
+  -webkit-mask: var(--social-icon) center / contain no-repeat;
+  mask: var(--social-icon) center / contain no-repeat;
+}
+.hitm .social-link--youtube { --social-icon: url("social/youtube.svg"); }
+.hitm .social-link--facebook { --social-icon: url("social/facebook.svg"); }
+.hitm .social-link--tiktok { --social-icon: url("social/tiktok.svg"); }
+.hitm .social-link--instagram { --social-icon: url("social/instagram.svg"); }
 .hitm .nav-cta {
   padding: 11px 18px;
   font-size: 13px;
@@ -543,30 +583,34 @@ html { scroll-behavior: smooth; }
 
 .hitm .watch {
   position: absolute;
-  bottom: -16px;
+  bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9;
   background: var(--flame);
   color: #FBF7EE;
-  padding: 10px 18px;
+  padding: 12px 22px;
   border-radius: 999px;
-  font: 500 13px var(--sans);
+  font: 600 15.6px var(--sans);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   box-shadow: 0 8px 20px rgba(224, 84, 28, 0.3);
   cursor: pointer;
   transition: transform .25s ease;
   white-space: nowrap;
 }
-.hitm .watch .play {
-  width: 18px; height: 18px;
+.hitm .watch .watch-mark {
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background: rgba(255,255,255,0.22);
   display: grid;
   place-items: center;
-  font-size: 9px;
+  padding-top: 3px;
+  font-family: var(--display);
+  font-size: 21px;
+  line-height: 1;
 }
 .hitm .watch:hover { transform: translateX(-50%) translateY(-2px); }
 
@@ -1451,6 +1495,11 @@ html { scroll-behavior: smooth; }
 }
 
 /* Responsive */
+@media (max-width: 1280px) {
+  .hitm .nav-inner { gap: 18px; }
+  .hitm .nav-links { gap: 18px; }
+  .hitm .nav-actions { gap: 8px; }
+}
 @media (max-width: 1100px) {
   .hitm .hero-grid { grid-template-columns: 1fr; gap: 48px; }
   .hitm .hero-card { order: -1; justify-content: center; }
@@ -1471,11 +1520,48 @@ html { scroll-behavior: smooth; }
   .hitm .testimonial-side .portrait { margin-inline: auto; }
 }
 @media (max-width: 600px) {
+  .hitm .nav-inner {
+    gap: 10px;
+    padding: 10px 0;
+  }
+  .hitm .logo-mark--icon-only img { height: 58px; }
+  .hitm .nav-actions { gap: 6px; }
+  .hitm .nav-social { gap: 2px; }
+  .hitm .social-link {
+    width: 28px;
+    height: 28px;
+    border-color: transparent;
+  }
+  .hitm .social-icon {
+    width: 14px;
+    height: 14px;
+  }
+  .hitm .nav-cta {
+    padding: 10px 14px;
+    font-size: 12.5px;
+  }
+  .hitm .nav-price,
+  .hitm .nav-cta .arr { display: none; }
   .hitm .mission-cards, .hitm .founders { grid-template-columns: 1fr; }
   .hitm .inside-grid > .in-card { grid-column: span 12; }
   .hitm .foot-grid { grid-template-columns: 1fr 1fr; }
   .hitm .real-letter { padding: 40px 28px 32px; }
   .hitm .real-letter::before { left: 32px; }
+}
+@media (max-width: 420px) {
+  .hitm .nav-inner { gap: 7px; }
+  .hitm .logo-mark--icon-only img { height: 52px; }
+  .hitm .nav-social { gap: 0; }
+  .hitm .social-link {
+    width: 25px;
+    height: 28px;
+  }
+  .hitm .nav-cta { padding-inline: 11px; }
+  .hitm .watch {
+    max-width: calc(100% - 20px);
+    padding: 11px 18px;
+    font-size: 14px;
+  }
 }
 
 /* ==========================================================================
