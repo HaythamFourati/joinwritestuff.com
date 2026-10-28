@@ -27,6 +27,7 @@ $blog_url = get_permalink(get_option('page_for_posts')) ?: home_url('/blog/');
           <li><a href="<?php echo esc_url(home_url('/#how-it-works')); ?>">How It Works</a></li>
           <li><a href="<?php echo esc_url(home_url('/#who-we-are')); ?>">Our Story</a></li>
           <li><a href="<?php echo esc_url($blog_url); ?>">Blog</a></li>
+          <?php if (class_exists('HITM_Affiliate_Recruitment')) : ?><li><a href="<?php echo esc_url(HITM_Affiliate_Recruitment::url()); ?>">Become an Affiliate</a></li><?php endif; ?>
         </ul>
       </div>
 
@@ -38,6 +39,7 @@ $blog_url = get_permalink(get_option('page_for_posts')) ?: home_url('/blog/');
           <li><a href="<?php echo esc_url(home_url('/checkout')); ?>">Subscribe</a></li>
           <li><a href="https://billing.stripe.com/p/login/9B6cN45Mb6Xm5wtfVzbwk00" target="_blank" rel="noopener noreferrer">Manage Subscription</a></li>
           <li><a href="mailto:<?php echo esc_attr(SITE_EMAIL); ?>">Contact Us</a></li>
+          <?php if (class_exists('HITM_Affiliate_Portal')) : ?><li><a href="<?php echo esc_url(HITM_Affiliate_Portal::url()); ?>">Affiliate Portal</a></li><?php endif; ?>
         </ul>
       </div>
     </div>

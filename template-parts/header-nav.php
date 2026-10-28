@@ -59,6 +59,7 @@ $social_links = array_filter(array(
       <a href="<?php echo esc_url(home_url('/#who-we-are')); ?>">Our Story</a>
       <a href="<?php echo esc_url($blog_url); ?>">Blog</a>
       <a href="<?php echo esc_url(home_url('/faq')); ?>">FAQ</a>
+      <?php if (class_exists('HITM_Affiliate_Recruitment')) : ?><a href="<?php echo esc_url(HITM_Affiliate_Recruitment::url()); ?>">Affiliates</a><?php endif; ?>
     </nav>
     <div class="nav-actions">
       <?php if ($social_links) : ?>

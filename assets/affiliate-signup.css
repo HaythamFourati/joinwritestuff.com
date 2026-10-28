@@ -1,0 +1,33 @@
+.hitm.affiliate-signup-page { background-image: none; }
+.hitm .affiliate-recruit-hero { padding-top: 64px; text-align: center; border-bottom: 1px solid var(--rule); }
+.hitm .affiliate-recruit-hero h1 { font: 400 64px/1.08 var(--display); letter-spacing: 0; text-wrap: balance; }
+.hitm .affiliate-recruit-hero h1 em, .hitm .affiliate-recruit-story h2 em { color: var(--brand); }
+.hitm .affiliate-recruit-hero > p { margin: 20px auto 0; color: var(--ink-soft); font-size: 18px; }
+.hitm .affiliate-recruit-mail { display: flex; justify-content: center; align-items: flex-end; gap: 12px; height: 192px; overflow: hidden; margin-top: 32px; }
+.hitm .affiliate-recruit-mail img { display: block; width: 144px; height: 180px; object-fit: cover; object-position: top; border: 5px solid var(--paper); box-shadow: 0 6px 20px #1a16141a; }
+.hitm .affiliate-recruit-mail img:first-child { transform: rotate(-7deg) translateY(10px); }
+.hitm .affiliate-recruit-mail img:last-child { transform: rotate(7deg) translateY(10px); }
+.hitm .affiliate-recruit-body { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 72px; padding-top: 64px; padding-bottom: 80px; }
+.hitm .affiliate-recruit-story h2 { font: 400 36px/1.15 var(--display); letter-spacing: 0; }
+.hitm .affiliate-recruit-story > p { max-width: 50ch; margin-top: 24px; color: var(--ink-soft); }
+.hitm .affiliate-recruit-steps { list-style: none; padding: 0; margin: 32px 0 0; }
+.hitm .affiliate-recruit-steps li { border-top: 1px solid var(--rule); padding-block: 20px; }
+.hitm .affiliate-recruit-steps strong { font-size: 15px; }
+.hitm .affiliate-recruit-steps p { margin-top: 6px; font-size: 14px; color: var(--ink-soft); max-width: 50ch; }
+.hitm .affiliate-recruit-existing { font-size: 14px; }
+.hitm .affiliate-recruit-existing a { display: inline-block; margin-top: 8px; color: var(--brand); text-decoration: underline; text-underline-offset: 4px; }
+.hitm .affiliate-recruit-form { border-left: 1px solid var(--rule); padding-left: 48px; min-width: 0; }
+.hitm .affiliate-recruit-form h2 { margin-bottom: 12px; }
+.hitm .hitm-application-intro { margin-bottom: 24px; }
+.hitm .hitm-application-footer { margin-top: 16px; }
+.hitm.affiliate-signup-page a:focus-visible, .hitm.affiliate-signup-page button:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; }
+
+@media (width <= 800px) {
+  .hitm .affiliate-recruit-hero { padding-top: 40px; }
+  .hitm .affiliate-recruit-hero h1 { font-size: 46px; }
+  .hitm .affiliate-recruit-body { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-top: 40px; padding-bottom: 48px; }
+  .hitm .affiliate-recruit-form { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 32px; }
+  .hitm .affiliate-recruit-story h2 { font-size: 32px; }
+  .hitm .affiliate-recruit-mail { height: 140px; gap: 4px; }
+  .hitm .affiliate-recruit-mail img { width: 96px; height: 130px; border-width: 3px; }
+}
